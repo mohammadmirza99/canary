@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_195251) do
+ActiveRecord::Schema.define(version: 2020_03_03_213635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,34 +26,11 @@ ActiveRecord::Schema.define(version: 2020_03_03_195251) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "interest"
     t.index ["location_id"], name: "index_activities_on_location_id"
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "category_interests", force: :cascade do |t|
-    t.bigint "category_id"
-    t.bigint "interest_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_interests_on_category_id"
-    t.index ["interest_id"], name: "index_category_interests_on_interest_id"
-  end
-
-  create_table "interest_activities", force: :cascade do |t|
-    t.bigint "activity_id"
-    t.bigint "interest_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["activity_id"], name: "index_interest_activities_on_activity_id"
-    t.index ["interest_id"], name: "index_interest_activities_on_interest_id"
-  end
-
-  create_table "interests", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_03_03_195251) do
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pairs", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_pairs_on_activity_id"
+    t.index ["category_id"], name: "index_pairs_on_category_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -101,10 +87,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_195251) do
   end
 
   add_foreign_key "activities", "locations"
-  add_foreign_key "category_interests", "categories"
-  add_foreign_key "category_interests", "interests"
-  add_foreign_key "interest_activities", "activities"
-  add_foreign_key "interest_activities", "interests"
+  add_foreign_key "pairs", "activities"
+  add_foreign_key "pairs", "categories"
   add_foreign_key "reviews", "activities"
   add_foreign_key "reviews", "users"
   add_foreign_key "selections", "activities"
