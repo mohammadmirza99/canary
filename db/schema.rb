@@ -10,10 +10,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_201903) do
+ActiveRecord::Schema.define(version: 2020_03_03_195251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.float "longitude"
+    t.float "latitude"
+    t.string "name"
+    t.text "description"
+    t.string "price_category"
+    t.bigint "location_id"
+    t.string "time_of_day"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_activities_on_location_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_interests", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "interest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_interests_on_category_id"
+    t.index ["interest_id"], name: "index_category_interests_on_interest_id"
+  end
+
+  create_table "interest_activities", force: :cascade do |t|
+    t.bigint "activity_id"
+    t.bigint "interest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_interest_activities_on_activity_id"
+    t.index ["interest_id"], name: "index_interest_activities_on_interest_id"
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "country"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "activity_id"
+    t.text "content"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_reviews_on_activity_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "selections", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "activity_id"
+    t.string "time_of_day"
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_selections_on_activity_id"
+    t.index ["user_id"], name: "index_selections_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +100,13 @@ ActiveRecord::Schema.define(version: 2020_03_02_201903) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "locations"
+  add_foreign_key "category_interests", "categories"
+  add_foreign_key "category_interests", "interests"
+  add_foreign_key "interest_activities", "activities"
+  add_foreign_key "interest_activities", "interests"
+  add_foreign_key "reviews", "activities"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "selections", "activities"
+  add_foreign_key "selections", "users"
 end
