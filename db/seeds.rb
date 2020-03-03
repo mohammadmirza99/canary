@@ -5,13 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
+puts "cleanning all"
+Activity.destroy_all
+Category.destroy_all
+Pair.destroy_all
 # create a location
 
 location1 = ([{
-  country = "Italy",
-  city = "Rome"
+  country: "Italy",
+  city: "Rome"
 }])
 
 # create activities
@@ -19,9 +21,10 @@ location1 = ([{
 activity1 = Activity.create([{
   latitude: '41.894660',
   longitude: '12.490910',
-  name: 'La Licata'
+  name: 'La Licata',
   description: 'La Licata began its activity as a Pastry Shop in 1967, one of the best and most renowned in the historic center of Rome, in the Rione Monti, the first and oldest Roman district, also known as “La Suburra”.',
   price_category: '5',
+  interest: "restaurant",
   image_url: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'morning',
   location: location1
@@ -32,7 +35,7 @@ activity1 = Activity.create([{
 activity3 = Activity.create([{
   latitude: '41.900830',
   longitude: '12.493640',
-  name: 'Artemís Spa'
+  name: 'Artemís Spa',
   description: 'In between city strolls and museum visits, enjoy a wellness programme and book a relaxing treatment, perhaps together with someone you love.',
   price_category: '2',
   image_url: 'https://www.lesaintsulpice.com/blog/wp-content/uploads/2016/06/spa.jpg',
@@ -44,7 +47,7 @@ activity3 = Activity.create([{
 activity4 = Activity.create([{
   latitude: '41.893580',
   longitude: '12.474500',
-  name: 'Pub Open Baladin'
+  name: 'Pub Open Baladin',
   description: 'From the Earth to the Eastern Beer project that symbolizes Baladin s commitment to promoting a craft beer produced exclusively with national raw materials',
   price_category: '5',
   image_url: 'https://i.radiopachone.org/img/77c4b4e5dd918775a8cd24f25a6d6a.jpg',
@@ -56,7 +59,7 @@ activity4 = Activity.create([{
 activity5 = Activity.create([{
   latitude: '41.890460',
   longitude: '12.469350',
-  name: 'Kadampa Meditation'
+  name: 'Kadampa Meditation',
   description: 'The Kadampa Roma Meditation Center is a Buddhist meditation center, is a member of the New Kadampa Tradition, the International Union of Kadampa Buddhism, an association founded by the Venerable Geshe Kelsang Gyatso.',
   price_category: '5',
   image_url: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
@@ -68,7 +71,7 @@ activity5 = Activity.create([{
 activity6 = Activity.create([{
   latitude: '41.918120',
   longitude: '12.483980',
-  name: 'Piscine Aldrovandi'
+  name: 'Piscine Aldrovandi',
   description: 'Everything you need for a healthy tan, such as sunbeds and umbrellas, is provided. Soft terrycloth towels and changing rooms with private lockers are also part of the renowned hospitality of Aldrovandi Swimming Pool.',
   price_category: '3',
   image_url: 'https://www.aldrovandiresidence.it/upload/img599ad572b9e06.jpg',
@@ -77,203 +80,61 @@ activity6 = Activity.create([{
 }])
 
 
-# create interests
-
-# category Relax
-
-interest1 = Interest.create([{
-  name: 'Spa'
-}])
-
-interest2 = Interest.create([{
-  name: 'Meditation'
-}])
-
-interest3 = Interest.create([{
-  name: 'Walk'
-}])
-
-interest4 = Interest.create([{
-  name: 'Restaurant'
-}])
-
-interest5 = Interest.create([{
-  name: 'Shopping'
-}])
-
-interest6 = Interest.create([{
-  name: 'Aquatic activities'
-}])
-#
-
-# category family
-
-interest7 = Interest.create([{
-  name: 'Cinema'
-}])
-
-interest8 = Interest.create([{
-  name: 'Parks'
-}])
-
-interest9 = Interest.create([{
-  name: 'Museum'
-}])
-
-interest10 = Interest.create([{
-  name: 'History'
-}])
-
-interest11 = Interest.create([{
-  name: 'Parks'
-}])
-
-# can have walk, restaurant, activities aquatic.
-
-# category adventure
-
-interest12 = Interest.create([{
-  name: 'Hikking'
-}])
-
-interest12 = Interest.create([{
-  name: 'Pub'
-}])
-
-
-
-# create category
+#create category
 
 category1 = Category.create([{
-  name: "Relax"
+  name: 'Relax'
 }])
+
 category2 = Category.create([{
-  name: "Family"
+  name: 'Family'
 }])
+
 category3 = Category.create([{
-  name: "Adventure"
+  name: 'Adventure'
 }])
+
 category4 = Category.create([{
-  name: "Party"
+  name: 'Discover'
 }])
 
 category5 = Category.create([{
-  name: "Discover"
+  name: 'Party'
 }])
 
-# Categories interests Relax
+# create pair
 
-categories_interests1 = ([{
-  interest: interest1,
-  category: category1
+# Relax pair
+pair1 = Pair.create([{
+  category: category1,
+  activity: activity3
 }])
 
-categories_interests1 = ([{
-  interest: interest2,
-  category: category1
+pair1 = Pair.create([{
+  category: category1,
+  activity: activity5
 }])
 
-categories_interests1 = ([{
-  interest: interest3,
-  category: category1
+pair1 = Pair.create([{
+  category: category1,
+  activity: activity6
 }])
 
-categories_interests1 = ([{
-  interest: interest4,
-  category: category1
+# Family pair
+
+pair2 = Pair.create([{
+  category: category2,
+  activity: activity1
 }])
 
-categories_interests1 = ([{
-  interest: interest5,
-  category: category1
+pair2 = Pair.create([{
+  category: category2,
+  activity: activity6
 }])
 
-
-# create category interests Family
-
-categories_interests2 = ([{
-  interest: interest3,
-  category: category2
-}])
-
-categories_interests1 = ([{
-  interest: interest4,
-  category: category1
-}])
-
-categories_interests1 = ([{
-  interest: interest5,
-  category: category1
-}])
-
-categories_interests1 = ([{
-  interest: interest6,
-  category: category1
-}])
-
-categories_interests1 = ([{
-  interest: interest7,
-  category: category1
-}])
-
-
-# create a category interests  Adventure
-categories_interests1 = ([{
-  interest: interest6,
-  category: category3
-}])
-
-categories_interests1 = ([{
-  interest: interest11,
-  category: category3
-}])
-
-categories_interests1 = ([{
-  interest: interest12,
-  category: category3
-}])
-
-
-# Create interest activities
-
-# spa
-
-interests_activities1 = ([{
-  activity: activity3,
-  interest: interest1
-
-}])
-
-# meditation
-
-interests_activities2 = ([{
-  activity: activity5,
-  interest: interest2
-
-}])
-
-# Restaurant
-
-interests_activities3 = ([{
-  activity: activity1,
-  interest: interest4
-
-}])
-
-# Aquatic
-
-interests_activities4 = ([{
-  activity: activity6,
-  interest: interest6
-
-}])
-
-# Pub
-
-interests_activities5 = ([{
-  activity: activity4,
-  interest: interest6
-
+pair2 = Pair.create([{
+  category: category2,
+  activity: activity
 }])
 
 
