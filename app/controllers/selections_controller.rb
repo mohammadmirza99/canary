@@ -8,12 +8,19 @@ class SelectionsController < ApplicationController
     @interest = params[:interest]
 
     if (@category || @interest)
-      @activities = Activity.joins(:pairs).where(pairs:{category: @category}, interest: @interest)
-      # @activites.each do |activity|
-        #unless user.selections.find { |selection| selection.activity_id == activity.id }
-          # Selection.create(activity_id: activity.id, user_id: current_user.id)
-        #end
-      #end
+      @activities = Activity.joins(:pairs).where(pairs:{category_id: @category}, interest: @interest)
+
+      current_user.selections.destroy_all
+      @activites.each do |activity|
+        # unless user.selections.find { |selection| selection.activity_id == activity.id }
+          Selection.create(
+            activity_id: activity.id,
+            user_id: current_user.id,
+
+          )
+        # end
+
+      end
     else
      @activities = Activity.all
     end
