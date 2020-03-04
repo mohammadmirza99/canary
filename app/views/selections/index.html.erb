@@ -15,6 +15,10 @@
   </ul>
 </div>
 
+<%= @activities.each |activity| do %>
+  <p><%= activity  %></p>
+<%end  %>
+
 <div class = "card-zone">
     <%#Individual cards morning  %>
     <div data-id="selection-1" class="card-cell card-itinerary">
