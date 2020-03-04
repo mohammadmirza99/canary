@@ -2,9 +2,8 @@
   <h2>Banner Top</h2>
 </div>
 
-
-<div>
-  <ul>
+  <div>
+  <ul class ="list-style">
     <li>Monday</li>
     <li>Tuesday</li>
     <li>Wednesday</li>
@@ -19,9 +18,8 @@
     <p><% @activities.each do |activity|  %></p>
         <p> <%= activity %></p>
     <% end %>
-
-
 <div class = "card-zone">
+
     <%#Individual cards morning  %>
     <div data-id="selection-1" class="card-cell card-itinerary">
       <p>Name1</p>
@@ -117,4 +115,6 @@
 
 <div class = "map-border">
   <h2>Map</h2>
+
+  <div id="map" style="height: 300px; width: 600px"></div>
 </div>
