@@ -44,3 +44,58 @@ swappable.on('drag:stop', (event) => {
 
   }, 0);
 });
+
+
+
+
+
+// Add an event to hide a checkbox in the form
+
+
+// select the dropdown
+const dropdown = document.querySelector("#categories");
+console.log(dropdown);
+
+// select the value to hide the checkbox if the value is not selected
+const valueRelax = document.getElementById("relax");
+console.log('checkbox', valueRelax);
+const valueFamily = document.getElementById("family");
+console.log('checkbox', valueFamily)
+const valueParty = document.getElementById("party");
+const valueAdventure = document.getElementById("adventure");
+
+
+// add an event, when the user click in the dropdown
+// dropdown.addEventListener("click", (event) => {
+//   console.log(event.target)
+// })
+
+
+dropdown.addEventListener("change", (event) => {
+  console.log(event.target.value);
+  const { value } = event.target
+    if (value == "Relax") {
+      valueFamily.style.display = "none";
+        // if the user change the value hide
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
