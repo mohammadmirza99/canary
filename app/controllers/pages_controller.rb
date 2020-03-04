@@ -4,6 +4,5 @@ class PagesController < ApplicationController
   def home
     @categories = Category.all
     @activities = Activity.all
-    @pairs = Pair.all
   end
 end

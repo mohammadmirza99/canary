@@ -10,8 +10,8 @@
 
   <!-- create a checkbox for the interest -->
   <% @activities.each do |a| %>
-    <%= if a.interest. %>
-    <%#= a.interest %>
+    <%#= if a.interest. %>
+    <%= a.interest %>
     <%= check_box_tag "interest[#{a.interest}]", a.interest, :name => "interest[]" %>
   <% end %>
 
