@@ -118,15 +118,12 @@ category2 = Category.create!({
 })
 
 category3 = Category.create!({
-  name: 'Adventure'
+  name: 'Party'
 })
+
 
 category4 = Category.create!({
-  name: 'Discover'
-})
-
-category5 = Category.create!({
-  name: 'Party'
+  name: 'Adventure'
 })
 
 puts "creating pair"
