@@ -62,7 +62,7 @@ activity3 = Activity.create!({
   description: 'In between city strolls and museum visits, enjoy a wellness programme and book a relaxing treatment, perhaps together with someone you love.',
   price_category: '2',
   image_url: 'https://www.lesaintsulpice.com/blog/wp-content/uploads/2016/06/spa.jpg',
-  time_of_day: 'afternoon',
+  time_of_day: 'morning',
   interest: 'Spa',
   location: location1
 })
@@ -75,7 +75,7 @@ activity4 = Activity.create!({
   description: 'From the Earth to the Eastern Beer project that symbolizes Baladin s commitment to promoting a craft beer produced exclusively with national raw materials',
   price_category: '5',
   image_url: 'https://i.radiopachone.org/img/77c4b4e5dd918775a8cd24f25a6d6a.jpg',
-  time_of_day: 'evennig',
+  time_of_day: 'evening',
   interest: 'Bar',
   location: location1
 })
@@ -102,10 +102,45 @@ activity6 = Activity.create!({
   price_category: '3',
   image_url: 'https://www.aldrovandiresidence.it/upload/img599ad572b9e06.jpg',
   interest: 'Aquatic activities',
-  time_of_day: 'afternoon',
+  time_of_day: 'morning',
   location: location1
 })
 
+activity7 = Activity.create!({
+  latitude: 41.918120,
+  longitude: 12.483980,
+  name: 'Galleria Borghese',
+  description: 'The Museum in the beautiful setting of Villa Borghese in Rome preserves sculptures, reliefs and ancient mosaics, and paintings and sculptures from the fifteenth to the eighteenth century.',
+  price_category: '3',
+  image_url: '#',
+  interest: 'Museum',
+  time_of_day: 'morning',
+  location: location1
+})
+
+activity8 = Activity.create!({
+  latitude: 41.967420,
+  longitude: 12.403540,
+  name: 'Sky Blu Pool Terrace',
+  description: 'From the first moment, you realize you will have an unforgettable experience! The door opens and immediately your feel to enter into a different dimension: the gentle mix of perfume and new material makes you relaxing and enjoying the main lobby and the marble is reflecting lights and music all around you.',
+  price_category: '3',
+  image_url: '#',
+  interest: 'Restaurant',
+  time_of_day: 'night',
+  location: location1
+})
+
+activity9 = Activity.create!({
+  latitude: 41.967420,
+  longitude: 12.403540,
+  name: 'The Great Opera Arias Concert',
+  description: 'The quality of the concert, the excellent acoustics and intimacy of the auditorium, the welcome of the staff, the beauty of the venue.',
+  price_category: '3',
+  image_url: '#',
+  interest: 'Theatre',
+  time_of_day: 'morning',
+  location: location1
+})
 puts "create categories"
 #create category
 
@@ -132,7 +167,7 @@ puts "creating pair"
 # Relax pair
 pair1 = Pair.create!({
   category: category1,
-  activity: activity3
+  activity: activity1
 })
 
 pair1 = Pair.create!({
@@ -144,7 +179,24 @@ pair1 = Pair.create!({
   category: category1,
   activity: activity6
 })
+pair1 = Pair.create!({
+  category: category1,
+  activity: activity3
+})
 
+pair1 = Pair.create!({
+  category: category1,
+  activity: activity7
+})
+
+pair1 = Pair.create!({
+  category: category1,
+  activity: activity8
+})
+pair1 = Pair.create!({
+  category: category1,
+  activity: activity9
+})
 puts "creating family"
 # Family pair
 
