@@ -5,6 +5,7 @@ class SelectionsController < ApplicationController
   end
 
   def create
+
     # create a new selection
     # @selection = Selection.new
     # # find the category
@@ -20,6 +21,7 @@ class SelectionsController < ApplicationController
     # # assign an activity_id to @selection
     # @selection.activity_id = @activity
     # @selection.save
+    raise
   end
 
 end
