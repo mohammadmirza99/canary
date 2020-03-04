@@ -1,6 +1,7 @@
 class SelectionsController < ApplicationController
 
   def index
+    raise
 
   end
 
