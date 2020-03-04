@@ -1,0 +1,14 @@
+.card-itinerary{
+  border: 1px solid gray;
+}
+
+.card-cell{
+  position: relative;
+}
+
+.card-zone{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(7, 100px);
+  grid-template-row: repeat(3, 100px);
+}
