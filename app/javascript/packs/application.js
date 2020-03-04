@@ -34,11 +34,13 @@ swappable.on('drag:stop', (event) => {
     const element = event.data.originalSource;
     const activityName = element.innerText;
 
-    // Some math to calculate where it was moved to
+  //   // Some math to calculate where it was moved to
     const position = Array.from(element.parentNode.children).indexOf(element);
     const time = times[Math.floor(position / 7)];
     const day = days[position % 7];
 
-    console.log(`${activityName} moved to ${day} ${time}`);
+  //   console.log(`${activityName} moved to ${day} ${time}`);
+
+
   }, 0);
 });
