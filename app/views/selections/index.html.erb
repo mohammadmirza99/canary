@@ -15,9 +15,11 @@
   </ul>
 </div>
 
-<%= @activities.each |activity| do %>
-  <p><%= activity  %></p>
-<%end  %>
+
+    <p><% @activities.each do |activity|  %></p>
+        <p> <%= activity %></p>
+    <% end %>
+
 
 <div class = "card-zone">
     <%#Individual cards morning  %>
