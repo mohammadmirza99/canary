@@ -1,2 +1,13 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%# @categories.each do |c| %>
+  <%#=  c.name %>
+<%= form_tag selections_path, method: "post" do %>
+  <%= text_field_tag :location %>
+  <%= text_field_tag :interest, params[:interest] %>
+  <%= text_field_tag :category, params[:category] %>
+
+  <%= submit_tag "itinerary", class: "btn btn-primary" %>
+<% end %>
