@@ -1,0 +1,26 @@
+
+<!-- create a form for the home_page -->
+<h1>Hello</h1>
+<%= form_tag selections_path, method: "post" do |f| %>
+
+  <%= text_field_tag :location %>
+
+  <!-- create a dropdown with all the categories -->
+  <%= select_tag "categories", options_from_collection_for_select(@categories, "id", "name") %>
+
+  <!-- create a checkbox for the interest -->
+  <% @activities.each do |a| %>
+    <%= if a.interest. %>
+    <%#= a.interest %>
+    <%= check_box_tag "interest[#{a.interest}]", a.interest, :name => "interest[]" %>
+  <% end %>
+
+
+  <%= submit_tag "itinerary", class: "btn btn-primary" %>
+<% end %>
+
+
+
+
+
+  <%#= text_field_tag :category, params[:category] %>
