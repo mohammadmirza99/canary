@@ -27,16 +27,16 @@
           <!-- create a checkbox for the relax category -->
           <% if category.name == 'Relax' %>
             <%= label_tag 'Spa' %>
-            <%= check_box_tag "interest[#{"Spa"}]"%>
+            <%= check_box_tag "interest[]", "Spa"%>
 
             <%= label_tag 'Restaurant' %>
-            <%= check_box_tag "interest[#{"Restaurant"}]"%>
+            <%= check_box_tag "interest[]", "Restaurant"%>
 
             <%= label_tag 'Cinema / Theatre' %>
-            <%= check_box_tag "interest[#{"Cinema / Theatre"}]"%>
+            <%= check_box_tag "interest[]", "Cinema/Theatre"%>
 
             <%= label_tag 'Museum' %>
-            <%= check_box_tag "interest[#{"Museum"}]"%>
+            <%= check_box_tag "interest[]", "Museum"%>
 
             <%= label_tag 'Walk' %>
             <%= check_box_tag "interest[#{"Walk"}]"%>

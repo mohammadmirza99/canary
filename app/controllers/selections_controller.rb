@@ -1,7 +1,6 @@
 class SelectionsController < ApplicationController
 
   def index
-    raise
 
 
     # @selections = Selection.all
