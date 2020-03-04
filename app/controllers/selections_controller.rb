@@ -1,7 +1,13 @@
 class SelectionsController < ApplicationController
 
   def index
-
+    @selections = Selection.all
+    if (params[:selection] && activities = Activity.where(activity_id: params[:selection]))
+      activities = activities
+      @selection = Selection.where(id: params[:selection])
+    else
+      @activities = Activity.all
+    end
   end
 
   def create
@@ -20,6 +26,10 @@ class SelectionsController < ApplicationController
     # # assign an activity_id to @selection
     # @selection.activity_id = @activity
     # @selection.save
+  end
+
+  def selections_params
+
   end
 
 end
