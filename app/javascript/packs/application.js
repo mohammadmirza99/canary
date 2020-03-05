@@ -70,16 +70,52 @@ const valueAdventure = document.getElementById("adventure");
 //   console.log(event.target)
 // })
 
+dropdown.addEventListener("change", (event) => {
+  console.log(event.target.value);
+  const { value } = event.target
+    if (value == "Family") {
+      valueRelax.style.display = "none";
+      valueParty.style.display = "none";
+      valueAdventure.style.display = "none";
+        // if the user change the value hide
+    } else if (value == "Family") {
+        valueRelax.style.display = "none";
+        valueParty.style.display = "none";
+        valueAdventure.style.display = "none";
+    } else if (value == "Pary") {
+        valueRelax.style.display = "none";
+        valueFamily.style.display = "none";
+        valueAdventure.style.display = "none";
+    } else if (value == "Adventure") {
+        valueRelax.style.display = "none";
+        valueParty.style.display = "none";
+        valueFamily.style.display = "none";
+    }
+});
+
 
 dropdown.addEventListener("change", (event) => {
   console.log(event.target.value);
   const { value } = event.target
     if (value == "Relax") {
       valueFamily.style.display = "none";
+      valueParty.style.display = "none";
+      valueAdventure.style.display = "none";
         // if the user change the value hide
+    } else if (value == "Family") {
+        valueRelax.style.display = "none";
+        valueParty.style.display = "none";
+        valueAdventure.style.display = "none";
+    } else if (value == "Pary") {
+        valueRelax.style.display = "none";
+        valueFamily.style.display = "none";
+        valueAdventure.style.display = "none";
+    } else if (value == "Adventure") {
+        valueRelax.style.display = "none";
+        valueParty.style.display = "none";
+        valueFamily.style.display = "none";
     }
 });
-
 
 
 
