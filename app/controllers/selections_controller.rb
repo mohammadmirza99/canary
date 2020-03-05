@@ -64,11 +64,15 @@ class SelectionsController < ApplicationController
 
   end
 
-  def update
 
+  def update
+    old_selection = Selection.find_by(safe_params)
     @selection = Selection.find(params[:id])
+
+    if old_selection
+      old_selection.update(date: @selection.date, time_of_day: @selection.time_of_day)
+    end
     @selection.update(safe_params)
-    redirect_to selections_path
   end
 
   def generate
@@ -89,7 +93,6 @@ class SelectionsController < ApplicationController
           # )
         # end
       # end
-
       DAYS.each do |time|
         Selection.create!(
           activity: Activity.first,
@@ -98,14 +101,12 @@ class SelectionsController < ApplicationController
           date: time[0]
         )
       end
-
     # else
      # @activities = Activity.all
         # end
     #   end
     # else
     #  @activities = Activity.all
-
     redirect_to selections_path
     end
   end
@@ -118,7 +119,7 @@ class SelectionsController < ApplicationController
 
 
   def safe_params
-    params.require(:selection).permit(:time_of_day, :date)
+    params.permit(:time_of_day, :date)
   end
 
 end
