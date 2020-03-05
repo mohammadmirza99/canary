@@ -47,76 +47,45 @@ swappable.on('drag:stop', (event) => {
 
 
 
-
-
-// Add an event to hide a checkbox in the form
-
-
 // select the dropdown
 const dropdown = document.querySelector("#categories");
-console.log(dropdown);
 
 // select the value to hide the checkbox if the value is not selected
+// each value repressent [title,checkbox]
 const valueRelax = document.getElementById("relax");
-console.log('checkbox', valueRelax);
 const valueFamily = document.getElementById("family");
-console.log('checkbox', valueFamily)
 const valueParty = document.getElementById("party");
 const valueAdventure = document.getElementById("adventure");
 
+// content which is none in the home page
+const displayNone = document.getElementById("display_none");
 
-// add an event, when the user click in the dropdown
-// dropdown.addEventListener("click", (event) => {
-//   console.log(event.target)
-// })
-
+// add an event, when the user change the value in the dropdown
 dropdown.addEventListener("change", (event) => {
   console.log(event.target.value);
   const { value } = event.target
-    if (value == "Family") {
-      valueRelax.style.display = "none";
-      valueParty.style.display = "none";
-      valueAdventure.style.display = "none";
-        // if the user change the value hide
-    } else if (value == "Family") {
+    // value selected in the dropdown -- hide other checkbox
+     if (value == "Family") {
+      // after the event show the checkbox wich are none
+        displayNone.style.display = "block";
+      // hide the content wich are none
         valueRelax.style.display = "none";
         valueParty.style.display = "none";
         valueAdventure.style.display = "none";
-    } else if (value == "Pary") {
+
+    } else if (value == "Party") {
+        displayNone.style.display = "block";
         valueRelax.style.display = "none";
         valueFamily.style.display = "none";
         valueAdventure.style.display = "none";
+
     } else if (value == "Adventure") {
+        displayNone.style.display = "block";
         valueRelax.style.display = "none";
         valueParty.style.display = "none";
         valueFamily.style.display = "none";
     }
 });
-
-
-dropdown.addEventListener("change", (event) => {
-  console.log(event.target.value);
-  const { value } = event.target
-    if (value == "Relax") {
-      valueFamily.style.display = "none";
-      valueParty.style.display = "none";
-      valueAdventure.style.display = "none";
-        // if the user change the value hide
-    } else if (value == "Family") {
-        valueRelax.style.display = "none";
-        valueParty.style.display = "none";
-        valueAdventure.style.display = "none";
-    } else if (value == "Pary") {
-        valueRelax.style.display = "none";
-        valueFamily.style.display = "none";
-        valueAdventure.style.display = "none";
-    } else if (value == "Adventure") {
-        valueRelax.style.display = "none";
-        valueParty.style.display = "none";
-        valueFamily.style.display = "none";
-    }
-});
-
 
 
 
