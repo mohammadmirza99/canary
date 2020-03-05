@@ -1,4 +1,8 @@
 .card-itinerary{
+
+  height: 100px;
+  background-size: cover;
+  background-position: center;
   border: 1px solid gray;
 }
 
@@ -10,5 +14,15 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-row: repeat(3, 100px);
+  grid-template-row: repeat(3, 1fr);
 }
+
+.card-cell:hover{
+  background: rgba(0 ,0 ,0, 0.8);
+}
+
+
+// .card-background{
+//   height: 100px;
+//   width: 150px;
+// }
