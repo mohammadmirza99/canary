@@ -41,9 +41,13 @@
           <% if selection %>
             <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-image: url('<%=selection.activity.image_url%>');">
               <p class><%= selection.activity.name %></p>
+              <p> <%= link_to "Delete", selection_path(selection.id), method: :delete, data: {confirm: "You sure?"} %></p>
             </div>
           <% else %>
-            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-color: black ;"></div>
+            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-color: gray ;">
+               <p> <%= link_to "Create", selections_path({time_of_day: day[1], day: day[0]}), method: :post %></p>
+            </div>
+
           <% end %>
 
             <% @counter +=1 %>
