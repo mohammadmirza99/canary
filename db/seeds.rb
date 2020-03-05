@@ -132,7 +132,7 @@ puts "creating pair"
 # Relax pair
 pair3 = Pair.create!({
   category: category1,
-  activity: activity4
+  activity: activity1
 })
 
 pair1 = Pair.create!({
