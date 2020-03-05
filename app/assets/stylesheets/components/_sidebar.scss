@@ -3,3 +3,17 @@
   color: white;
   margin-right: 5px;
 }
+
+.sidebar-liststyle{
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-liststyle a{
+  color: white;
+  text-decoration: none;
+
+  &:hover{
+    color: black;
+  }
+}
