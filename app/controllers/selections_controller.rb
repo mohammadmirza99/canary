@@ -48,6 +48,24 @@ class SelectionsController < ApplicationController
   end
 
   def create
+
+    new_selection = Selection.create!(
+      activity: Activity.first,
+      user: current_user,
+      time_of_day: params[:time_of_day],
+      date: params[:day]
+      )
+
+    redirect_to selections_path
+
+    # @selection = Selection.new
+    # @selection.activity = params[:activity]
+    # @selection.user = current_user
+    # @selection.time_of_day = params [:time_of_day]
+    # @selection.date = params [:date]
+    # @selection.save
+    # redirect_to selections_path
+
   end
 
   def generate
@@ -89,9 +107,13 @@ class SelectionsController < ApplicationController
     #  @activities = Activity.all
 
     redirect_to selections_path
-
     end
+  end
 
+  def destroy
+    @selection = Selection.find(params[:id])
+    @selection.destroy
+    redirect_to selections_path
   end
 
 end
