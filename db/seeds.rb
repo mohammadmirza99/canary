@@ -39,7 +39,7 @@ location1 = Location.create!({
 })
 
 # create activities
-
+#restaurants
 activity1 = Activity.create!({
   latitude: 41.894660,
   longitude: 12.490910,
@@ -52,10 +52,77 @@ activity1 = Activity.create!({
   location: location1
 
 })
+activity2 = Activity.create!({
+  latitude: 41.894660,
+  longitude: 12.490910,
+  name: 'Condominio Marconi',
+  description: 'Italian, Pizza',
+  price_category: '5',
+  image_url: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  time_of_day: 'night',
+  interest: 'Restaurant',
+  location: location1
 
-
-
+})
 activity3 = Activity.create!({
+  latitude: 41.894660,
+  longitude: 12.490910,
+  name: 'Bull Steak',
+  description: 'talian, Steakhouse',
+  price_category: '5',
+  image_url: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  time_of_day: 'afternoon',
+  interest: 'Restaurant',
+  location: location1
+
+})
+activity4 = Activity.create!({
+  latitude: 41.894660,
+  longitude: 12.490910,
+  name: 'Bufalero',
+  description: 'Italian, American',
+  price_category: '5',
+  image_url: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  time_of_day: 'morning',
+  interest: 'Restaurant',
+  location: location1
+
+})
+activity5 = Activity.create!({
+  latitude: 41.967420,
+  longitude: 12.403540,
+  name: 'Sky Blu Pool Terrace',
+  description: 'From the first moment, you realize you will have an unforgettable experience! The door opens and immediately your feel to enter into a different dimension: the gentle mix of perfume and new material makes you relaxing and enjoying the main lobby and the marble is reflecting lights and music all around you.',
+  price_category: '3',
+  image_url: '#',
+  interest: 'Restaurant',
+  time_of_day: 'night',
+  location: location1
+})
+activity6 = Activity.create!({
+  latitude: 41.967420,
+  longitude: 12.403540,
+  name: "Hanna's Restaurant",
+  description: 'Seafood, International',
+  price_category: '3',
+  image_url: '#',
+  interest: 'Restaurant',
+  time_of_day: 'night',
+  location: location1
+})
+activity7 = Activity.create!({
+  latitude: 41.967420,
+  longitude: 12.403540,
+  name: 'Ristorante Sandalia',
+  description: 'Italian, Seafood',
+  price_category: '3',
+  image_url: '#',
+  interest: 'Restaurant',
+  time_of_day: 'night',
+  location: location1
+})
+
+activity8 = Activity.create!({
   latitude: 41.900830,
   longitude: 12.493640,
   name: 'Artemís Spa',
@@ -68,7 +135,7 @@ activity3 = Activity.create!({
 })
 
 
-activity4 = Activity.create!({
+activity9 = Activity.create!({
   latitude: 41.893580,
   longitude: 12.474500,
   name: 'Pub Open Baladin',
@@ -81,7 +148,7 @@ activity4 = Activity.create!({
 })
 
 
-activity5 = Activity.create!({
+activity10 = Activity.create!({
   latitude: 41.890460,
   longitude: 12.469350,
   name: 'Kadampa Meditation',
@@ -94,7 +161,7 @@ activity5 = Activity.create!({
 })
 
 
-activity6 = Activity.create!({
+activity11 = Activity.create!({
   latitude: 41.918120,
   longitude: 12.483980,
   name: 'Piscine Aldrovandi',
@@ -106,7 +173,7 @@ activity6 = Activity.create!({
   location: location1
 })
 
-activity7 = Activity.create!({
+activity12 = Activity.create!({
   latitude: 41.918120,
   longitude: 12.483980,
   name: 'Galleria Borghese',
@@ -118,19 +185,8 @@ activity7 = Activity.create!({
   location: location1
 })
 
-activity8 = Activity.create!({
-  latitude: 41.967420,
-  longitude: 12.403540,
-  name: 'Sky Blu Pool Terrace',
-  description: 'From the first moment, you realize you will have an unforgettable experience! The door opens and immediately your feel to enter into a different dimension: the gentle mix of perfume and new material makes you relaxing and enjoying the main lobby and the marble is reflecting lights and music all around you.',
-  price_category: '3',
-  image_url: '#',
-  interest: 'Restaurant',
-  time_of_day: 'night',
-  location: location1
-})
 
-activity9 = Activity.create!({
+activity13 = Activity.create!({
   latitude: 41.967420,
   longitude: 12.403540,
   name: 'The Great Opera Arias Concert',
@@ -170,30 +226,30 @@ pair1 = Pair.create!({
   activity: activity1
 })
 
-pair1 = Pair.create!({
+pair2 = Pair.create!({
   category: category1,
   activity: activity5
 })
 
-pair1 = Pair.create!({
+pair3 = Pair.create!({
   category: category1,
   activity: activity6
 })
-pair1 = Pair.create!({
+pair4 = Pair.create!({
   category: category1,
   activity: activity3
 })
 
-pair1 = Pair.create!({
+pair5 = Pair.create!({
   category: category1,
   activity: activity7
 })
 
-pair1 = Pair.create!({
+pair6 = Pair.create!({
   category: category1,
   activity: activity8
 })
-pair1 = Pair.create!({
+pair7 = Pair.create!({
   category: category1,
   activity: activity9
 })
