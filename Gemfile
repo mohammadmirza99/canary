@@ -18,6 +18,8 @@ gem 'webpacker'
 # add a gem for date-picker
 gem 'bootstrap-datepicker-rails'
 
+gem 'geocoder'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

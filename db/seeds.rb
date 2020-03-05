@@ -130,35 +130,36 @@ puts "creating pair"
 # create pair
 
 # Relax pair
+pair3 = Pair.create!({
+  category: category1,
+  activity: activity1
+})
+
 pair1 = Pair.create!({
   category: category1,
   activity: activity3
 })
 
-pair1 = Pair.create!({
+pair2 = Pair.create!({
   category: category1,
   activity: activity5
 })
 
-pair1 = Pair.create!({
-  category: category1,
-  activity: activity6
-})
 
 puts "creating family"
 # Family pair
 
-pair2 = Pair.create!({
+pair4 = Pair.create!({
   category: category2,
   activity: activity1
 })
 
-pair2 = Pair.create!({
+pair5 = Pair.create!({
   category: category2,
   activity: activity6
 })
 
-pair2 = Pair.create!({
+pair6 = Pair.create!({
   category: category2,
   activity: activity4
 })

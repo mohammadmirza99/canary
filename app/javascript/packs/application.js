@@ -1,4 +1,15 @@
 import "bootstrap";
+import mapboxgl from 'mapbox-gl';
+
+// Code For Map
+
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();
+
+// Code For Swappable
 import { Swappable, Plugins } from '@shopify/draggable';
 
 const days = [
@@ -33,14 +44,11 @@ swappable.on('drag:stop', (event) => {
   setTimeout(() => {
     const element = event.data.originalSource;
     const activityName = element.innerText;
-
   //   // Some math to calculate where it was moved to
     const position = Array.from(element.parentNode.children).indexOf(element);
     const time = times[Math.floor(position / 7)];
     const day = days[position % 7];
-
-  //   console.log(`${activityName} moved to ${day} ${time}`);
-
+    console.log(`${activityName} moved to ${day} ${time}`);
 
   }, 0);
 });
@@ -86,21 +94,6 @@ dropdown.addEventListener("change", (event) => {
         valueFamily.style.display = "none";
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :selections, only: [:index, :create, :update, :delete]
 
   resources :categories, only: [:show]
+
+  post '/generate', to: 'selections#generate', as: 'generate'
 end

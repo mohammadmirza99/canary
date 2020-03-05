@@ -3,7 +3,7 @@
 
   <div class="container_form d-flex justify-content-center">
     <!-- create a form_tag -->
-    <%= form_tag selections_path, method: "get" do |f| %>
+    <%= form_tag generate_path, method: "post" do |f| %>
 
     <!-- create an input for location -->
     <div class="location">
@@ -36,7 +36,7 @@
             <%= check_box_tag "interest[]", "Restaurant"%>
 
             <%= label_tag 'Cinema / Theatre' %>
-            <%= check_box_tag "interest[]", "Cinema / Theatre"%>
+            <%= check_box_tag "interest[]", "Cinema/Theatre"%>
 
             <%= label_tag 'Museum' %>
             <%= check_box_tag "interest[]", "Museum"%>
