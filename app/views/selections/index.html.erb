@@ -1,120 +1,64 @@
-<div class = "banner-dash">
-  <h2>Banner Top</h2>
-</div>
 
+<div class ="dashboard-container">
+
+  <%# Sidebar  %>
+  <div class="sidebar-bg">
+    <h2>Logo</h2>
+    <hr>
+    <h2>Sidebar</h2>
+    <hr>
+    <p>List-View</p>
+    <p>My Itineraries</p>
+    <p>Save</p>
+    <hr>
+    <p>Settings</p>
+    <p>Logout</p>
+  </div>
+
+  <%# To display days of the week  %>
   <div>
-  <ul class ="list-style">
-    <li>Monday</li>
-    <li>Tuesday</li>
-    <li>Wednesday</li>
-    <li>Thursday</li>
-    <li>Friday</li>
-    <li>Saturday</li>
-    <li>Sunday</li>
-  </ul>
-</div>
-
-
-    <p><% @activities.each do |activity|  %></p>
-        <p> <%= activity.name %></p>
-    <% end %>
-<div class = "card-zone">
-
-    <%#Individual cards morning  %>
-    <div data-id="selection-1" class="card-cell card-itinerary">
-      <p>Name1</p>
-      <p>Address</p>
+    <div class="banner-dashboard">
     </div>
-    <div data-id="selection-2" class="card-cell card-itinerary">
-      <p>Name2</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-3"  class="card-cell card-itinerary">
-      <p>Name3</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-4" class="card-cell card-itinerary">
-      <p>Name4</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-5" class="card-cell card-itinerary">
-      <p>Name5</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-6" class="card-cell card-itinerary">
-      <p>Name6</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-7" class="card-cell card-itinerary">
-      <p>Name7</p>
-      <p>Address</p>
+      <div>
+      <ul class ="list-style card-container">
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+        <li>Friday</li>
+        <li>Saturday</li>
+        <li>Sunday</li>
+      </ul>
     </div>
 
-    <%#Individual cards afternoon %>
-    <div data-id="selection-8"  class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-9"  class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-10" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-11" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-12" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-13" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-14" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
+    <%# Loading all of the sorted cards  %>
+    <div class="card-container">
+      <div class = "card-zone">
+        <% @counter = 1 %>
+        <% DAYS.each do |day|  %>
+
+          <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
+          <% if selection %>
+            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-image: url('<%=selection.activity.image_url%>');">
+              <p class><%= selection.activity.name %></p>
+            </div>
+          <% else %>
+            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-color: black ;"></div>
+          <% end %>
+
+            <% @counter +=1 %>
+        <% end %>
+      </div>
     </div>
 
-    <%#Individual cards Evening %>
-    <div data-id="selection-15" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
+    <%# Map  %>
+    <div class = "map-border map-container">
+     <div id="map" style="width: 100%; height: 400px;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
-    <div data-id="selection-16" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-17" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-18" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-19" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-20" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
-    <div data-id="selection-21" class="card-cell card-itinerary">
-      <p>Name</p>
-      <p>Address</p>
-    </div>
+  </div>
+
 </div>
 
 
 
-<div class = "map-border">
-  <h2>Map</h2>
 
-  <div id="map" style="height: 300px; width: 600px"></div>
-</div>
