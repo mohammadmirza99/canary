@@ -25,6 +25,7 @@ DAYS = [
 class SelectionsController < ApplicationController
 
   def index
+
     # if (params[:selection] && activities = Activity.where(activity_id: params[:selection]))
     #   activities = activities
     #   @selection = Selection.where(id: params[:selection])
@@ -74,6 +75,7 @@ class SelectionsController < ApplicationController
     end
     @selection.update(safe_params)
   end
+
 
   def generate
     @category = params[:categories]

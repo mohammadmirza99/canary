@@ -1,4 +1,9 @@
 import "bootstrap";
+<<<<<<< HEAD
+import mapboxgl from 'mapbox-gl';
+import "../plugins/flatpickr";
+=======
+>>>>>>> d78c0900b5021a2b00ff5f95f6cc31de85e83d60
 
 // Code For Map
 import mapboxgl from 'mapbox-gl';
