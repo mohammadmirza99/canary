@@ -42,13 +42,32 @@ const swappable = new Swappable(containers, {
 
 swappable.on('drag:stop', (event) => {
   setTimeout(() => {
+    // Target element
     const element = event.data.originalSource;
+
+    // Get relevant variables
     const activityName = element.innerText;
   //   // Some math to calculate where it was moved to
     const position = Array.from(element.parentNode.children).indexOf(element);
     const time = times[Math.floor(position / 7)];
     const day = days[position % 7];
-    console.log(`${activityName} moved to ${day} ${time}`);
+
+
+    // Grab CSRF Token to bypass rails security feature
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content
+
+
+    // Send request to backend with variables (i.e. the params) to update the backend
+    fetch(`/selections/${element.dataset.selectionId}?date=${day}&time_of_day=${time}`, {
+      method: "PATCH",
+      headers: {
+        'x-csrf-token': csrfToken
+      }
+    })
+    .then(() => {
+      console.log(`${activityName} moved to ${day} ${time}`);
+    })
+
 
   }, 0);
 });
