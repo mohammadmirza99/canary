@@ -25,7 +25,6 @@ DAYS = [
 class SelectionsController < ApplicationController
 
   def index
-    raise
 
     # if (params[:selection] && activities = Activity.where(activity_id: params[:selection]))
     #   activities = activities
@@ -69,7 +68,7 @@ class SelectionsController < ApplicationController
   end
 
   def generate
-
+    raise
     @category = params[:categories]
     @interest = params[:interest]
 
