@@ -25,8 +25,6 @@ DAYS = [
 class SelectionsController < ApplicationController
 
   def index
-
-
     # if (params[:selection] && activities = Activity.where(activity_id: params[:selection]))
     #   activities = activities
     #   @selection = Selection.where(id: params[:selection])
@@ -34,15 +32,13 @@ class SelectionsController < ApplicationController
     #   @activities = Activity.all
     # end
 
-
     # For maps
-    @act = Activity.geocoded #returns flats with coordinates
-
+    @act = Activity.geocoded
     @markers = @act.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        # infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
       }
     end
   end
@@ -51,7 +47,6 @@ class SelectionsController < ApplicationController
   end
 
   def generate
-
     @category = params[:categories]
     @interest = params[:interest]
 
@@ -68,8 +63,8 @@ class SelectionsController < ApplicationController
 
           # )
         # end
-
       # end
+
       DAYS.each do |time|
         Selection.create!(
           activity: Activity.first,
@@ -81,9 +76,7 @@ class SelectionsController < ApplicationController
 
     # else
      # @activities = Activity.all
-
         # end
-
     #   end
     # else
     #  @activities = Activity.all
