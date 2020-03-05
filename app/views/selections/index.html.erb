@@ -34,17 +34,20 @@
     <%# Loading all of the sorted cards  %>
     <div class="card-container">
       <div class = "card-zone">
-          <% @counter = 1 %>
-          <% 21.times { %>
-            <% @activities.each do |activity|  %>
+        <% @counter = 1 %>
+        <% DAYS.each do |day|  %>
 
-              <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-image: url('<%=activity.image_url%>');">
-                <p class><%= activity.name %></p>
-              </div>
+          <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
+          <% if selection %>
+            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-image: url('<%=selection.activity.image_url%>');">
+              <p class><%= selection.activity.name %></p>
+            </div>
+          <% else %>
+            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-color: black ;"></div>
+          <% end %>
 
-              <% @counter +=1 %>
-            <% end %>
-          <% } %>
+            <% @counter +=1 %>
+        <% end %>
       </div>
     </div>
 
