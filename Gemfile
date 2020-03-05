@@ -15,6 +15,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+# add a gem for date-picker
+gem 'bootstrap-datepicker-rails'
 
 gem 'geocoder'
 
