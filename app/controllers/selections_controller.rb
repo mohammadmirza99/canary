@@ -33,15 +33,13 @@ class SelectionsController < ApplicationController
     #   @activities = Activity.all
     # end
 
-
     # For maps
-    @act = Activity.geocoded #returns flats with coordinates
-
+    @act = Activity.geocoded
     @markers = @act.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        # infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
       }
     end
   end
@@ -67,6 +65,18 @@ class SelectionsController < ApplicationController
 
   end
 
+
+  def update
+    old_selection = Selection.find_by(safe_params)
+    @selection = Selection.find(params[:id])
+
+    if old_selection
+      old_selection.update(date: @selection.date, time_of_day: @selection.time_of_day)
+    end
+    @selection.update(safe_params)
+  end
+
+
   def generate
     @category = params[:categories]
     @interest = params[:interest]
@@ -84,7 +94,6 @@ class SelectionsController < ApplicationController
 
           # )
         # end
-
       # end
       DAYS.each do |time|
         Selection.create!(
@@ -94,16 +103,12 @@ class SelectionsController < ApplicationController
           date: time[0]
         )
       end
-
     # else
      # @activities = Activity.all
-
         # end
-
     #   end
     # else
     #  @activities = Activity.all
-
     redirect_to selections_path
     end
   end
@@ -112,6 +117,11 @@ class SelectionsController < ApplicationController
     @selection = Selection.find(params[:id])
     @selection.destroy
     redirect_to selections_path
+  end
+
+
+  def safe_params
+    params.permit(:time_of_day, :date)
   end
 
 end

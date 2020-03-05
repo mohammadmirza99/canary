@@ -17,10 +17,22 @@
   grid-template-row: repeat(3, 1fr);
 }
 
-.card-cell:hover{
-  background: rgba(0 ,0 ,0, 0.8);
+.card-none {
+    display: none;
 }
 
+.card-cell:hover{
+  background: black;
+
+  .card-none{
+    display:block;
+  }
+
+}
+
+// .card-cell:hover  .card-none {
+//     display: block;
+// }
 
 // .card-background{
 //   height: 100px;

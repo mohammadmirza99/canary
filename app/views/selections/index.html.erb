@@ -1,18 +1,22 @@
 
 <div class ="dashboard-container">
 
+
   <%# Sidebar  %>
   <div class="sidebar-bg">
     <h2>Logo</h2>
     <hr>
     <h2>Sidebar</h2>
     <hr>
-    <p>List-View</p>
-    <p>My Itineraries</p>
-    <p>Save</p>
-    <hr>
-    <p>Settings</p>
-    <p>Logout</p>
+
+    <ul class= "sidebar-liststyle">
+      <li> <%= link_to "List-View"  %> </li>
+      <li>  <%= link_to "My itinerary" %></li>
+      <li> <%= link_to "Save" %></li>
+      <hr>
+      <li> <%= link_to "Settings" %></li>
+      <li> <%= link_to "Logout" %></li>
+    </ul>
   </div>
 
   <%# To display days of the week  %>
@@ -39,9 +43,12 @@
 
           <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
           <% if selection %>
-            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-image: url('<%=selection.activity.image_url%>');">
+            <div data-selection-id="<%=selection.id%>" class="card-cell card-itinerary" style="background-image: url('<%=selection.activity.image_url%>');">
+
+              <span class="card-none"> <i class="fas fa-random"></i></span>
               <p class><%= selection.activity.name %></p>
-              <p> <%= link_to "Delete", selection_path(selection.id), method: :delete, data: {confirm: "You sure?"} %></p>
+              <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"far fa-trash-alt card-none" %></p>
+
             </div>
           <% else %>
             <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-color: gray ;">
