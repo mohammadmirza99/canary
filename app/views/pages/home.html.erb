@@ -1,20 +1,18 @@
 <div class="banner-home">
   <h1>Hello</h1>
 
-  <div class="container_form d-flex justify-content-center">
+  <div class="container_form", style="margin-left: 50px;">
     <!-- create a form_tag -->
     <%= form_tag generate_path, method: "post" do |f| %>
 
     <!-- create an input for location -->
-    <div class="location">
-      <%= label_tag 'Where ?' %>
-      <%= text_field_tag :location %>
-    </div>
-
-    <div class="calendar">
-        <%#= f.input :start_date %>
-        <%#= f.input :end_date %>
-    </div>
+      <div class="location">
+        <%= label_tag 'Where ?' %>
+        <%= text_field_tag :location %>
+      </div>
+      <div class="form-wrapper" style="width: 400px; height: 100px; margin: 0 auto;">
+        <%= date_field_tag :starts_at, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
+      </div>
       <!-- create an input for purpose -->
       <div class="purpose">
         <%= label_tag 'Purposes ?' %>
@@ -143,14 +141,12 @@
             </div>
           </div>
 
-        </div>
+      </div>
 
-      <%= submit_tag "itinerary", class: "btn btn-primary" %>
+      <%= submit_tag "Itinerary", class: "btn btn-primary" %>
     <% end %>
 
   </div>
-
-
 </div>
 
 
