@@ -68,7 +68,6 @@ class SelectionsController < ApplicationController
   end
 
   def generate
-    raise
     @category = params[:categories]
     @interest = params[:interest]
 
