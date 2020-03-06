@@ -6,29 +6,42 @@
     <%= form_tag generate_path, method: "post" do |f| %>
 
     <!-- create an input for location -->
-      <div class="location">
-        <i class="fas fa-plane-departure"></i>
-        <%= label_tag 'Destination' %>
-        <%= text_field_tag :location %>
-      </div>
-      <div class="form-wrapper" style="width: 250px; height: 100px; margin: 0 auto;">
-        <div id="range_start">
-          <%= hidden_field_tag :start_date,'', id: "start_date" %>
-          <%= hidden_field_tag :end_date, '', id: "end_date" %>
+      <div class="form__input">
+        <div>
+          <div class="title__form">
+            <i class="fas fa-plane-departure"></i>
+            <%= label_tag 'Destination' %>
+          </div>
+          <div class="input">
+            <%= text_field_tag :location %>
+          </div>
         </div>
-      </div>
-      <!-- create an input for purpose -->
-      <div class="purpose">
-        <%= label_tag 'Purposes ?' %>
-        <%= select_tag "categories", options_from_collection_for_select(@categories, "name", "name") %>
+
+        <div>
+          <div class="form-wrapper" style="width: 250px; height: 100px; margin: 0 auto;">
+            <div id="range_start">
+              <%= hidden_field_tag :start_date,'', id: "start_date" %>
+              <%= hidden_field_tag :end_date, '', id: "end_date" %>
+            </div>
+          </div>
+        </div>
+        <!-- create an input for purpose -->
+        <div class="purpose">
+          <div class="title__form">
+            <%= label_tag 'Purposes ?' %>
+          </div>
+          <div class="input">
+            <%= select_tag "categories", options_from_collection_for_select(@categories, "name", "name") %>
+          </div>
+        </div>
       </div>
       <!-- create a dropdown with all the categories -->
 
       <!-- create a checkbox for the interest -->
       <div class="interest">
           <!-- create a checkbox for the relax category -->
-          <div id ="relax">
-            <div>
+          <div id ="relax" class="checkboxes">
+            <div class="title__checkboxes">
               <h4>Relax</h4>
             </div>
             <%= label_tag 'Spa' %>
@@ -54,8 +67,8 @@
           </div>
 
           <div id="display_none">
-            <div id="family">
-              <div>
+            <div id="family" class="checkboxes">
+              <div class="title__checkboxes">
                 <h4>Family</h4>
               </div>
               <%= label_tag 'Restaurant' %>
@@ -85,8 +98,8 @@
               <!-- create a checkbox for the Family category -->
 
               <!-- create a checkbox for the Party category -->
-            <div id="party">
-              <div>
+            <div id="party" class="checkboxes">
+              <div class="title__checkboxes">
                 <h4>Party</h4>
               </div>
               <%= label_tag 'Club' %>
@@ -114,9 +127,9 @@
               <%= check_box_tag "interest[]", "Stand-up"%>
             </div>
 
-            <div id="adventure">
+            <div id="adventure" class="checkboxes">
             <!-- create a checkbox for the Adventure category -->
-              <div>
+              <div class="title__checkboxes">
                 <h4>Adventure</h4>
               </div>
               <%= label_tag 'Hiking' %>
@@ -146,8 +159,9 @@
           </div>
 
       </div>
-
-      <%= submit_tag "Itinerary", class: "btn btn-primary" %>
+      <div class="button__form">
+        <%= submit_tag "Itinerary", class: "btn btn-primary" %>
+      </div>
     <% end %>
 
   </div>
