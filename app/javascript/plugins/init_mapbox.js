@@ -5,10 +5,12 @@ import mapboxgl from 'mapbox-gl';
 
 const mapElement = document.getElementById('map');
 
-const buildMap = () => {
+const buildMap = (initMarker) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
+    zoom: 10,
+    center: [initMarker.lng, initMarker.lat],
     style: 'mapbox://styles/mapbox/streets-v10'
   });
 };
@@ -32,8 +34,8 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
   if (mapElement) {
-    const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
+    const map = buildMap(markers[0]);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
 
