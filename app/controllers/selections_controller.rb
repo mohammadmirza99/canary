@@ -100,16 +100,17 @@ class SelectionsController < ApplicationController
 
   def generate_map
     @act = Activity.geocoded
-
-    # if @act.selection.user == current_user
     @markers = @act.map do |activity|
+
+      # Sorting through activity to make sure it corresponds to current user.
+      if Selection.find_by(activity: activity, user: current_user)
       {
         lat: activity.latitude,
         lng: activity.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
       }
+      end
     end
-    # end
   end
 
 end
