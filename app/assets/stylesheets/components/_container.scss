@@ -5,9 +5,9 @@
 }
 
 .card-list-container{
-  border: 1px solid black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // width: 700px;
-  margin-bottom: 20px;
+  margin: 40px 80px;
 }
 
 
@@ -19,4 +19,14 @@
 .list-container{
   display: grid;
   grid-template-columns: 12% 54% 34%;
+}
+
+.week-container{
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card-text-container{
+  padding: 20px;
 }
