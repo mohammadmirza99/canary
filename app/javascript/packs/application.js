@@ -1,8 +1,8 @@
 import "bootstrap";
 import "../plugins/flatpickr";
 
-
 // Code For Map
+
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
