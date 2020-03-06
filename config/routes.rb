@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
 
   post '/generate', to: 'selections#generate', as: 'generate'
+  get '/listview', to: 'selections#listview'
 end

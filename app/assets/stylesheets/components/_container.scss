@@ -4,12 +4,19 @@
   padding-bottom: 10px;
 }
 
-.map-container{
-  // width: 90%;
-  // margin: auto;
+.card-list-container{
+  border: 1px solid black;
+  // width: 700px;
+  margin-bottom: 20px;
 }
+
 
 .dashboard-container{
   display: grid;
   grid-template-columns: 12% 87%;
+}
+
+.list-container{
+  display: grid;
+  grid-template-columns: 12% 54% 34%;
 }

@@ -47,7 +47,14 @@
 
           <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
           <% if selection %>
+
             <div data-selection-id="<%=@counter%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
+
+            <div data-selection-id="<%=selection.id%>" class="card-cell card-itinerary" style="background-image: url('<%=selection.activity.image_url%>');">
+
+              <span class="card-none"> <i class="fas fa-random"></i></span>
+              <p class><%= selection.activity.name %></p>
+              <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"far fa-trash-alt card-none" %></p>
 
               <p class= "card-inner-text"><%= selection.activity.name %></p>
               <div class="card-icons">
