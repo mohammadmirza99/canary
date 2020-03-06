@@ -58,6 +58,7 @@ class SelectionsController < ApplicationController
 
 
   def generate
+
     # Submit on homepage directs to this method.
     @category = params[:categories]
     @interest = params[:interest]
