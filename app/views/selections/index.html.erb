@@ -1,25 +1,29 @@
-
 <div class ="dashboard-container">
 
 
   <%# Sidebar  %>
-  <div class="sidebar-bg">
-    <h2>Logo</h2>
-    <hr>
-    <h2>Sidebar</h2>
-    <hr>
-
-    <ul class= "sidebar-liststyle">
-      <li> <%= link_to "List-View"  %> </li>
-      <li>  <%= link_to "My itinerary" %></li>
-      <li> <%= link_to "Save" %></li>
+  <div class="sidebar-bg sidebox">
+    <div class="sidebar-links">
+      <h2>Logo</h2>
       <hr>
-      <li> <%= link_to "Settings" %></li>
-      <li> <%= link_to "Logout" %></li>
-    </ul>
+      <h5>Username + avatar</h5>
+      <hr>
+      <ul class= "sidebar-liststyle">
+        <li> <%= link_to "List-View", listview_path %> </li>
+        <li> <%= link_to "Calendar-View", selections_path %> </li>
+        <li>  <%= link_to "My itinerary" %></li>
+        <li> <%= link_to "Save" %></li>
+      </ul>
+    </div>
+    <div class="sidebar-actions">
+      <ul class= "sidebar-liststyle">
+        <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
+        <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
+      </ul>
+    </div>
   </div>
 
-  <%# To display days of the week  %>
+  <%# To display days of the weesk  %>
   <div>
     <div class="banner-dashboard">
     </div>
@@ -43,16 +47,17 @@
 
           <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
           <% if selection %>
-            <div data-selection-id="<%=selection.id%>" class="card-cell card-itinerary" style="background-image: url('<%=selection.activity.image_url%>');">
+            <div data-selection-id="<%=@counter%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
 
-              <span class="card-none"> <i class="fas fa-random"></i></span>
-              <p class><%= selection.activity.name %></p>
-              <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"far fa-trash-alt card-none" %></p>
-
+              <p class= "card-inner-text"><%= selection.activity.name %></p>
+              <div class="card-icons">
+                <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"far fa-trash-alt card-none" %></p>
+                <span class="card-none"> <i class="fas fa-random"></i></span>
+              </div>
             </div>
           <% else %>
-            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary" style="background-color: gray ;">
-               <p> <%= link_to "Create", selections_path({time_of_day: day[1], day: day[0]}), method: :post %></p>
+            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary add-icon" style="background-color: gray ;">
+               <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0]}), method: :post, class:"fas fa-plus-circle fa-5x" %></p>
             </div>
 
           <% end %>
