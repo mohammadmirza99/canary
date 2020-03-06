@@ -5,32 +5,36 @@
     <!-- create a form_tag -->
     <%= form_tag generate_path, method: "post" do |f| %>
 
-    <!-- create an input for location -->
+    <!-- create an input__form for location -->
       <div class="form__input">
         <div>
           <div class="title__form">
             <i class="fas fa-plane-departure"></i>
             <%= label_tag 'Destination' %>
           </div>
-          <div class="input">
+          <div class="input__form">
             <%= text_field_tag :location %>
           </div>
         </div>
 
         <div>
-          <div class="form-wrapper" style="width: 250px; height: 100px; margin: 0 auto;">
+          <div class="title__form">
+            <i class="fas fa-plane-departure"></i>
+            <%= label_tag 'Date' %>
+          </div>
+          <div class="form-wrapper" style="width: 250px; height: 100px;">
             <div id="range_start">
               <%= hidden_field_tag :start_date,'', id: "start_date" %>
               <%= hidden_field_tag :end_date, '', id: "end_date" %>
             </div>
           </div>
         </div>
-        <!-- create an input for purpose -->
+        <!-- create an input__form for purpose -->
         <div class="purpose">
           <div class="title__form">
             <%= label_tag 'Purposes ?' %>
           </div>
-          <div class="input">
+          <div class="input__form">
             <%= select_tag "categories", options_from_collection_for_select(@categories, "name", "name") %>
           </div>
         </div>

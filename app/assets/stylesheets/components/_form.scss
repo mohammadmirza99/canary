@@ -1,10 +1,21 @@
 // container of the form
 .container_form {
   background-color: white;
+  opacity: 85%;
   width: 40%;
   height: 450px;
+  border-radius: 2px;
+  font-size: 12px;
 }
 
 .form__input {
   padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkboxes {
+  display: flex;
+  justify-content: space-between;
 }
