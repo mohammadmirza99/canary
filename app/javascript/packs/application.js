@@ -2,7 +2,9 @@ import "bootstrap";
 import "../plugins/flatpickr";
 
 
+
 // Code For Map
+
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
@@ -33,23 +35,33 @@ if (dropdown) {
       // value selected in the dropdown -- hide other checkbox
        if (value == "Family") {
         // after the event show the checkbox wich are none
-          displayNone.style.display = "block";
+          displayNone.style.display = 'block';
         // hide the content wich are none
-          valueRelax.style.display = "none";
-          valueParty.style.display = "none";
-          valueAdventure.style.display = "none";
+          valueFamily.classList.remove('hide');
+          valueRelax.classList.add('hide');
+          valueParty.classList.add('hide');
+          valueAdventure.classList.add('hide');
 
       } else if (value == "Party") {
           displayNone.style.display = "block";
-          valueRelax.style.display = "none";
-          valueFamily.style.display = "none";
-          valueAdventure.style.display = "none";
+          valueParty.classList.remove('hide');
+          valueRelax.classList.add('hide');
+          valueFamily.classList.add('hide');
+          valueAdventure.classList.add('hide');
 
       } else if (value == "Adventure") {
           displayNone.style.display = "block";
-          valueRelax.style.display = "none";
-          valueParty.style.display = "none";
-          valueFamily.style.display = "none";
+          valueAdventure.classList.remove('hide');
+          valueRelax.classList.add('hide');
+          valueParty.classList.add('hide');
+          valueFamily.classList.add('hide');
+
+      } else if (value == "Relax") {
+          displayNone.style.display = "block";
+          valueRelax.classList.remove('hide');
+          valueParty.classList.add('hide');
+          valueFamily.classList.add('hide');
+          valueAdventure.classList.add('hide');
       }
   });
 }
