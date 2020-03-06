@@ -21,15 +21,22 @@ export const getDateISO = (date) => {
 flatpickr("#range_start", {
   altInput: true,
   altFormat: "F j, Y",
+  minDate: "today",
   dateFormat: "Y-m-d",
-  plugins: [new rangePlugin({ input: "#range_end"})],
-  onChange: function(selectedDates, dateStr, instance) {
-    console.log(selectedDates, dateStr, instance);
+  mode: "range",
+  // plugins: [new rangePlugin({ input: "#range_start"})],
+  onClose(selectedDates, dateStr, instance) {
+    console.log(selectedDates)
+    instance.setDate(selectedDates)
+  },
+  onChange(selectedDates, dateStr, instance) {
+    console.log(selectedDates);
     // target start date node (hidden field) and store in variable
     const start = getDateISO(selectedDates[0])
-    console.log(start)
+    // console.log(start)
     // target end date node (hidden field) and store in variable
     const end = getDateISO(selectedDates[1])
+
 
     // reassign the <input id="start_date">.value of start date to the user selected start date
     const start_date = document.getElementById("start_date")
@@ -39,8 +46,9 @@ flatpickr("#range_start", {
     const end_start = document.getElementById("end_date")
     end_start.value = end;
 
+
+
     // reassign the .value of end date to the user selected end date
   }
 })
-
 
