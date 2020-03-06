@@ -100,6 +100,8 @@ class SelectionsController < ApplicationController
 
   def generate_map
     @act = Activity.geocoded
+
+    # if @act.selection.user == current_user
     @markers = @act.map do |activity|
       {
         lat: activity.latitude,
@@ -107,6 +109,7 @@ class SelectionsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
       }
     end
+    # end
   end
 
 end
