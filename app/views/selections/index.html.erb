@@ -25,18 +25,15 @@
 
   <%# To display days of the weesk  %>
   <div>
-    <div class="banner-dashboard">
-    </div>
-      <div>
-      <ul class ="list-style card-container">
-        <li>Monday</li>
-        <li>Tuesday</li>
-        <li>Wednesday</li>
-        <li>Thursday</li>
-        <li>Friday</li>
-        <li>Saturday</li>
-        <li>Sunday</li>
-      </ul>
+    <%# Changed display to grid so that weeks align better  %>
+    <div class ="week-container">
+        <p>Monday</p>
+        <p>Tuesday</p>
+        <p>Wednesday</p>
+        <p>Thursday</p>
+        <p>Friday</p>
+        <p>Saturday</p>
+        <p>Sunday</p>
     </div>
 
     <%# Loading all of the sorted cards  %>
@@ -51,13 +48,13 @@
 
               <p class= "card-inner-text"><%= selection.activity.name %></p>
               <div class="card-icons">
-                <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"far fa-trash-alt card-none" %></p>
+                <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"fas fa-trash card-none text-decor-none" %></p>
                 <span class="card-none"> <i class="fas fa-random"></i></span>
               </div>
             </div>
           <% else %>
             <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary add-icon" style="background-color: gray ;">
-               <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0]}), method: :post, class:"fas fa-plus-circle fa-5x" %></p>
+               <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0]}), method: :post, class:"fas fa-plus-circle fa-2x text-decor-none" %></p>
             </div>
 
           <% end %>
