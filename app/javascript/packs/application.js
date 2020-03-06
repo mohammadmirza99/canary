@@ -1,5 +1,8 @@
 import "bootstrap";
 import "../plugins/flatpickr";
+// Code For Swappable
+import {initSwappable} from '../plugins/swappable';
+initSwappable();
 
 // Code For Map
 
@@ -8,9 +11,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
-// Code For Swappable
-import {initSwappable} from '../plugins/swappable';
-initSwappable();
 
 
 // select the dropdown
