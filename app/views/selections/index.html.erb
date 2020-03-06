@@ -3,23 +3,27 @@
 
 
   <%# Sidebar  %>
-  <div class="sidebar-bg">
-    <h2>Logo</h2>
-    <hr>
-    <h2>Sidebar</h2>
-    <hr>
-
-    <ul class= "sidebar-liststyle">
-      <li> <%= link_to "List-View"  %> </li>
-      <li>  <%= link_to "My itinerary" %></li>
-      <li> <%= link_to "Save" %></li>
+  <div class="sidebar-bg sidebox">
+    <div class="sidebar-links">
+      <h2>Logo</h2>
       <hr>
-      <li> <%= link_to "Settings" %></li>
-      <li> <%= link_to "Logout" %></li>
-    </ul>
+      <h5>Username + avatar</h5>
+      <hr>
+      <ul class= "sidebar-liststyle">
+        <li> <%= link_to "List-View"  %> </li>
+        <li>  <%= link_to "My itinerary" %></li>
+        <li> <%= link_to "Save" %></li>
+      </ul>
+    </div>
+    <div class="sidebar-actions">
+      <ul class= "sidebar-liststyle">
+        <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
+        <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
+      </ul>
+    </div>
   </div>
 
-  <%# To display days of the week  %>
+  <%# To display days of the weesk  %>
   <div>
     <div class="banner-dashboard">
     </div>
