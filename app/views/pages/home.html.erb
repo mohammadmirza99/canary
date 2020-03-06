@@ -1,5 +1,7 @@
 <div class="banner-home">
 
+  <%= render 'shared/navbar' %>
+
   <div class="container_form", style="margin-left: 50px;">
     <!-- create a form_tag -->
     <%= form_tag generate_path, method: "post" do |f| %>
@@ -97,88 +99,138 @@
           <div id="display_none">
             <div id="family">
               <div class="category__interests">
-                <div class="category__interests">
+
+                <div class="category__interest">
                   <%= label_tag 'Restaurant' %>
                   <%= check_box_tag "interest[]", "Restaurant"%>
                 </div>
 
-                <%= label_tag 'Aquatic' %>
-                <%= check_box_tag "interest[]", "Aquatic"%>
+                <div class="category__interest">
+                  <%= label_tag 'Aquatic' %>
+                  <%= check_box_tag "interest[]", "Aquatic"%>
+                </div>
 
-                <%= label_tag 'Parks' %>
-                <%= check_box_tag "interest[]", "Parks"%>
+                <div class="category__interest">
+                  <%= label_tag 'Parks' %>
+                  <%= check_box_tag "interest[]", "Parks"%>
+                </div>
 
-                <%= label_tag 'Museum' %>
-                <%= check_box_tag "interest[]", "Museum"%>
+                <div class="category__interest">
+                  <%= label_tag 'Museum' %>
+                  <%= check_box_tag "interest[]", "Museum"%>
+                </div>
 
-                <%= label_tag 'Walk' %>
-                <%= check_box_tag "interest[]", "Walk"%>
+                <div class="category__interest">
+                  <%= label_tag 'Walk' %>
+                  <%= check_box_tag "interest[]", "Walk"%>
+                </div>
 
-                <%= label_tag 'Aquatic' %>
-                <%= check_box_tag "interest[]", "Aquatic"%>
+                <div class="category__interest">
+                  <%= label_tag 'Aquatic' %>
+                  <%= check_box_tag "interest[]", "Aquatic"%>
+                </div>
 
-                <%= label_tag 'Zoo' %>
-                <%= check_box_tag "interest[]", "Zoo"%>
+                <div class="category__interest">
+                  <%= label_tag 'Zoo' %>
+                  <%= check_box_tag "interest[]", "Zoo"%>
+                </div>
 
-                <%= label_tag 'Football' %>
-                <%= check_box_tag "interest[]", "Football"%>
+                <div class="category__interest">
+                  <%= label_tag 'Football' %>
+                  <%= check_box_tag "interest[]", "Football"%>
+                </div>
               </div>
             </div>
               <!-- create a checkbox for the Family category -->
 
               <!-- create a checkbox for the Party category -->
             <div id="party" class="form-group">
-              <%= label_tag 'Club' %>
-              <%= check_box_tag "interest[]", "Club"%>
+              <div class="category__interests">
+                <div class="category__interest">
+                  <%= label_tag 'Club' %>
+                  <%= check_box_tag "interest[]", "Club"%>
+                </div>
 
-              <%= label_tag 'Bars' %>
-              <%= check_box_tag "interest[]", "Bars"%>
+                <div class="category__interest">
+                  <%= label_tag 'Bars' %>
+                  <%= check_box_tag "interest[]", "Bars"%>
+                </div>
 
-              <%= label_tag 'Restaurant' %>
-              <%= check_box_tag "interest[]", "Restaurant"%>
+                <div class="category__interest">
+                  <%= label_tag 'Restaurant' %>
+                  <%= check_box_tag "interest[]", "Restaurant"%>
+                </div>
 
-              <%= label_tag 'Aquatic' %>
-              <%= check_box_tag "interest[]", "Aquatic"%>
+                <div class="category__interest">
+                  <%= label_tag 'Aquatic' %>
+                  <%= check_box_tag "interest[]", "Aquatic"%>
+                </div>
 
-              <%= label_tag 'Walk' %>
-              <%= check_box_tag "interest[]", "Walk"%>
+                <div class="category__interest">
+                  <%= label_tag 'Walk' %>
+                  <%= check_box_tag "interest[]", "Walk"%>
+                </div>
 
-              <%= label_tag 'Concert' %>
-              <%= check_box_tag "interest[]", "Concert"%>
+                <div class="category__interest">
+                  <%= label_tag 'Concert' %>
+                  <%= check_box_tag "interest[]", "Concert"%>
+                </div>
 
-              <%= label_tag 'Festival' %>
-              <%= check_box_tag "interest[]", "Festival"%>
+                <div class="category__interest">
+                  <%= label_tag 'Festival' %>
+                  <%= check_box_tag "interest[]", "Festival"%>
+                </div>
 
-              <%= label_tag 'Stand-up' %>
-              <%= check_box_tag "interest[]", "Stand-up"%>
+                <div class="category__interest">
+                  <%= label_tag 'Stand-up' %>
+                  <%= check_box_tag "interest[]", "Stand-up"%>
+                </div>
+              </div>
             </div>
+
 
             <div id="adventure" class="form-group">
             <!-- create a checkbox for the Adventure category -->
-              <%= label_tag 'Hiking' %>
-              <%= check_box_tag "interest[]", "Hiking"%>
+              <div class="category__interests">
+                <div class="category__interest">
+                  <%= label_tag 'Hiking' %>
+                  <%= check_box_tag "interest[]", "Hiking"%>
+                </div>
 
-              <%= label_tag 'Climbing' %>
-              <%= check_box_tag "interest[]", "Climbing"%>
+                <div class="category__interest">
+                    <%= label_tag 'Climbing' %>
+                    <%= check_box_tag "interest[]", "Climbing"%>
+                </div>
 
-              <%= label_tag 'Walk' %>
-              <%= check_box_tag "interest[]", "Walk"%>
+                <div class="category__interest">
+                    <%= label_tag 'Walk' %>
+                    <%= check_box_tag "interest[]", "Walk"%>
+                </div>
 
-              <%= label_tag 'Restaurant' %>
-              <%= check_box_tag "interest[]", "Restaurant"%>
+                <div class="category__interest">
+                  <%= label_tag 'Restaurant' %>
+                  <%= check_box_tag "interest[]", "Restaurant"%>
+                </div>
 
-              <%= label_tag 'Thrill' %>
-              <%= check_box_tag "interest[]", "Thrill"%>
+                <div class="category__interest">
+                  <%= label_tag 'Thrill' %>
+                  <%= check_box_tag "interest[]", "Thrill"%>
+                </div>
 
-              <%= label_tag 'Ski' %>
-              <%= check_box_tag "interest[]", "Ski"%>
+                <div class="category__interest">
+                  <%= label_tag 'Ski' %>
+                  <%= check_box_tag "interest[]", "Ski"%>
+                </div>
 
-              <%= label_tag 'Beach' %>
-              <%= check_box_tag "interest[]", "Beach"%>
+                <div class="category__interest">
+                  <%= label_tag 'Beach' %>
+                  <%= check_box_tag "interest[]", "Beach"%>
+                </div>
 
-              <%= label_tag 'Escape' %>
-              <%= check_box_tag "interest[]", "Escape"%>
-            </div>
+                <div class="category__interest">
+                  <%= label_tag 'Escape' %>
+                  <%= check_box_tag "interest[]", "Escape"%>
+              </div>
           </div>
 
       </div>

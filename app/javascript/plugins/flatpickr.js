@@ -21,6 +21,7 @@ export const getDateISO = (date) => {
 flatpickr("#range_start", {
   altInput: true,
   altFormat: "F j, Y",
+  minDate: "today",
   dateFormat: "Y-m-d",
   mode: "range",
   // plugins: [new rangePlugin({ input: "#range_start"})],
