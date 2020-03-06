@@ -2,9 +2,49 @@
 .container_form {
   background-color: white;
   width: 40%;
-  height: 450px;
+  padding-top: 10px;
+  border-radius: 2px;
+  font-size: 12px;
 }
 
 .form__input {
-  margin: 20px
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.destination {
+  display: flex;
+}
+.category__interests {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.category__interest {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category__interest {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: .4;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: rgb(44,202,174);
+  color: white;
+  opacity: 1;
+  }
 }

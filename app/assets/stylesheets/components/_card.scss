@@ -60,7 +60,17 @@
   .card-none{
     display:block;
   }
+}
 
+.text-decor-none:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.card-image{
+  height: 200px;
+  background-size: cover;
+  background-position: center;
 }
 
 // .card-cell:hover  .card-none {
