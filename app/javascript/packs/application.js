@@ -1,13 +1,10 @@
 import "bootstrap";
-<<<<<<< HEAD
-import mapboxgl from 'mapbox-gl';
 import "../plugins/flatpickr";
-=======
->>>>>>> d78c0900b5021a2b00ff5f95f6cc31de85e83d60
+
 
 // Code For Map
 import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 

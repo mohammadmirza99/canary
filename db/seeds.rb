@@ -8,6 +8,7 @@
 
 
 puts "cleanning all"
+Selection.destroy_all
 Activity.destroy_all
 Category.destroy_all
 Pair.destroy_all
@@ -38,6 +39,7 @@ location1 = Location.create!({
   city: 'Rome'
 })
 
+puts "Creating activities"
 # create activities
 #restaurants
 activity1 = Activity.create!({
