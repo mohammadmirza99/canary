@@ -78,6 +78,7 @@ class SelectionsController < ApplicationController
 
 
   def generate
+
     @category = params[:categories]
     @interest = params[:interest]
 
