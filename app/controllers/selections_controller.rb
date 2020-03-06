@@ -74,7 +74,7 @@ class SelectionsController < ApplicationController
           date: time[0]
         )
       end
-    redirect_to selections_path
+    redirect_to listview_path
     end
   end
 
