@@ -1,0 +1,79 @@
+<div class ="dashboard-container">
+
+
+  <%# Sidebar  %>
+  <div class="sidebar-bg sidebox">
+    <div class="sidebar-links">
+      <h2>Logo</h2>
+      <hr>
+      <h5>Username + avatar</h5>
+      <hr>
+      <ul class= "sidebar-liststyle">
+        <li> <%= link_to "List-View"  %> </li>
+        <li>  <%= link_to "My itinerary" %></li>
+        <li> <%= link_to "Save" %></li>
+      </ul>
+    </div>
+    <div class="sidebar-actions">
+      <ul class= "sidebar-liststyle">
+        <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
+        <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
+      </ul>
+    </div>
+  </div>
+
+  <%# To display days of the weesk  %>
+  <div>
+    <div class="banner-dashboard">
+    </div>
+      <div>
+      <ul class ="list-style card-container">
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+        <li>Friday</li>
+        <li>Saturday</li>
+        <li>Sunday</li>
+      </ul>
+    </div>
+
+    <%# Loading all of the sorted cards  %>
+    <div class="card-container">
+      <div class = "card-zone">
+        <% @counter = 1 %>
+        <% DAYS.each do |day|  %>
+
+          <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
+          <% if selection %>
+            <div data-selection-id="<%=@counter%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
+
+              <p class= "card-inner-text"><%= selection.activity.name %></p>
+              <div class="card-icons">
+                <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"far fa-trash-alt card-none" %></p>
+                <span class="card-none"> <i class="fas fa-random"></i></span>
+              </div>
+            </div>
+          <% else %>
+            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary add-icon" style="background-color: gray ;">
+               <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0]}), method: :post, class:"fas fa-plus-circle fa-5x" %></p>
+            </div>
+
+          <% end %>
+
+            <% @counter +=1 %>
+        <% end %>
+      </div>
+    </div>
+
+    <%# Map  %>
+    <div class = "map-border map-container">
+     <div id="map" style="width: 100%; height: 400px;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  </div>
+
+</div>
+
+
+
+

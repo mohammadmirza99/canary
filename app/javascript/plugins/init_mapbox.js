@@ -6,30 +6,35 @@ import mapboxgl from 'mapbox-gl';
 const mapElement = document.getElementById('map');
 
 const buildMap = (initMarker) => {
+  let initialCoords;
+  if (initMarker) {
+    initialCoords = initMarker;
+  } else {
+    initialCoords = { lat: 45.5017, lng:  -73.5673 }
+  }
+
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
     zoom: 10,
-    center: [initMarker.lng, initMarker.lat],
+    center: [initialCoords.lng, initialCoords.lat],
     style: 'mapbox://styles/mapbox/streets-v10'
   });
 };
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    if (marker !== null) {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(map);
-    }
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(map);
   });
 
 };
 
 const fitMapToMarkers = (map, markers) => {
-  if (markers !== null) {
+  if (markers.length > 0) {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => {
       if (marker !== null) {
