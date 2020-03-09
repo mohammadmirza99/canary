@@ -44,8 +44,10 @@
 
 
 }
-.card-itinerary{
-
+.cards-itinerary-container {
+  justify-content: flex-end;
+  // Add margin
+  margin: 0 151px;
 }
 
 .card-zone{
@@ -77,6 +79,42 @@
   background-position: center;
   color:#28B69C;
 }
+
+
+// list view add time beside cards
+.container__content {
+  display: flex;
+  justify-content: space-between;
+  // define the width of the card
+  width: 100%;
+}
+
+//
+.time__info {
+  display: flex;
+  align-items: center;
+}
+
+.list__icon {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  color: #FA9949;
+  border: 2px solid #FA9949;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
 
 // .card-cell:hover  .card-none {
 //     display: block;
