@@ -5,9 +5,9 @@
   <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
     <ul class="nav sidebar-nav">
       <div class="sidebar-header">
-        <div class="sidebar-brand">
-          <a href="#">Brand</a>
-        </div>
+   <div class="sidebar-brand">
+            <div class="logonav"><%= image_tag "logo.png"%></div>
+          </div>
       </div>
       <div class="sidebox">
         <div class="sidelist">
@@ -194,7 +194,6 @@ ss
         <% end %>
 
       </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @thursday_selection.each do |selection| %>
@@ -410,6 +409,7 @@ ss
         <%# /loop  %>
 
       </div>
+
       <!-- /cards-itinerary-container -->
     </div>
     <!-- /.list-container -->

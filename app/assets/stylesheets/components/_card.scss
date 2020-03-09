@@ -26,8 +26,12 @@
     }
 }
 .fas{
-  color: black;
+  color: #ECBE46;
 }
+.fa-plus-circle:hover{
+    color: #28B69C !important;
+}
+
 .add-icon {
   display: flex;
   justify-content: center;
@@ -73,6 +77,7 @@
   height: 200px;
   background-size: cover;
   background-position: center;
+  color:#28B69C;
 }
 
 

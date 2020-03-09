@@ -9,12 +9,6 @@ html { height: 100%;}
 /*-------------------------------*/
 /*           Wrappers            */
 /*-------------------------------*/
-.sidebox {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-}
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -141,7 +135,7 @@ html { height: 100%;}
     display: inline-block;
 }
 .sidebar-brand {
-    height: 65px;
+    height: 80px;
     position: relative;
     background:#340C4D !important;
     background: linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
@@ -153,6 +147,21 @@ html { height: 100%;}
 .sidebar-brand a:hover {
     color: #28B69C;
     text-decoration: none;
+}
+.sidebox {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logonav{
+  display: flex;
+  align-items: center;
+  img{
+    width: 70px;
+    margin-bottom: 30px;
+  }
+
 }
 .sidebar-nav .dropdown-menu {
     position: relative;
