@@ -1,57 +1,81 @@
 
 <%# Container for the entire page (cards and map)  %>
-<div class="list-container">
+<div id="wrapper">
 
-  <%# Sidebar (Can possibly be moved to shared) %>
-    <div class="sidebar-bg sidebar-sticky">
-      <h2>Logo</h2>
-      <hr>
-      <h5>Username + avatar</h5>
-      <hr>
+  <div class="overlay"></div>
 
-      <ul class= "sidebar-liststyle">
-        <li> <%= link_to "List-View", listview_path %> </li>
-        <li> <%= link_to "Calendar-View", selections_path %> </li>
-        <li>  <%= link_to "My itinerary" %></li>
-        <li> <%= link_to "Save" %></li>
-        <hr>
-         <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
-        <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
-      </ul>
-    </div>
-
-  <div>
-    <%# Looping through each selection %>
-    <% @selections.each do |selection| %>
-
-    <%# Card starting point  %>
-      <div class="card-list-container">
-        <div class="card-list-flex">
-
-    <%# Image container  %>
-            <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-            </div>
-
-
-    <%# Card info  %>
-          <div class="card-text-container">
-            <h2><%=selection.activity.name%></h2>
-            <p> <%=selection.activity.description%> </p>
-            <p>Reviews</p>
-
-          </div>
-
+  <!-- Sidebar -->
+  <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <a href="#">Brand</a>
         </div>
       </div>
+      <li> <%= link_to "List-View", listview_path %> </li>
+      <li> <%= link_to "Calendar-View", selections_path %> </li>
+      <li>  <%= link_to "My itinerary" %></li>
+      <li> <%= link_to "Save" %></li>
+      <hr>
+      <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
+      <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
+    </ul>
+  </nav>
+  <!-- /#sidebar-wrapper -->
 
-    <% end %>
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+
+
+    <div class="list-container">
+
+      <div class="cards-itinerary-container">
+
+        <%# Looping through each selection %>
+        <% @selections.each do |selection| %>
+        <%# Card starting point  %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        <% end %>
+        <%# /loop  %>
+
+      </div>
+      <!-- /cards-itinerary-container -->
+
+      <%# Map starts %>
+      <div class="map-view">
+        <div id="map" style="width: 100%; height: 100vh;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+
+    </div>
+    <!-- /.list-container -->
 
   </div>
+  <!-- /#page-content-wrapper -->
 
-  <%# Map starts %>
-  <div class="map-view">
-    <div id="map" style="width: 100%; height: 100vh;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
 
 </div>
+<!-- /#wrapper -->
 
