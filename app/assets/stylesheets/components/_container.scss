@@ -7,6 +7,7 @@
 .card-list-container{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // width: 700px;
+  width: 75%;
   margin: 40px 80px;
 }
 
@@ -15,11 +16,6 @@
   display: grid;
   grid-template-columns: 12% 87%;
   border: 3px solid blue;
-}
-
-.list-container{
-  display: grid;
-  grid-template-columns: 50% 50%;
 }
 
 .week-container{
