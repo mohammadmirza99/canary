@@ -32,7 +32,6 @@ class SelectionsController < ApplicationController
   end
 
   def create
-    raise
 
     @interests = current_user.interests
     @selections = Selection.all
@@ -47,7 +46,6 @@ class SelectionsController < ApplicationController
       time_of_day: params[:time_of_day],
       date: params[:day]
       )
-    raise
 
     redirect_to selections_path
   end
