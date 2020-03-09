@@ -14,11 +14,12 @@
 .dashboard-container{
   display: grid;
   grid-template-columns: 12% 87%;
+  border: 3px solid blue;
 }
 
 .list-container{
   display: grid;
-  grid-template-columns: 12% 54% 34%;
+  grid-template-columns: 50% 50%;
 }
 
 .week-container{
