@@ -40,8 +40,10 @@
 
 
 }
-.card-itinerary{
-
+.cards-itinerary-container {
+  justify-content: flex-end;
+  // Add margin
+  margin: 0 151px;
 }
 
 .card-zone{
@@ -73,16 +75,17 @@
   background-position: center;
 }
 
+
 // list view add time beside cards
 .container__content {
   display: flex;
-  justify-content: space-evenly;
-
-
+  justify-content: space-between;
+  // define the width of the card
+  width: 100%;
 }
 
+//
 .time__info {
-  align-content: center;
   display: flex;
   align-items: center;
 }

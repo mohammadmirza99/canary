@@ -32,6 +32,7 @@ class SelectionsController < ApplicationController
   end
 
   def create
+    raise
 
     # Creates new selection based on params time_of_day and day
     new_selection = Selection.create!(
@@ -133,7 +134,6 @@ end
     @friday_selection = @selections.where(date: "Friday")
     @saturday_selection = @selections.where(date: "Saturday")
     @sunday_selection = @selections.where(date: "Sunday")
-    # raise
     generate_map
 
   end
