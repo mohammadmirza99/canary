@@ -7,18 +7,8 @@
 .card-list-container{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // width: 700px;
+  width: 75%;
   margin: 40px 80px;
-}
-
-
-.dashboard-container{
-  display: grid;
-  grid-template-columns: 12% 87%;
-}
-
-.list-container{
-  display: grid;
-  grid-template-columns: 12% 54% 34%;
 }
 
 .week-container{

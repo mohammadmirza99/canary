@@ -1,76 +1,81 @@
-<div class ="dashboard-container">
-
-
-  <%# Sidebar  %>
-  <div class="sidebar-bg sidebox">
-    <div class="sidebar-links">
-      <h2><%= link_to 'Logo', root_path  %></h2>
-      <hr>
-      <h5>Username + avatar</h5>
-      <hr>
-      <ul class= "sidebar-liststyle">
-        <li> <%= link_to "List-View", listview_path %> </li>
-        <li> <%= link_to "Calendar-View", selections_path %> </li>
-        <li>  <%= link_to "My itinerary" %></li>
-        <li> <%= link_to "Save" %></li>
+<div id="wrapper">
+  <div class="overlay"></div>
+  <div class ="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+      <ul class="nav sidebar-nav">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <div class="logonav"><%= image_tag "logo.png"%></div>
+          </div>
+        </div>
+        <div class="sidebox">
+          <div class="sidelist">
+            <li> <%= link_to "List-View", listview_path %> </li>
+            <li> <%= link_to "Calendar-View", selections_path %> </li>
+            <li>  <%= link_to "My itinerary" %></li>
+            <li> <%= link_to "Save" %></li>
+          </div>
+          <div class="sideactions">
+            <li><!-- <i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
+            <li><!-- <i class="fas fa-sign-out-alt"> --></i><%= link_to "Logout" %></li>
+          </div>
+        </div>
       </ul>
-    </div>
-    <div class="sidebar-actions">
-      <ul class= "sidebar-liststyle">
-        <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
-        <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
-      </ul>
-    </div>
-  </div>
+    </nav>
+    <!-- /#sidebar-wrapper -->
+    <div id="page-content-wrapper">
+      <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+        <span class="hamb-top"></span>
+        <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+      </button>
 
-  <%# To display days of the weesk  %>
-  <div>
-    <%# Changed display to grid so that weeks align better  %>
-    <div class ="week-container">
-        <p>Monday</p>
-        <p>Tuesday</p>
-        <p>Wednesday</p>
-        <p>Thursday</p>
-        <p>Friday</p>
-        <p>Saturday</p>
-        <p>Sunday</p>
-    </div>
+        <%# To display days of the weesk  %>
+        <div>
+          <%# Changed display to grid so that weeks align better  %>
+          <div class ="week-container">
+              <p>Monday</p>
+              <p>Tuesday</p>
+              <p>Wednesday</p>
+              <p>Thursday</p>
+              <p>Friday</p>
+              <p>Saturday</p>
+              <p>Sunday</p>
+          </div>
 
-    <%# Loading all of the sorted cards  %>
-    <div class="card-container">
-      <div class = "card-zone">
-        <% @counter = 1 %>
-        <% DAYS.each do |day|  %>
-
-          <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
-          <% if selection %>
-            <div data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
-
-              <p class= "card-inner-text"><%= selection.activity.name %></p>
-              <div class="card-icons">
-                <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"fas fa-trash card-none text-decor-none" %></p>
-                <span class="card-none"> <i class="fas fa-random"></i></span>
+          <%# Loading all of the sorted cards  %>
+          <div class=“card-container”>
+              <div class = “card-zone”>
+                <% @counter = 1 %>
+                <% DAYS.each do |day|  %>
+                  <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
+                  <% if selection %>
+                    <div data-selection-id=“<%= selection.id%>” class=“card-cell card-itinerary image-box” style=“background-image: url(‘<%=selection.activity.image_url%>‘);“>
+                      <p class= “card-inner-text”><%= selection.activity.name %></p>
+                      <div class=“card-icons”>
+                        <p> <%= link_to ‘’, selection_path(selection.id), method: :delete, data: {confirm: “You sure?“}, class:“fas fa-trash card-none text-decor-none” %></p>
+                        <p> <%= link_to ‘’, random_path({time_of_day: day[1], day: day[0], selection: selection.id}), method: :post, class:“fas fa-random card-none text-decor-none” %></p>
+                      </div>
+                    </div>
+                  <% else %>
+                    <div data-id=“selection-<%=@counter%>” class=“card-cell card-itinerary add-icon” style=“background-color: gray ;“>
+                       <p> <%= link_to ‘’, selections_path({time_of_day: day[1], day: day[0] }), method: :post, class:“fas fa-plus-circle fa-2x text-decor-none” %></p>
+                    </div>
+                  <% end %>
+                    <% @counter +=1 %>
+                <% end %>
               </div>
             </div>
-          <% else %>
-            <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary add-icon" style="background-color: gray ;">
-               <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0]}), method: :post, class:"fas fa-plus-circle fa-2x text-decor-none" %></p>
-            </div>
-
-          <% end %>
-
-            <% @counter +=1 %>
-        <% end %>
+          <%# Map  %>
+          <div class = "map-border map-container">
+           <div id="map" style="width: 100%; height: 400px;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <%# Map  %>
-    <div class = "map-border map-container">
-     <div id="map" style="width: 100%; height: 400px;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
-  </div>
-
 </div>
+
 
 
 
