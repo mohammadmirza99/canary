@@ -58,25 +58,60 @@ class SelectionsController < ApplicationController
 
 
   def generate
-
     # Submit on homepage directs to this method.
 
     @category = params[:categories]
-    @interest = params[:interest]
+    @interests = params[:interest]
 
-    if (@category || @interest)
-      Selection.where(user: current_user).destroy_all
-      DAYS.each do |time|
-        Selection.create!(
-          activity: Activity.first,
-          user: current_user,
-          time_of_day: time[1],
-          date: time[0]
-        )
-      end
-    redirect_to listview_path
+
+    user_activities = []
+
+    @interests.each do |interest|
+      user_activities << Activity.where(interest: interest).to_a
     end
-  end
+
+    user_activities.flatten!
+
+    Selection.where(user: current_user).destroy_all
+    # Iterates through array of days
+    DAYS.each do |day|
+      # Iterates through array of interests
+      user_activities.each do |act|
+        next if Selection.where(time_of_day: day[1], date: day[0], user: current_user).count > 0
+        # Iterates over each activity inside the interests
+          # Checks to see if time of day of activity is == to T.O.D of array element.
+          if act.time_of_day == day[1]
+            Selection.create!(
+              activity: act,
+              user: current_user,
+              time_of_day: day[1],
+              date: day[0]
+              )
+            user_activities.delete(act)
+          end
+      end
+    end
+
+
+  redirect_to listview_path
+
+end
+
+  #    raise
+
+  #   if (@category || @interest)
+  #     Selection.where(user: current_user).destroy_all
+  #     DAYS.each do |time|
+  #       Selection.create!(
+  #         activity: Activity.first,
+  #         user: current_user,
+  #         time_of_day: time[1],
+  #         date: time[0]
+  #       )
+  #     end
+  #   redirect_to listview_path
+  #   end
+  # end
 
   def destroy
     @selection = Selection.find(params[:id])
