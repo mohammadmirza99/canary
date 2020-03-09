@@ -22,9 +22,37 @@
 
   <div>
     <%# Looping through each selection %>
-    <% @selections.each do |selection| %>
+    <% @monday_selection.each do |selection| %>
+
 
     <%# Card starting point  %>
+    <div class="container__content">
+      <% if selection.time_of_day == "Morning" %>
+      <div class="time__info">
+        <div class="list__icon">
+          <i class="fas fa-sun", style="color: #FA9949";></i>
+        </div>
+      </div>
+
+      <% elsif selection.time_of_day == "Afternoon" %>
+      <div class="time__info">
+
+        <div class="list__icon">
+          <%= selection.date %>
+        </div>
+      </div>
+
+      <% elsif selection.time_of_day == "Evening"   %>
+
+      <div class="time__info">
+        <div class="list__icon">
+          <i class="fas fa-moon", style="color: #FA9949";></i>
+        </div>
+      </div>
+      <% end %>
+
+
+
       <div class="card-list-container">
         <div class="card-list-flex">
 
@@ -37,6 +65,7 @@
           <div class="card-text-container">
             <h2><%=selection.activity.name%></h2>
             <p> <%=selection.activity.description%> </p>
+            <p> <%=selection.activity.time_of_day%> </p>
             <p>Reviews</p>
 
           </div>
@@ -44,14 +73,16 @@
         </div>
       </div>
 
+    </div>
+
     <% end %>
 
   </div>
 
   <%# Map starts %>
-  <div class="map-view">
+<!--   <div class="map-view">
     <div id="map" style="width: 100%; height: 100vh;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
+  </div> -->
 
 </div>
 

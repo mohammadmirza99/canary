@@ -40,6 +40,7 @@ class SelectionsController < ApplicationController
       time_of_day: params[:time_of_day],
       date: params[:day]
       )
+    raise
 
     redirect_to selections_path
   end
@@ -120,9 +121,19 @@ end
   end
 
   def listview
+
     #Iterate in the view over the selection array.
+
     @selections = Selection.all
     # For map
+    @monday_selection = @selections.where(date: "Monday")
+    @tuesday_selection = @selections.where(date: "Tuesday")
+    @wednesday_selection = @selections.where(date: "Wednesday")
+    @thursday_selection = @selections.where(date: "Thursday")
+    @friday_selection = @selections.where(date: "Friday")
+    @saturday_selection = @selections.where(date: "Saturday")
+    @sunday_selection = @selections.where(date: "Sunday")
+    # raise
     generate_map
 
   end

@@ -73,6 +73,41 @@
   background-position: center;
 }
 
+// list view add time beside cards
+.container__content {
+  display: flex;
+  justify-content: space-evenly;
+
+
+}
+
+.time__info {
+  align-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.list__icon {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  color: #FA9949;
+  border: 2px solid #FA9949;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
 // .card-cell:hover  .card-none {
 //     display: block;
 // }
