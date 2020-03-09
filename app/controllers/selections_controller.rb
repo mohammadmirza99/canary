@@ -58,7 +58,12 @@ class SelectionsController < ApplicationController
 
 
   def generate
+    # create an itinerary
+    @itinerary = Itinerary.new(start_end: params[:start_date], end_start: params[:end_date])
+    @itinerary.save
     # Submit on homepage directs to this method.
+
+    raise
 
     @category = params[:categories]
     @interests = params[:interest]
@@ -86,6 +91,9 @@ class SelectionsController < ApplicationController
               user: current_user,
               time_of_day: day[1],
               date: day[0]
+
+              # assign the itinerary to selection
+
               )
             user_activities.delete(act)
           end
