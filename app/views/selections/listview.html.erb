@@ -1,60 +1,420 @@
-
 <%# Container for the entire page (cards and map)  %>
-<div class="list-container">
-
-  <%# Sidebar (Can possibly be moved to shared) %>
-    <div class="sidebar-bg sidebar-sticky">
-      <h2>Logo</h2>
-      <hr>
-      <h5>Username + avatar</h5>
-      <hr>
-
-      <ul class= "sidebar-liststyle">
-        <li> <%= link_to "List-View", listview_path %> </li>
-        <li> <%= link_to "Calendar-View", selections_path %> </li>
-        <li>  <%= link_to "My itinerary" %></li>
-        <li> <%= link_to "Save" %></li>
-        <hr>
-         <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
-        <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
-      </ul>
-    </div>
-
-  <div>
-    <%# Looping through each selection %>
-    <% @selections.each do |selection| %>
-
-    <%# Card starting point  %>
-      <div class="card-list-container">
-        <div class="card-list-flex">
-
-    <%# Image container  %>
-            <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-            </div>
-
-
-    <%# Card info  %>
-          <div class="card-text-container">
-            <h2><%=selection.activity.name%></h2>
-            <p> <%=selection.activity.description%> </p>
-            <p>Reviews</p>
-
+<div id="wrapper">
+  <div class="overlay"></div>
+  <!-- Sidebar -->
+  <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+      <div class="sidebar-header">
+   <div class="sidebar-brand">
+            <div class="logonav"><%= image_tag "logo.png"%></div>
           </div>
-
+      </div>
+      <div class="sidebox">
+        <div class="sidelist">
+          <li> <%= link_to "List-View", listview_path %> </li>
+          <li> <%= link_to "Calendar-View", selections_path %> </li>
+          <li>  <%= link_to "My itinerary" %></li>
+          <li> <%= link_to "Save" %></li>
+        </div>
+        <div class="sideactions">
+          <li><!-- <i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
+          <li><!-- <i class="fas fa-sign-out-alt"> --></i><%= link_to "Logout" %></li>
         </div>
       </div>
+    </ul>
+  </nav>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="list-container">
 
-    <% end %>
+      <div class="cards-itinerary-container">
+        <%# Looping through each selection %>
+        <% @monday_selection.each do |selection| %>
+        <%# Card starting point  %>
+        <%# Card starting point  %>
 
+        <!-- create an icon by the time of day -->
+        <div class="container__content">
+          <% if selection.time_of_day == "Morning" %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-sun", style="color: #FA9949";></i>
+            </div>
+          </div>
+        <!-- create an icon by the time of day -->
+          <% elsif selection.time_of_day == "Afternoon" %>
+          <div class="time__info">
+
+            <div class="list__icon">
+              <%= selection.date %>
+            </div>
+          </div>
+
+          <!-- create an icon by the time of day -->
+          <% elsif selection.time_of_day == "Evening"   %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-moon", style="color: #FA9949";></i>
+            </div>
+          </div>
+          <% end %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="cards-itinerary-container">
+        <%# Looping through each selection %>
+        <% @tuesday_selection.each do |selection| %>
+        <%# Card starting point  %>
+        <%# Card starting point  %>
+        <div class="container__content">
+          <% if selection.time_of_day == "Morning" %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-sun", style="color: #FA9949";></i>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Afternoon" %>
+          <div class="time__info">
+
+            <div class="list__icon">
+              <%= selection.date %>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Evening"   %>
+
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-moon", style="color: #FA9949";></i>
+            </div>
+          </div>
+          <% end %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="cards-itinerary-container">
+        <%# Looping through each selection %>
+        <% @wednesday_selection.each do |selection| %>
+        <%# Card starting point  %>
+        <%# Card starting point  %>
+        <div class="container__content">
+          <% if selection.time_of_day == "Morning" %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-sun", style="color: #FA9949";></i>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Afternoon" %>
+          <div class="time__info">
+
+            <div class="list__icon">
+              <%= selection.date %>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Evening"   %>
+
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-moon", style="color: #FA9949";></i>
+            </div>
+          </div>
+          <% end %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        </div>
+        <% end %>
+
+      </div>
+      <div class="cards-itinerary-container">
+        <%# Looping through each selection %>
+        <% @thursday_selection.each do |selection| %>
+        <%# Card starting point  %>
+        <%# Card starting point  %>
+        <div class="container__content">
+          <% if selection.time_of_day == "Morning" %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-sun", style="color: #FA9949";></i>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Afternoon" %>
+          <div class="time__info">
+
+            <div class="list__icon">
+              <%= selection.date %>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Evening"   %>
+
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-moon", style="color: #FA9949";></i>
+            </div>
+          </div>
+          <% end %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="cards-itinerary-container">
+        <%# Looping through each selection %>
+        <% @friday_selection.each do |selection| %>
+        <%# Card starting point  %>
+        <%# Card starting point  %>
+        <div class="container__content">
+          <% if selection.time_of_day == "Morning" %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-sun", style="color: #FA9949";></i>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Afternoon" %>
+          <div class="time__info">
+
+            <div class="list__icon">
+              <%= selection.date %>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Evening"   %>
+
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-moon", style="color: #FA9949";></i>
+            </div>
+          </div>
+          <% end %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="cards-itinerary-container">
+        <%# Looping through each selection %>
+        <% @saturday_selection.each do |selection| %>
+        <%# Card starting point  %>
+        <%# Card starting point  %>
+        <div class="container__content">
+          <% if selection.time_of_day == "Morning" %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-sun", style="color: #FA9949";></i>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Afternoon" %>
+          <div class="time__info">
+
+            <div class="list__icon">
+              <%= selection.date %>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Evening"   %>
+
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-moon", style="color: #FA9949";></i>
+            </div>
+          </div>
+          <% end %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        </div>
+        <% end %>
+
+      </div>
+
+      <div class="cards-itinerary-container">
+        <%# Looping through each selection %>
+        <% @sunday_selection.each do |selection| %>
+        <%# Card starting point  %>
+        <%# Card starting point  %>
+        <div class="container__content">
+          <% if selection.time_of_day == "Morning" %>
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-sun", style="color: #FA9949";></i>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Afternoon" %>
+          <div class="time__info">
+
+            <div class="list__icon">
+              <%= selection.date %>
+            </div>
+          </div>
+
+          <% elsif selection.time_of_day == "Evening"   %>
+
+          <div class="time__info">
+            <div class="list__icon">
+              <i class="fas fa-moon", style="color: #FA9949";></i>
+            </div>
+          </div>
+          <% end %>
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+                <p>Reviews</p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+          <!-- /.card-list-container -->
+        </div>
+        <% end %>
+
+      </div>
+
+        <%# /loop  %>
+
+      </div>
+
+      <!-- /cards-itinerary-container -->
+    </div>
+    <!-- /.list-container -->
   </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
 
-
-
-
-  <%# Map starts %>
-<!--   <div class="map-view">
-    <div id="map" style="width: 100%; height: 100vh;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
-
-</div> -->
 
