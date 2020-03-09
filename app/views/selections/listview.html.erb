@@ -12,13 +12,18 @@
           <a href="#">Brand</a>
         </div>
       </div>
-      <li> <%= link_to "List-View", listview_path %> </li>
-      <li> <%= link_to "Calendar-View", selections_path %> </li>
-      <li>  <%= link_to "My itinerary" %></li>
-      <li> <%= link_to "Save" %></li>
-      <hr>
-      <li><i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
-      <li><i class="fas fa-sign-out-alt"></i><%= link_to "Logout" %></li>
+      <div class="sidebox">
+        <div class="sidelist">
+          <li> <%= link_to "List-View", listview_path %> </li>
+          <li> <%= link_to "Calendar-View", selections_path %> </li>
+          <li>  <%= link_to "My itinerary" %></li>
+          <li> <%= link_to "Save" %></li>
+        </div>
+        <div class="sideactions">
+          <li><!-- <i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
+          <li><!-- <i class="fas fa-sign-out-alt"> --></i><%= link_to "Logout" %></li>
+        </div>
+      </div>
     </ul>
   </nav>
   <!-- /#sidebar-wrapper -->
