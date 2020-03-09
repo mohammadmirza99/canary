@@ -33,9 +33,15 @@ class SelectionsController < ApplicationController
 
   def create
 
+    @interests = current_user.interests
+    @selections = Selection.all
+
+    @activities = current_user.activities
+    @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
+
     # Creates new selection based on params time_of_day and day
     new_selection = Selection.create!(
-      activity: Activity.first,
+      activity: @new_act,
       user: current_user,
       time_of_day: params[:time_of_day],
       date: params[:day]
@@ -56,16 +62,40 @@ class SelectionsController < ApplicationController
     @selection.update(safe_params)
   end
 
+  def random
+
+    @interests = current_user.interests
+    @selections = Selection.all
+    @activities = current_user.activities
+
+    @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
+
+    @selection = Selection.find(params[:selection])
+    @selection.destroy
+
+    # Creates new selection based on params time_of_day and day
+    new_selection = Selection.create!(
+      activity: @new_act,
+      user: current_user,
+      time_of_day: params[:time_of_day],
+      date: params[:day]
+      )
+    redirect_to selections_path
+  end
+
 
   def generate
     # Submit on homepage directs to this method.
-
     @category = params[:categories]
     @interests = params[:interest]
 
+    # To save current_user's interests in order to be able to use in other methods.
+    current_user.interests = params[:interest]
+    current_user.save
 
     user_activities = []
 
+    # Iterate over @interests array and find activities.
     @interests.each do |interest|
       user_activities << Activity.where(interest: interest).to_a
     end
@@ -92,26 +122,8 @@ class SelectionsController < ApplicationController
       end
     end
 
-
   redirect_to listview_path
-
 end
-
-  #    raise
-
-  #   if (@category || @interest)
-  #     Selection.where(user: current_user).destroy_all
-  #     DAYS.each do |time|
-  #       Selection.create!(
-  #         activity: Activity.first,
-  #         user: current_user,
-  #         time_of_day: time[1],
-  #         date: time[0]
-  #       )
-  #     end
-  #   redirect_to listview_path
-  #   end
-  # end
 
   def destroy
     @selection = Selection.find(params[:id])
@@ -144,6 +156,7 @@ end
           lat: activity.latitude,
           lng: activity.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
+          # image_tag: 'canary_logo.png'
         }
 
         @markers << marker
