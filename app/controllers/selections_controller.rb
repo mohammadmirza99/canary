@@ -85,8 +85,10 @@ class SelectionsController < ApplicationController
   end
 
   def listview
+    raise
     #Iterate in the view over the selection array.
     @selections = Selection.all
+
     # For map
     generate_map
 
