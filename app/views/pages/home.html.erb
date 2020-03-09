@@ -13,20 +13,27 @@
       <div class="form__input">
 
         <div class="destination">
-          <div class="title__form">
-            <i class="fas fa-globe-asia"></i>
-            <%= label_tag 'Country' %>
+
+          <div>
+            <div class="title__form">
+              <i class="fas fa-globe-asia"></i>
+              <%= label_tag 'Country' %>
+            </div>
+            <div class="input__form">
+              <%= text_field_tag :country, "Destination" %>
+            </div>
           </div>
-          <div class="input__form">
-            <%= text_field_tag :country %>
+
+          <div>
+            <div class="title__form">
+              <i class="fas fa-city"></i>
+              <%= label_tag 'City' %>
+            </div>
+            <div class="input__form">
+              <%= text_field_tag :city, "Destination" %>
+            </div>
           </div>
-          <div class="title__form">
-            <i class="fas fa-city"></i>
-            <%= label_tag 'City' %>
-          </div>
-          <div class="input__form">
-            <%= text_field_tag :city %>
-          </div>
+
         </div>
 
         <div>
@@ -47,8 +54,11 @@
           <div class="title__form">
             <%= label_tag 'Purpose' %>
           </div>
-          <div class="input__form">
-            <%= select_tag "categories", options_from_collection_for_select(@categories, "name", "name") %>
+
+          <div class="dropdown__container">
+
+            <%= select_tag "categories", options_from_collection_for_select(@categories, "name", "name", {:class => "custom__select"})%>
+
           </div>
         </div>
       </div>
