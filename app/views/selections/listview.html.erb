@@ -38,6 +38,8 @@
         <% @monday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+
+        <!-- create an icon by the time of day -->
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
@@ -45,7 +47,7 @@
               <i class="fas fa-sun", style="color: #FA9949";></i>
             </div>
           </div>
-
+        <!-- create an icon by the time of day -->
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
 
@@ -54,8 +56,9 @@
             </div>
           </div>
 
+          <!-- create an icon by the time of day -->
           <% elsif selection.time_of_day == "Evening"   %>
-
+ss
           <div class="time__info">
             <div class="list__icon">
               <i class="fas fa-moon", style="color: #FA9949";></i>
