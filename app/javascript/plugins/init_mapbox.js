@@ -20,7 +20,7 @@ const buildMap = (initMarker) => {
     container: 'map',
     zoom: 10,
     center: [initialCoords.lng, initialCoords.lat],
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mohammadmirza99/ck7m6srk80x1l1jnsax1bhfyz'
   });
 
   return mapInstance
@@ -35,8 +35,8 @@ const addMarkersToMap = (map, markers) => {
   // element.className = 'marker';
   // element.style.backgroundImage = `url('${marker.image_url}')`;
   // element.style.backgroundSize = 'contain';
-  // element.style.width = '25px';
-  // element.style.height = '25px';
+  // element.style.width = '40px';
+  // element.style.height = '40px';
 
   // Passing element into the map
     new mapboxgl.Marker()
@@ -62,11 +62,11 @@ const fitMapToMarkers = (map, markers) => {
 const mapHandler = (name, long, lat) =>{
   console.log("Longitude:", long);
   console.log("Latitude:", lat);
+
   const popupHTML = `<strong>${name}</strong>`;
-
   mapInstance.panTo([long,lat])
-
   new mapboxgl.Popup().setLngLat([long, lat]).setHTML(popupHTML).addTo(mapInstance);
+
 };
 
 const initMapbox = () => {
