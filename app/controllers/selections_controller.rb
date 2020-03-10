@@ -147,8 +147,13 @@ class SelectionsController < ApplicationController
         end
       end
     end
-    redirect_to listview_path
-  end
+
+
+  # Added sleep so that modal has enough time to show animation.
+  sleep(2)
+  redirect_to listview_path
+end
+
 
   def destroy
     @selection = Selection.find(params[:id])
