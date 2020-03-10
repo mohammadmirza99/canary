@@ -51,7 +51,7 @@
           <% DAYS.each do |day|  %>
             <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
             <% if selection %>
-              <div data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
+              <div onclick="window.mapHandler('<%= selection.activity.name %>', '<%=selection.activity.longitude%>', '<%=selection.activity.latitude %>')" data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
 
                 <p class= "card-inner-text"><%= selection.activity.name %></p>
                 <div class="card-icons">
