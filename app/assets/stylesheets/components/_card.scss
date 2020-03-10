@@ -87,6 +87,7 @@
   justify-content: space-between;
   // define the width of the card
   width: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
 //
@@ -99,12 +100,48 @@
   height: 68px;
   width: 68px;
   border-radius: 50%;
-  color: #FA9949;
-  border: 2px solid #FA9949;
+  color: #F4BC19;
+  border: 2px solid #F4BC19;
   font-size: 15px;
   display: flex;
+  text-align: center;
+  font-weight: bold;
   align-items: center;
   justify-content: center;
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #F4F4F4;
+}
+
+.list__icon:after {
+  content: "";
+  background-color: #9AA8A0;
+  position: absolute;
+  width: 3px;
+  height: 1000vh;
+  top: 10px;
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+
+
+.list__icon__day {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  color: #F4BC19;
+  border: 2px solid #F4BC19;
+  font-size: 15px;
+  display: flex;
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  padding-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #F4F4F4;
 }
 
 
