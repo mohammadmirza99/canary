@@ -12,6 +12,11 @@ import { initMapbox, mapHandler } from '../plugins/init_mapbox';
 initMapbox();
 window.mapHandler = mapHandler;
 
+// Code for sweetalert
+
+import { generateModal} from '../plugins/modal';
+window.generateModal = generateModal;
+
 
 // select the dropdown
 const dropdown = document.querySelector("#categories");
