@@ -188,7 +188,7 @@ html { height: 100%;}
   display: block;
   width: 32px;
   height: 32px;
-  margin-left: 3px;
+  margin-left: 15px;
   background: transparent;
   border: none;
 }
@@ -293,12 +293,15 @@ html { height: 100%;}
 .minisidebar{
   position: fixed;
   height: 100%;
-  width: 40px;
+  width: 70px;
   background-color: #29b69c;
   transition: width 0.5s ease;
 }
 .toggled .minisidebar{
   width: 0px;
+}
+.toggled #map{
+  margin-left: 0;
 }
 .logonav{
   display: flex;
