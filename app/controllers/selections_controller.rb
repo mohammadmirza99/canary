@@ -24,7 +24,7 @@ DAYS = [
 
 # create array to find month and day
 
-MONTH_LIST = ["Jan", "Febr", "Mar", "Apr", "May", "Jun",
+MONTH_LIST = ["Jan", "Febr", "March", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 
@@ -202,7 +202,7 @@ end
           lat: activity.latitude,
           lng: activity.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
-          # image_tag: 'canary_logo.png'
+          image_url: helpers.asset_url('canary_logo.png')
         }
 
         @markers << marker
