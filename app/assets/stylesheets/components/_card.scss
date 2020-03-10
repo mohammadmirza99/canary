@@ -26,7 +26,7 @@
     }
 }
 .fas{
-  color: #ECBE46;
+  color: #28B69C;
 }
 .fa-plus-circle:hover{
     color: #28B69C !important;
@@ -106,7 +106,14 @@
   align-items: center;
   justify-content: center;
 }
+.calendar-map{
+  margin-left: 40px;
+  transition: margin-left 0.5s ease;
 
+}
+.toggled .calendar-map {
+    margin-left: 0px;
+}
 
 
 
