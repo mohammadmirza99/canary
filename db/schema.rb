@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_03_09_204121) do
+=======
+ActiveRecord::Schema.define(version: 2020_03_10_135437) do
+>>>>>>> 5aaa741fb41e89a2e0c7d56745a134a292cb5c00
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +42,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_204121) do
   end
 
   create_table "itineraries", force: :cascade do |t|
-    t.string "start_end"
-    t.string "end_start"
+    t.string "start_date"
+    t.string "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -79,6 +83,10 @@ ActiveRecord::Schema.define(version: 2020_03_09_204121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "itinerary_id"
+<<<<<<< HEAD
+=======
+    t.integer "day_date"
+>>>>>>> 5aaa741fb41e89a2e0c7d56745a134a292cb5c00
     t.index ["activity_id"], name: "index_selections_on_activity_id"
     t.index ["itinerary_id"], name: "index_selections_on_itinerary_id"
     t.index ["user_id"], name: "index_selections_on_user_id"
