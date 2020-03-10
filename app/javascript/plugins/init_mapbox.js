@@ -5,6 +5,8 @@ import mapboxgl from 'mapbox-gl';
 
 const mapElement = document.getElementById('map');
 
+let mapInstance;
+
 const buildMap = (initMarker) => {
   let initialCoords;
   if (initMarker) {
@@ -14,12 +16,14 @@ const buildMap = (initMarker) => {
   }
 
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-  return new mapboxgl.Map({
+  mapInstance = new mapboxgl.Map({
     container: 'map',
     zoom: 10,
     center: [initialCoords.lng, initialCoords.lat],
     style: 'mapbox://styles/mapbox/streets-v10'
   });
+
+  return mapInstance
 };
 
 const addMarkersToMap = (map, markers) => {
@@ -55,6 +59,16 @@ const fitMapToMarkers = (map, markers) => {
   }
 };
 
+const mapHandler = (name, long, lat) =>{
+  console.log("Longitude:", long);
+  console.log("Latitude:", lat);
+  const popupHTML = `<strong>${name}</strong>`;
+
+  mapInstance.panTo([long,lat])
+
+  new mapboxgl.Popup().setLngLat([long, lat]).setHTML(popupHTML).addTo(mapInstance);
+};
+
 const initMapbox = () => {
   if (mapElement) {
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -66,5 +80,5 @@ const initMapbox = () => {
   }
 };
 
-export { initMapbox };
+export { initMapbox, mapHandler };
 

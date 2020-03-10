@@ -8,9 +8,9 @@ initSwappable();
 
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { initMapbox } from '../plugins/init_mapbox';
+import { initMapbox, mapHandler } from '../plugins/init_mapbox';
 initMapbox();
-
+window.mapHandler = mapHandler;
 
 
 // select the dropdown

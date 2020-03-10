@@ -22,6 +22,12 @@ DAYS = [
   ["Sunday", "Evening"]
 ]
 
+# create array to find month and day
+
+MONTH_LIST = ["Jan", "Febr", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+
 class SelectionsController < ApplicationController
 
   def index
@@ -83,7 +89,24 @@ class SelectionsController < ApplicationController
 
 
   def generate
+
+    # create an itinerary
+    @itinerary = Itinerary.new(start_date: params[:start_date], end_date: params[:end_date])
+    @itinerary.save
+
+
+    # grab the day date
+    date_start = @itinerary.start_date.to_date
+    # date_f = date_start.strftime('%d')
+    #date end
+    date_end = @itinerary.end_date.to_date
+    # date_f = date_end.strftime('%d')
+
     # Submit on homepage directs to this method.
+    # create a create a date range between these two dates
+    range_date =((date_start)..(date_end)).map{|d| d.day}
+
+
     @category = params[:categories]
     @interests = params[:interest]
 
@@ -102,26 +125,30 @@ class SelectionsController < ApplicationController
 
     Selection.where(user: current_user).destroy_all
     # Iterates through array of days
-    DAYS.each do |day|
+    DAYS.each_with_index do |day, index|
       # Iterates through array of interests
+
       user_activities.each do |act|
         next if Selection.where(time_of_day: day[1], date: day[0], user: current_user).count > 0
         # Iterates over each activity inside the interests
-          # Checks to see if time of day of activity is == to T.O.D of array element.
-          if act.time_of_day == day[1]
-            Selection.create!(
-              activity: act,
-              user: current_user,
-              time_of_day: day[1],
-              date: day[0]
-              )
-            user_activities.delete(act)
-          end
+        # Checks to see if time of day of activity is == to T.O.D of array element.
+        if act.time_of_day == day[1]
+          Selection.create!(
+            activity: act,
+            user: current_user,
+            time_of_day: day[1],
+            date: day[0],
+            # assign a day_date
+            day_date: range_date[index % 7],
+            # assign the itinerary to selection
+            itinerary: @itinerary
+          )
+          user_activities.delete(act)
+        end
       end
     end
-
-  redirect_to listview_path
-end
+    redirect_to listview_path
+  end
 
   def destroy
     @selection = Selection.find(params[:id])
@@ -132,8 +159,15 @@ end
   def listview
 
     #Iterate in the view over the selection array.
-
+    @selection = Selection.first
     @selections = Selection.all
+
+    # month choose by the user
+    num_month = @selection.itinerary.end_date[5] + @selection.itinerary.end_date[6]
+    # finds the month in a array defined at the top of the file
+    @month = MONTH_LIST[num_month.to_i - 1]
+    day = @selection.itinerary.end_date.to_i - @selection.itinerary.start_date.to_i
+
     # For map
     @monday_selection = @selections.where(date: "Monday")
     @tuesday_selection = @selections.where(date: "Tuesday")
@@ -142,8 +176,9 @@ end
     @friday_selection = @selections.where(date: "Friday")
     @saturday_selection = @selections.where(date: "Saturday")
     @sunday_selection = @selections.where(date: "Sunday")
-    generate_map
 
+    generate_map
+    # raisse
   end
 
   private
