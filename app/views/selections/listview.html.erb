@@ -32,6 +32,8 @@
       <span class="hamb-middle"></span>
       <span class="hamb-bottom"></span>
     </button>
+
+
     <div class="list-container">
 
       <div class="cards-itinerary-container">
@@ -42,7 +44,7 @@
 
         <!-- add a date if afternoon -->
 
-        <% if selection.time_of_day == "Afternoon" %>
+        <% if selection.time_of_day == "Morning" %>
           <div class="cards__date">
             <div class="cards__date-title">
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
@@ -63,7 +65,7 @@
           <% elsif selection.time_of_day == "Afternoon" %>
 
           <div class="time__info">
-
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
@@ -107,7 +109,7 @@
         <%# Card starting point  %>
         <%# Card starting point  %>
 
-        <% if selection.time_of_day == "Afternoon" %>
+        <% if selection.time_of_day == "Morning" %>
           <div class="cards__date">
             <div class="cards__date-title">
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
@@ -118,6 +120,7 @@
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
+
           <div class="time__info">
             <div class="list__icon">
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -126,6 +129,7 @@
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
@@ -167,7 +171,7 @@
         <% @wednesday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
-        <% if selection.time_of_day == "Afternoon" %>
+        <% if selection.time_of_day == "Morning" %>
           <div class="cards__date">
             <div class="cards__date-title">
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
@@ -186,6 +190,7 @@
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
@@ -226,7 +231,7 @@
         <% @thursday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
-        <% if selection.time_of_day == "Afternoon" %>
+        <% if selection.time_of_day == "Morning" %>
           <div class="cards__date">
             <div class="cards__date-title">
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
@@ -244,6 +249,7 @@
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
@@ -285,7 +291,7 @@
         <% @friday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
-        <% if selection.time_of_day == "Afternoon" %>
+        <% if selection.time_of_day == "Morning" %>
           <div class="cards__date">
             <div class="cards__date-title">
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
@@ -303,6 +309,7 @@
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
@@ -344,7 +351,7 @@
         <% @saturday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
-        <% if selection.time_of_day == "Afternoon" %>
+        <% if selection.time_of_day == "Morning" %>
           <div class="cards__date">
             <div class="cards__date-title">
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
@@ -363,6 +370,7 @@
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
@@ -404,7 +412,7 @@
         <% @sunday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
-        <% if selection.time_of_day == "Afternoon" %>
+        <% if selection.time_of_day == "Morning" %>
           <div class="cards__date">
             <div class="cards__date-title">
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
@@ -423,7 +431,7 @@
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
-
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>

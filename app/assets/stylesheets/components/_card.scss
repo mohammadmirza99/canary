@@ -91,9 +91,22 @@
 }
 
 //
+.list-container {
+  margin-top: 100px;
+}
 .time__info {
   display: flex;
   align-items: center;
+  position: relative;
+
+  .line {
+    position: absolute;
+    height: 793px;
+    width: 2px;
+    background-color: #9AA8A0;
+    z-index: -1;
+    left: 34px;
+  }
 }
 
 .list__icon {
@@ -113,17 +126,18 @@
   background-color: #F4F4F4;
 }
 
-.list__icon:after {
-  content: "";
-  background-color: #9AA8A0;
-  position: absolute;
-  width: 3px;
-  height: 1000vh;
-  top: 10px;
-  display: block;
-  position: absolute;
-  z-index: -1;
-}
+// .list__icon:after {
+//   content: "";
+//   background-color: #9AA8A0;
+//   position: absolute;
+//   width: 3px;
+//   height: 1000vh;
+//   top: 214px;
+//   display: block;
+//   position: absolute;
+//   z-index: -1;
+
+// }
 
 
 .cards__date {
