@@ -25,14 +25,11 @@ DAYS = [
 class SelectionsController < ApplicationController
 
   def index
-
     # For map
     generate_map
-
   end
 
   def create
-
     @interests = current_user.interests
     @selections = Selection.all
 
@@ -65,11 +62,12 @@ class SelectionsController < ApplicationController
   def random
 
     @interests = current_user.interests
-    @selections = Selection.all
     @activities = current_user.activities
 
+    # Finds an activity that matches interests but is not selected yet.
     @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
 
+    # Deletes current selection
     @selection = Selection.find(params[:selection])
     @selection.destroy
 
