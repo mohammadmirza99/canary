@@ -125,20 +125,33 @@
   z-index: -1;
 }
 
-.date {
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  display:flex;
-  justify-content: center;
-  color: #9AA8A0;
-  align-items: center;
-  padding-top: 10px;
-}
 
 .cards__date {
   text-align: center;
-  margin: 10px;
+  margin: 10px 10px 10px 50px;
+}
 
+.cards__date-title {
+  position: relative;
+
+  p {
+    position: absolute;
+    background-color: #F4F4F4;
+    padding: 10px 25px;
+    top: -20px;
+    left: 450px;
+    color: #9AA8A0;
+  }
+
+  hr {
+    margin: 0px 20px;
+    margin: 0px 69px 0px 154px;
+
+  }
+}
+
+.inner {
+  outline-bottom: 5px solid green;
 }
 
 .list__icon__day {
