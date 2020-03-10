@@ -13,7 +13,7 @@
 }
 // this class is to format the text in the card-@habib
 .card-inner-text {
-  font-weight: 500;
+  font-weight: 700;
   color:#fcf8e8;
 }
 .card-icons {
@@ -26,7 +26,7 @@
     }
 }
 .fas{
-  color: #ECBE46;
+  color: #28B69C;
 }
 .fa-plus-circle:hover{
     color: #28B69C !important;
@@ -158,8 +158,17 @@
   font-family: "Montserrat", sans-serif;
   background-color: #F4F4F4;
 }
+.calendar-map{
+  margin-left: 40px;
+  transition: margin-left 0.5s ease;
 
-
+}
+.toggled .calendar-map {
+    margin-left: 0px;
+}
+.calendar{
+  border: 5px solid red;
+}
 
 
 
