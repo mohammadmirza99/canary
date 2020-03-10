@@ -156,15 +156,6 @@ html { height: 100%;}
   flex-direction: column;
   justify-content: space-between;
 }
-.logonav{
-  display: flex;
-  align-items: center;
-  img{
-    width: 70px;
-    margin-bottom: 30px;
-  }
-
-}
 .sidebar-nav .dropdown-menu {
     position: relative;
     width: 100%;
@@ -309,7 +300,18 @@ html { height: 100%;}
 .toggled .minisidebar{
   width: 0px;
 }
+.logonav{
+  display: flex;
+  align-items: center;
+  img{
+    width: 70px;
+    margin-bottom: 30px;
+  }
 
+}
+#logohome{
+
+}
 /*-------------------------------*/
 /*            Overlay            */
 /*-------------------------------*/
