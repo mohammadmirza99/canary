@@ -20,3 +20,17 @@
 .card-text-container{
   padding: 20px;
 }
+
+
+.top-half-dash-container{
+  display: grid;
+  grid-template-columns: 8% auto;
+  margin-right: 80px;
+  padding-bottom: 6px;
+}
+
+.day-container{
+  padding-left:60px;
+  display: grid;
+  grid-template-rows: 25% 29% 26% 20% ;
+}
