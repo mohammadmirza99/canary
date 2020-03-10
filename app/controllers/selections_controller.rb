@@ -24,7 +24,7 @@ DAYS = [
 
 # create array to find month and day
 
-MONTH_LIST = ["Jan", "Febr", "Mar", "Apr", "May", "Jun",
+MONTH_LIST = ["Jan", "Febr", "March", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 
@@ -161,7 +161,6 @@ end
   end
 
   def listview
-
     #Iterate in the view over the selection array.
     @selection = Selection.first
     @selections = Selection.all
