@@ -39,22 +39,32 @@
         <%# Card starting point  %>
         <%# Card starting point  %>
 
-        <!-- create an icon by the time of day -->
+        <!-- add a date if afternoon -->
+
+        <% if selection.time_of_day == "Afternoon" %>
+          <div class="cards__date">
+              <h5><%= selection.date %> <%= selection.day_date %> <%= @month %></h5>
+          </div>
+        <% end %>
+
         <div class="container__content">
+          <!-- create an icon by the time of day -->
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
-        <!-- create an icon by the time of day -->
+          <!-- create an icon by the time of day -->
           <% elsif selection.time_of_day == "Afternoon" %>
+
           <div class="time__info">
 
-            <div class="list__icon__day">
-              <p><%= selection.day_date %><br><%= @month %><p>
+            <div class="list__icon">
+              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+
 
           <!-- create an icon by the time of day -->
           <% elsif selection.time_of_day == "Evening"   %>

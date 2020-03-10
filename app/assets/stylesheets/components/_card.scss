@@ -125,6 +125,21 @@
   z-index: -1;
 }
 
+.date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  display:flex;
+  justify-content: center;
+  color: #9AA8A0;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.cards__date {
+  text-align: center;
+  margin: 10px;
+
+}
 
 .list__icon__day {
   height: 68px;

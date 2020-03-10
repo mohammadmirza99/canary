@@ -24,7 +24,7 @@ DAYS = [
 
 # create array to find month and day
 
-MONTH_LIST = ["Jan", "Febr", "Mar", "Apr", "May", "Jun",
+MONTH_LIST = ["Jan", "Febr", "March", "Apr", "May", "Jun",
     "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 
