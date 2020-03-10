@@ -22,6 +22,15 @@ DAYS = [
   ["Sunday", "Evening"]
 ]
 
+# create array to find month and day
+
+MONTH_LIST = ["Jan", "Febr", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+DAY_LIST = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+    "Saturday", "Sunday"];
+
+
+
 class SelectionsController < ApplicationController
 
   def index
@@ -83,8 +92,9 @@ class SelectionsController < ApplicationController
 
 
   def generate
+
     # create an itinerary
-    @itinerary = Itinerary.new(start_end: params[:start_date], end_start: params[:end_date])
+    @itinerary = Itinerary.new(start_date: params[:start_date], end_date: params[:end_date])
     @itinerary.save
     # Submit on homepage directs to this method.
 
@@ -140,8 +150,15 @@ end
   def listview
 
     #Iterate in the view over the selection array.
-
+    @selection = Selection.first
     @selections = Selection.all
+
+    # mont choose by the user
+    num_month = @selection.itinerary.end_date[5] + @selection.itinerary.end_date[6]
+    # finds the month in a array defined at the top of the file
+    @month = MONTH_LIST[num_month.to_i - 1]
+    day = @selection.itinerary.end_date.to_i - @selection.itinerary.start_date.to_i
+
 
     # For map
     @monday_selection = @selections.where(date: "Monday")
@@ -151,8 +168,9 @@ end
     @friday_selection = @selections.where(date: "Friday")
     @saturday_selection = @selections.where(date: "Saturday")
     @sunday_selection = @selections.where(date: "Sunday")
+
     generate_map
-    raise
+
   end
 
   private

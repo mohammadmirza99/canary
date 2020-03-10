@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_03_09_204121) do
-=======
-ActiveRecord::Schema.define(version: 2020_03_09_185103) do
->>>>>>> 1ded0a64f1a40c4d1193ab012b0a787794b28ba9
+ActiveRecord::Schema.define(version: 2020_03_09_221132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +38,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_185103) do
   end
 
   create_table "itineraries", force: :cascade do |t|
-    t.string "start_end"
-    t.string "end_start"
+    t.string "start_date"
+    t.string "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
