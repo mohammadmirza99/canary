@@ -25,6 +25,7 @@
   </nav>
   <!-- /#sidebar-wrapper -->
   <!-- Page Content -->
+  <div class="minisidebar"></div>
   <div id="page-content-wrapper">
     <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
       <span class="hamb-top"></span>
@@ -52,13 +53,13 @@
           <div class="time__info">
 
             <div class="list__icon">
-              <%= selection.date %>
+              <p><%= selection.day_date %></p>
+              <p><%= @month %><p>
             </div>
           </div>
 
           <!-- create an icon by the time of day -->
           <% elsif selection.time_of_day == "Evening"   %>
-ss
           <div class="time__info">
             <div class="list__icon">
               <i class="fas fa-moon", style="color: #FA9949";></i>
@@ -106,7 +107,8 @@ ss
           <div class="time__info">
 
             <div class="list__icon">
-              <%= selection.date %>
+              <p><%= selection.day_date %></p>
+              <p><%= @month %><p>
             </div>
           </div>
 
@@ -159,7 +161,8 @@ ss
           <div class="time__info">
 
             <div class="list__icon">
-              <%= selection.date %>
+              <p><%= selection.day_date %></p>
+              <p><%= @month %><p>
             </div>
           </div>
 
@@ -211,7 +214,8 @@ ss
           <div class="time__info">
 
             <div class="list__icon">
-              <%= selection.date %>
+              <p><%= selection.day_date %></p>
+              <p><%= @month %><p>
             </div>
           </div>
 
@@ -264,7 +268,8 @@ ss
           <div class="time__info">
 
             <div class="list__icon">
-              <%= selection.date %>
+              <p><%= selection.day_date %></p>
+              <p><%= @month %><p>s
             </div>
           </div>
 
@@ -317,7 +322,8 @@ ss
           <div class="time__info">
 
             <div class="list__icon">
-              <%= selection.date %>
+              <p><%= selection.day_date %></p>
+              <p><%= @month %><p>
             </div>
           </div>
 
@@ -370,7 +376,8 @@ ss
           <div class="time__info">
 
             <div class="list__icon">
-              <%= selection.date %>
+              <p><%= selection.day_date %></p>
+              <p><%= @month %><p>
             </div>
           </div>
 
@@ -417,4 +424,5 @@ ss
   <!-- /#page-content-wrapper -->
 </div>
 <!-- /#wrapper -->
+
 
