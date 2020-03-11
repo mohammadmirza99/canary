@@ -31,8 +31,12 @@ MONTH_LIST = ["Jan", "Febr", "March", "Apr", "May", "Jun",
 class SelectionsController < ApplicationController
 
   def index
+
     # For map
     @selections = Selection.all
+
+    @itinerary = Itinerary.find(@selections.first.itinerary.id)
+
     @monday_selection = @selections.where(date: "Monday", time_of_day: "Morning")
     @tuesday_selection = @selections.where(date: "Tuesday", time_of_day: "Morning")
     @wednesday_selection = @selections.where(date: "Wednesday", time_of_day: "Morning")
@@ -44,8 +48,10 @@ class SelectionsController < ApplicationController
   end
 
   def create
+
     @interests = current_user.interests
     @selections = Selection.all
+    @itinerary = Itinerary.find(params[:itinerary])
 
     @activities = current_user.activities
     @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
@@ -54,7 +60,8 @@ class SelectionsController < ApplicationController
       activity: @new_act,
       user: current_user,
       time_of_day: params[:time_of_day],
-      date: params[:day]
+      date: params[:day],
+      itinerary: @itinerary
       )
 
     redirect_to selections_path
@@ -76,6 +83,7 @@ class SelectionsController < ApplicationController
 
     @interests = current_user.interests
     @activities = current_user.activities
+    @itinerary = Itinerary.find(params[:itinerary])
 
     # Finds an activity that matches interests but is not selected yet.
     @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
@@ -89,7 +97,8 @@ class SelectionsController < ApplicationController
       activity: @new_act,
       user: current_user,
       time_of_day: params[:time_of_day],
-      date: params[:day]
+      date: params[:day],
+      itinerary: @itinerary
       )
     redirect_to selections_path
   end

@@ -13,6 +13,7 @@ Activity.destroy_all
 Category.destroy_all
 Pair.destroy_all
 User.destroy_all
+Itinerary.destroy_all
 # create a location
 
 puts "create users"
