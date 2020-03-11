@@ -6,6 +6,7 @@ import mapboxgl from 'mapbox-gl';
 const mapElement = document.getElementById('map');
 
 let mapInstance;
+let allMarkers = [];
 
 const buildMap = (initMarker) => {
   let initialCoords;
@@ -29,6 +30,7 @@ const buildMap = (initMarker) => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    popup.open = true;
 
   // Custom marker code
   const element = document.createElement('div');
@@ -39,10 +41,12 @@ const addMarkersToMap = (map, markers) => {
   element.style.height = '40px';
 
   // Passing element into the map
-    new mapboxgl.Marker(element)
+    const newMarker = new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map);
+
+    allMarkers.push(newMarker);
   });
 
 };
@@ -59,13 +63,30 @@ const fitMapToMarkers = (map, markers) => {
   }
 };
 
-const mapHandler = (name, long, lat) =>{
-  console.log("Longitude:", long);
-  console.log("Latitude:", lat);
+const mapHandler = (long, lat) =>{
+  // console.log("Longitude:", long);
+  // console.log("Latitude:", lat);
 
-  const popupHTML = `<strong>${name}</strong>`;
+  // const popupHTML = `<div><strong>${name}</strong></div>
+  // <div>${description}</div>
+  // <div><strong>${address}</strong></div>`;
+
+  // allMarkers[0].getElement().click();
+  const foundMarker = allMarkers.find(marker => {
+    const coords = marker.getLngLat();
+    if (coords.lng === long && coords.lat === lat) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  if (foundMarker) {
+    foundMarker.getElement().click()
+  }
+
   mapInstance.panTo([long,lat])
-  new mapboxgl.Popup().setLngLat([long, lat]).setHTML(popupHTML).addTo(mapInstance);
+  // new mapboxgl.Popup().setLngLat([long, lat]).setHTML(popupHTML).addTo(mapInstance);
 
 };
 
