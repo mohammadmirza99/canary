@@ -163,7 +163,7 @@ class SelectionsController < ApplicationController
     end
   # Added sleep so that modal has enough time to show animation.
   sleep(2)
-  redirect_to listview_path
+  redirect_to selections_path
 end
 
 

@@ -2,27 +2,35 @@
 <div id="wrapper">
   <div class="overlay"></div>
   <!-- Sidebar -->
-  <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
-    <ul class="nav sidebar-nav">
-      <div class="sidebar-header">
-   <div class="sidebar-brand">
-            <div class="logonav"><%= image_tag "logo.png"%></div>
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+      <ul class="nav sidebar-nav">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <div class="logonav"><%= link_to (image_tag "logo.png"), root_path %></div>
           </div>
-      </div>
-      <div class="sidebox">
-        <div class="sidelist">
-          <li> <%= link_to "List-View", listview_path %> </li>
-          <li> <%= link_to "Calendar-View", selections_path %> </li>
-          <li>  <%= link_to "My itinerary" %></li>
-          <li> <%= link_to "Save" %></li>
         </div>
-        <div class="sideactions">
-          <li><!-- <i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
-          <li><i class="fas fa-sign-out-alt"> --></i><%= link_to "Logout" %></li>
+        <div class="sidebox">
+          <div class="sidelist">
+            <li class="side-menue-actions"><i class="fas fa-stream" style="color: white"></i><%= link_to "List-View", listview_path %> </li>
+            <li class="side-menue-actions"><i class="far fa-calendar-alt" style="color: white"></i><%= link_to "Calendar-View", selections_path %> </li>
+            <li class="side-menue-actions"><i class="fas fa-map-marked-alt" style="color: white"></i><%= link_to "My itinerary" %></li>
+            <li class="side-menue-actions"><i class="fas fa-file-download" style="color: white"></i><%= link_to "Save" %></li>
+          </div>
+          <div class="sideactions">
+            <li class="side-menue-actions"><%= link_to "Settings" %></li>
+            <li class="side-menue-actions"><%= link_to "Logout" %></li>
+            <hr style="color: white">
+            <p><i class="far fa-copyright"></i> Canary,Inc. All rights reserved<br>@canary</p>
+            <div class="footericons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter-square"></i>
+            </div>
+          </div>
         </div>
-      </div>
-    </ul>
-  </nav>
+      </ul>
+    </nav>
+
   <!-- /#sidebar-wrapper -->
   <!-- Page Content -->
   <div class="minisidebar"></div>
@@ -154,8 +162,27 @@
             </div>
           </div>
           <% end %>
+<<<<<<< HEAD
 
           <%= render 'card-list', {selection: selection} %>
+=======
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+>>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -200,7 +227,26 @@
             </div>
           </div>
           <% end %>
+<<<<<<< HEAD
           <%= render 'card-list', {selection: selection} %>
+=======
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+>>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -243,7 +289,26 @@
             </div>
           </div>
           <% end %>
+<<<<<<< HEAD
           <%= render 'card-list', {selection: selection} %>
+=======
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+>>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -287,7 +352,26 @@
             </div>
           </div>
           <% end %>
+<<<<<<< HEAD
           <%= render 'card-list', {selection: selection} %>
+=======
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+>>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -332,7 +416,26 @@
             </div>
           </div>
           <% end %>
+<<<<<<< HEAD
           <%= render 'card-list', {selection: selection} %>
+=======
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+              </div>
+              <!-- /.card-info -->
+
+            </div>
+            <!-- /.card-list-flex -->
+          </div>
+>>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -378,6 +481,7 @@
             </div>
           </div>
           <% end %>
+<<<<<<< HEAD
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
@@ -389,6 +493,18 @@
               <div class="line"></div>
               <div class="list__icon-start">
                 <i class="fas fa-plane-departure fa-lg", style="color: #484848";></i>
+=======
+          <div class="card-list-container">
+            <div class="card-list-flex">
+
+              <%# Image container  %>
+              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
+              </div>
+              <%# Card info  %>
+              <div class="card-text-container">
+                <h2><%=selection.activity.name%></h2>
+                <p> <%=selection.activity.description%> </p>
+>>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
               </div>
             </div>
           </div>
@@ -416,5 +532,5 @@
 
 
 
-<%= link_to 'DOWNLOAD PDF', listview_path(format: :pdf) %>
+<%#= link_to 'DOWNLOAD PDF', listview_path(format: :pdf) %>
 

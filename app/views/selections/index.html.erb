@@ -2,23 +2,30 @@
   <div class="overlay"></div>
   <div class ="dashboard-container">
     <!-- Sidebar -->
-    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+   <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
       <ul class="nav sidebar-nav">
         <div class="sidebar-header">
           <div class="sidebar-brand">
-            <div class="logonav"><%= image_tag "logo.png"%></div>
+            <div class="logonav"><%= link_to (image_tag "logo.png"), root_path %></div>
           </div>
         </div>
         <div class="sidebox">
           <div class="sidelist">
-            <li> <%= link_to "List-View", listview_path %> </li>
-            <li> <%= link_to "Calendar-View", selections_path %> </li>
-            <li> <%= link_to "My itinerary" %></li>
-            <li> <%= link_to "Save" %></li>
+            <li class="side-menue-actions"><i class="fas fa-stream" style="color: white"></i><%= link_to "List-View", listview_path %> </li>
+            <li class="side-menue-actions"><i class="far fa-calendar-alt" style="color: white"></i><%= link_to "Calendar-View", selections_path %> </li>
+            <li class="side-menue-actions"><i class="fas fa-map-marked-alt" style="color: white"></i><%= link_to "My itinerary" %></li>
+            <li class="side-menue-actions"><i class="fas fa-file-download" style="color: white"></i><%= link_to "Save" %></li>
           </div>
           <div class="sideactions">
-            <li><!-- <i class="fas fa-user-cog"></i><%= link_to "Settings" %></li>
-            <li><!-- <i class="fas fa-sign-out-alt"> --></i><%= link_to "Logout" %></li>
+            <li class="side-menue-actions"><%= link_to "Settings" %></li>
+            <li class="side-menue-actions"><%= link_to "Logout" %></li>
+            <hr style="color: white">
+            <p><i class="far fa-copyright"></i> Canary,Inc. All rights reserved<br>@canary</p>
+            <div class="footericons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter-square"></i>
+            </div>
           </div>
         </div>
       </ul>
@@ -56,24 +63,14 @@
       <%# Div created to align the weeks to the calendar.  %>
         <div>
 
-          <% range =  @itinerary.end_date.to_date.day - @itinerary.start_date.to_date.day  %>
-
-          <div class = "week-container">
-
-          <% current_day_num = @itinerary.end_date.to_date.day %>
-          <% current_date = @itinerary.end_date.to_date %>
-          <% 7.times do %>
-
-            <div class = "week__date">
-
-            <%= current_date.strftime('%A') %>
-            <% current_date = current_date.next %>
-            <%= current_day_num %>
-            <% current_day_num += 1 %>
-
-            </div>
-          <% end %>
-
+          <div class ="week-container">
+            <p>Monday</p>
+            <p>Tuesday</p>
+            <p>Wednesday</p>
+            <p>Thursday</p>
+            <p>Friday</p>
+            <p>Saturday</p>
+            <p>Sunday</p>
           </div>
 
             <%# Loading all of the sorted cards  %>
@@ -84,18 +81,17 @@
                 <% DAYS.each do |day|  %>
 
                   <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
-                  <% first_selection = Selection.first %>
                   <% if selection %>
                     <div onclick = "window.mapHandler('<%= selection.activity.name%>', '<%= selection.activity.longitude%>', '<%= selection.activity.latitude%>' )" data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
                       <p class= "card-inner-text"><%= selection.activity.name %></p>
                       <div class="card-icons">
                         <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"fas fa-trash card-none text-decor-none" %></p>
-                        <p> <%= link_to '', random_path({time_of_day: day[1], day: day[0], selection: selection.id, itinerary: selection.itinerary.id}), method: :post, class:"fas fa-random card-none text-decor-none" %></p>
+                        <p> <%= link_to '', random_path({time_of_day: day[1], day: day[0], selection: selection.id}), method: :post, class:"fas fa-random card-none text-decor-none" %></p>
                       </div>
                     </div>
                   <% else %>
                     <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary add-icon" style="background-color: white; border: 2px dotted #ECBE46 ">
-                       <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0], itinerary: first_selection.itinerary}), method: :post, class:"fas fa-plus-circle fa-2x text-decor-none" %></p>
+                       <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0] }), method: :post, class:"fas fa-plus-circle fa-2x text-decor-none" %></p>
                     </div>
                   <% end %>
                 <% @counter +=1 %>
@@ -117,6 +113,5 @@
       </div>
   </div>
 </div>
-
 
 
