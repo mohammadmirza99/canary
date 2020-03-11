@@ -79,9 +79,6 @@ html { height: 100%;}
     line-height: 20px;
     display: inline-block;
     width: 100%;
-    display: flex;
-    align-items: center;
-    margin-left: 4px;
 }
 
 .sidebar-nav li:before {
@@ -99,14 +96,11 @@ html { height: 100%;}
             transition: width .2s ease-in;
 
 }
-
-
-.sidebar-nav .side-menue-actions:hover{
+.sidebar-nav li:hover{
   background: #ECBE46 !important;
   border-radius: 10px;
-  padding-left: 3px;
-  // margin-left: 10px;
-  // margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .sidebar-nav li:hover:before,
 .sidebar-nav li.open:hover:before {
@@ -158,23 +152,9 @@ html { height: 100%;}
 }
 .sidebox {
   display: flex;
-  height: calc(95vh - 100px);
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  left: 10px;
-  top: 100px;
-  position: absolute;
-}
-.sidelist{
-  margin-left: 8px
-}
-.sideactions {
-  p{
-    font-size: 10px;
-    text-align: center;
-    color: #fffaf6;
-    margin-bottom: 5px;
-  }
 }
 .sidebar-nav .dropdown-menu {
     position: relative;
@@ -190,11 +170,13 @@ html { height: 100%;}
     top: 0;
 }
 /*Fontawesome icons*/
-// .nav.sidebar-nav li a::before {
-//     vertical-align: baseline;
-//     display: inline-block;
-//     padding-right: 5px;
-// }
+.nav.sidebar-nav li a::before {
+    font-family: fontawesome;
+    content: "\f12e";
+    vertical-align: baseline;
+    display: inline-block;
+    padding-right: 5px;
+}
 /*-------------------------------*/
 /*       Hamburger-Cross         */
 /*-------------------------------*/
@@ -330,11 +312,9 @@ html { height: 100%;}
   }
 
 }
-.footericons{
-  display: flex;
-  justify-content: space-around;
-}
+#logohome{
 
+}
 /*-------------------------------*/
 /*            Overlay            */
 /*-------------------------------*/
