@@ -101,7 +101,8 @@
 
   .line {
     position: absolute;
-    height: 793px;
+    height: 500px;
+    top: 0;
     width: 2px;
     background-color: #9AA8A0;
     z-index: -1;
@@ -110,6 +111,7 @@
 }
 
 .list__icon {
+  position: relative;
   height: 68px;
   width: 68px;
   border-radius: 50%;
@@ -126,18 +128,64 @@
   background-color: #F4F4F4;
 }
 
-// .list__icon:after {
-//   content: "";
-//   background-color: #9AA8A0;
-//   position: absolute;
-//   width: 3px;
-//   height: 1000vh;
-//   top: 214px;
-//   display: block;
-//   position: absolute;
-//   z-index: -1;
+.start__activity-container {
+  justify-content: flex-end;
+  margin: 0 151px;
+}
 
-// }
+.end__activity-container {
+  justify-content: flex-end;
+  margin: 125px 151px;
+}
+
+.list__icon-start {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  color: #484848;
+  border: 2px solid #484848;
+  font-size: 15px;
+  display: flex;
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #F4F4F4;
+}
+
+.time__info-start {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .line {
+    position: absolute;
+    height: 295px;
+    width: 2px;
+    background-color: #9AA8A0;
+    z-index: -1;
+    left: 36px;
+    top: 0px;
+  }
+}
+
+.time__info-end {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .line {
+    position: absolute;
+    height: 400px;
+    width: 2px;
+    background-color: #9AA8A0;
+    z-index: -1;
+    left: 36px;
+    bottom: 0px;
+  }
+}
 
 
 .cards__date {
@@ -185,6 +233,9 @@
   font-family: "Montserrat", sans-serif;
   background-color: #F4F4F4;
 }
+
+////////////// end of list-cards ////////
+
 .calendar-map{
   margin-left: 40px;
   transition: margin-left 0.5s ease;

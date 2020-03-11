@@ -105,11 +105,9 @@ class SelectionsController < ApplicationController
 
 
   def generate
-
     # create an itinerary
     @itinerary = Itinerary.new(start_date: params[:start_date], end_date: params[:end_date])
     @itinerary.save
-
 
     # grab the day date
     date_start = @itinerary.start_date.to_date
@@ -196,6 +194,7 @@ end
     @sunday_selection = @selections.where(date: "Sunday")
 
 
+
     # Code for PDF generator
 
       respond_to do |format|
@@ -237,6 +236,12 @@ end
 
         @markers << marker
       end
+    end
+  end
+
+  def style_line
+    if @monday_selection.count == 2
+
     end
   end
 
