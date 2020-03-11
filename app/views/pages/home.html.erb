@@ -8,10 +8,10 @@
 
     <!-- create an input__form for location -->
     <div class="title">
-      <div class="title-text">
-        <h2>Canary</h2><br>
-      <h4>Fly Stress Free</h4>
-      </div>
+
+        <h3>Because Canaries</h3>
+        <h3>Fly Stress Free</h3>
+
     </div>
       <div class="form__input">
 
@@ -23,7 +23,7 @@
               <%= label_tag 'Country' %>
             </div>
             <div class="input__form">
-              <%= text_field_tag :country, "Destination" %>
+              <%= text_field_tag :country, nil,  placeholder: "Country" %>
             </div>
           </div>
 
@@ -33,7 +33,7 @@
               <%= label_tag 'City' %>
             </div>
             <div class="input__form">
-              <%= text_field_tag :city, "Destination" %>
+              <%= text_field_tag :city, nil, placeholder: "City" %>
             </div>
           </div>
 
@@ -42,9 +42,9 @@
         <div>
           <div class="title__form">
             <i class="fas fa-plane-departure"></i>
-            <%= label_tag 'Date' %>
+            <%= label_tag 'Dates' %>
           </div>
-          <div class="form-wrapper" style="width: 250px; height: 50px;">
+          <div class="form-wrapper" style="width: 260px; height: 50px;">
             <input id="range_start" class="input__flatpickr">
               <%= hidden_field_tag :start_date,'', id: "start_date" %>
               <%= hidden_field_tag :end_date, '', id: "end_date" %>
