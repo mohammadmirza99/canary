@@ -4,22 +4,11 @@
 }
 
 .title {
-  display:flex;
-  justify-content: center;
+  margin-left: 40px;
+  margin-top: 20px;
 
-  h2{
-    text-align: center;
-  }
+}
 
-  h4{
-    font-style: italic;
-  }
-}
-.title-text {
-  display: flex;
-  flex-direction: column;
-  margin-left: 0;
-}
 
 .title__checkboxes {
   text-align: center;
