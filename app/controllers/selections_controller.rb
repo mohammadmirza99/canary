@@ -50,7 +50,6 @@ class SelectionsController < ApplicationController
     @activities = current_user.activities
     @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
 
-    # Creates new selection based on params time_of_day and day
     new_selection = Selection.create!(
       activity: @new_act,
       user: current_user,
@@ -188,7 +187,24 @@ end
     @sunday_selection = @selections.where(date: "Sunday")
 
     generate_map
-    # raisse
+
+
+    # Code for PDF generator
+
+      respond_to do |format|
+            format.html
+            format.pdf do
+                render pdf: "Itinerary for: test",
+                page_size: 'A4',
+                template: "../views/selections/listview.html.erb",
+                layout: "pdf.html",
+                orientation: "Landscape",
+                lowquality: true,
+                zoom: 1,
+                dpi: 75
+            end
+          end
+
   end
 
   private
@@ -208,7 +224,7 @@ end
           lat: activity.latitude,
           lng: activity.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
-          image_url: helpers.asset_url('canary_logo.png')
+          image_url: helpers.asset_url('canary_map.png')
         }
 
         @markers << marker

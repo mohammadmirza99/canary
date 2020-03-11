@@ -18,7 +18,7 @@
 }
 
 .card-text-container{
-  padding: 20px;
+  padding: 10px;
 }
 
 
@@ -34,3 +34,11 @@
   display: grid;
   grid-template-rows: 25% 29% 26% 20% ;
 }
+
+.card-info-container{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 15%;
+}
+
+
