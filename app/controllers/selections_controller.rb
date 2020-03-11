@@ -218,7 +218,7 @@ end
           lat: activity.latitude,
           lng: activity.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
-          image_url: helpers.asset_url('canary_logo.png')
+          image_url: helpers.asset_url('canary_map.png')
         }
 
         @markers << marker

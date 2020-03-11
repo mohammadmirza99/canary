@@ -88,10 +88,37 @@
               </div>
 
               <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
+
+              <%# Turns card info area into a 2-div grid  %>
+              <div class = "card-info-container">
+
+                <%# Adding padding to the text  %>
+                <div class="card-text-container">
+                  <h2><%=selection.activity.name%></h2>
+                  <p> <%=selection.activity.description%> </p>
+                  <p> <%=selection.activity.address%></p>
+                </div>
+
+                <div class = "card-text-container ">
+
+                  <div class = "card-list-right">
+
+                    <div>
+                      <p>Website</p>
+                    </div>
+
+                    <div>
+                      <p><% 5.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <p><% 5.times{%> <i class="fas fa-star"></i> <%}%> </p>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
+
+
               <!-- /.card-info -->
 
             </div>
