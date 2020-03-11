@@ -50,6 +50,8 @@
   margin: 0 151px;
 }
 
+cards
+
 .card-zone{
   display: grid;
   grid-gap: 10px;
@@ -208,6 +210,33 @@
 .card-list-right{
   display: grid;
   grid-template-rows: 50% 50%;
+}
+
+.card-list-flex {
+  height: 388px;
+}
+
+.cards__info-price {
+  margin-top: 43px;
+  p {
+    margin: 0px 0px;
+  }
+}
+
+.cards__info-web {
+  margin-top: 9px;
+  a:hover {
+    text-decoration: none;
+    color: #167FFB;
+  }
+}
+
+.card-list-left {
+
+    display: grid;
+    grid-template-rows: 70% 30%;
+    grid-gap: 10%;
+
 }
 
 

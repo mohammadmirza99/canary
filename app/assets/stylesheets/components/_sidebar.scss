@@ -22,6 +22,12 @@ html { height: 100%;}
     padding-top: 70px;
 }
 
+.sidelist {
+  li {
+    display: inline;
+  }
+}
+
 #sidebar-wrapper {
     z-index: 1000;
     left: 220px;
