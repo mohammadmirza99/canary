@@ -32,6 +32,14 @@ class SelectionsController < ApplicationController
 
   def index
     # For map
+    @selections = Selection.all
+    @monday_selection = @selections.where(date: "Monday", time_of_day: "Morning")
+    @tuesday_selection = @selections.where(date: "Tuesday", time_of_day: "Morning")
+    @wednesday_selection = @selections.where(date: "Wednesday", time_of_day: "Morning")
+    @thursday_selection = @selections.where(date: "Thursday", time_of_day: "Morning")
+    @friday_selection = @selections.where(date: "Friday", time_of_day: "Morning")
+    @saturday_selection = @selections.where(date: "Saturday", time_of_day: "Morning")
+    @sunday_selection = @selections.where(date: "Sunday", time_of_day: "Morning")
     generate_map
   end
 
@@ -146,8 +154,6 @@ class SelectionsController < ApplicationController
         end
       end
     end
-
-
   # Added sleep so that modal has enough time to show animation.
   sleep(2)
   redirect_to listview_path
