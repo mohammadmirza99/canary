@@ -51,7 +51,8 @@
 
       <div class="start__activity-container">
         <div>
-          <div class="time__info">
+          <div class="time__info-start">
+            <div class="line"></div>
             <div class="list__icon-start">
               <i class="fas fa-plane-arrival fa-lg", style="color: #484848";></i>
             </div>
@@ -80,27 +81,30 @@
         <% end %>
 
         <div class="container__content">
-          <!-- create an icon by the time of day -->
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info-start">
-            <div class="line"></div>
+          <div class="time__info">
             <div class="list__icon">
+              <% if @monday_selection.find_by(time_of_day: "Afternoon") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
-          <!-- create an icon by the time of day -->
-          <% elsif selection.time_of_day == "Afternoon" %>
 
+          <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
-            <div class="line"></div>
             <div class="list__icon">
+              <% if @monday_selection.find_by(time_of_day: "Evening")%>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+          <% end %>
 
 
           <!-- create an icon by the time of day -->
-          <% elsif selection.time_of_day == "Evening"   %>
+          <% if selection.time_of_day == "Evening"   %>
           <div class="time__info">
             <div class="list__icon">
               <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
@@ -162,27 +166,8 @@
             </div>
           </div>
           <% end %>
-<<<<<<< HEAD
 
           <%= render 'card-list', {selection: selection} %>
-=======
-          <div class="card-list-container">
-            <div class="card-list-flex">
-
-              <%# Image container  %>
-              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-              </div>
-              <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
-              </div>
-              <!-- /.card-info -->
-
-            </div>
-            <!-- /.card-list-flex -->
-          </div>
->>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -207,19 +192,25 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
+              <% if @wednesday_selection.find_by(time_of_day: "Afternoon") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
-            <div class="line"></div>
             <div class="list__icon">
+              <% if @wednesday_selection.find_by(time_of_day: "Evening") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+          <% end %>
 
-          <% elsif selection.time_of_day == "Evening"   %>
+          <% if selection.time_of_day == "Evening"   %>
 
           <div class="time__info">
             <div class="list__icon">
@@ -227,26 +218,8 @@
             </div>
           </div>
           <% end %>
-<<<<<<< HEAD
+
           <%= render 'card-list', {selection: selection} %>
-=======
-          <div class="card-list-container">
-            <div class="card-list-flex">
-
-              <%# Image container  %>
-              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-              </div>
-              <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
-              </div>
-              <!-- /.card-info -->
-
-            </div>
-            <!-- /.card-list-flex -->
-          </div>
->>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -269,19 +242,25 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
+              <% if @thursday_selection.find_by(time_of_day: "Afternoon") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
-            <div class="line"></div>
             <div class="list__icon">
+              <% if @thursday_selection.find_by(time_of_day: "Evening") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+          <% end %>
 
-          <% elsif selection.time_of_day == "Evening"   %>
+          <% if selection.time_of_day == "Evening"   %>
 
           <div class="time__info">
             <div class="list__icon">
@@ -289,26 +268,8 @@
             </div>
           </div>
           <% end %>
-<<<<<<< HEAD
+
           <%= render 'card-list', {selection: selection} %>
-=======
-          <div class="card-list-container">
-            <div class="card-list-flex">
-
-              <%# Image container  %>
-              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-              </div>
-              <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
-              </div>
-              <!-- /.card-info -->
-
-            </div>
-            <!-- /.card-list-flex -->
-          </div>
->>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -332,19 +293,25 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
+              <% if @friday_selection.find_by(time_of_day: "Afternoon") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
-            <div class="line"></div>
             <div class="list__icon">
+              <% if @friday_selection.find_by(time_of_day: "Evening") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+          <% end %>
 
-          <% elsif selection.time_of_day == "Evening"   %>
+          <% if selection.time_of_day == "Evening"   %>
 
           <div class="time__info">
             <div class="list__icon">
@@ -352,26 +319,7 @@
             </div>
           </div>
           <% end %>
-<<<<<<< HEAD
           <%= render 'card-list', {selection: selection} %>
-=======
-          <div class="card-list-container">
-            <div class="card-list-flex">
-
-              <%# Image container  %>
-              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-              </div>
-              <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
-              </div>
-              <!-- /.card-info -->
-
-            </div>
-            <!-- /.card-list-flex -->
-          </div>
->>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -396,19 +344,25 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
+              <% if @saturday_selection.find_by(time_of_day: "Afternoon") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
-            <div class="line"></div>
             <div class="list__icon">
+              <% if @saturday_selection.find_by(time_of_day: "Evening") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+          <% end %>
 
-          <% elsif selection.time_of_day == "Evening"   %>
+          <% if selection.time_of_day == "Evening" %>
 
           <div class="time__info">
             <div class="list__icon">
@@ -416,30 +370,11 @@
             </div>
           </div>
           <% end %>
-<<<<<<< HEAD
+
           <%= render 'card-list', {selection: selection} %>
-=======
-          <div class="card-list-container">
-            <div class="card-list-flex">
-
-              <%# Image container  %>
-              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-              </div>
-              <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
-              </div>
-              <!-- /.card-info -->
-
-            </div>
-            <!-- /.card-list-flex -->
-          </div>
->>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
           <!-- /.card-list-container -->
         </div>
         <% end %>
-
       </div>
 
       <div class="cards-itinerary-container">
@@ -460,55 +395,48 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
+              <% if @sunday_selection.find_by(time_of_day: "Afternoon") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
-            <div class="line"></div>
             <div class="list__icon">
+              <% if @sunday_selection.find_by(time_of_day: "Evening") %>
+                <div class="line"></div>
+              <% end %>
               <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+          <% end %>
 
-          <% elsif selection.time_of_day == "Evening"   %>
+          <% if selection.time_of_day == "Evening"   %>
 
           <div class="time__info-end">
-            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
           <% end %>
-<<<<<<< HEAD
+
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
-        <% end %>
-        </div>
-        <div class="end__activity-container">
-          <div>
-            <div class="time__info">
-              <div class="line"></div>
-              <div class="list__icon-start">
-                <i class="fas fa-plane-departure fa-lg", style="color: #484848";></i>
-=======
-          <div class="card-list-container">
-            <div class="card-list-flex">
+          <% end %>
 
-              <%# Image container  %>
-              <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
-              </div>
-              <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
->>>>>>> 8c2ffae8c9e1e36d6946da72f2d283012fccb6b4
-              </div>
+      </div>
+
+      <div class="end__activity-container">
+        <div>
+          <div class="time__info-end">
+            <div class="list__icon-start">
+              <div class="line"></div>
+              <i class="fas fa-plane-departure fa-lg", style="color: #484848";></i>
             </div>
           </div>
-
         </div>
 
       </div>

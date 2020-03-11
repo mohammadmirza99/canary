@@ -135,7 +135,7 @@
 
 .end__activity-container {
   justify-content: flex-end;
-  margin: 109px 151px;
+  margin: 125px 151px;
 }
 
 .list__icon-start {
@@ -162,11 +162,12 @@
 
   .line {
     position: absolute;
-    height: 562px;
+    height: 295px;
     width: 2px;
     background-color: #9AA8A0;
     z-index: -1;
-    left: 34px;
+    left: 36px;
+    top: 0px;
   }
 }
 
@@ -177,11 +178,12 @@
 
   .line {
     position: absolute;
-    height: 800px;
+    height: 400px;
     width: 2px;
     background-color: #9AA8A0;
     z-index: -1;
-    left: 34px;
+    left: 36px;
+    bottom: 0px;
   }
 }
 
