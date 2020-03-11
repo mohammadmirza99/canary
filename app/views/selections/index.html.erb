@@ -57,13 +57,34 @@
         <div>
 
           <div class ="week-container">
-            <p>Monday</p>
-            <p>Tuesday</p>
-            <p>Wednesday</p>
-            <p>Thursday</p>
-            <p>Friday</p>
-            <p>Saturday</p>
-            <p>Sunday</p>
+            <div class="week__date">
+              <p><%= @monday_selection[0].date %> <%= @monday_selection[0].day_date %></p>
+            </div>
+
+            <div class="week__date">
+              <p><%= @tuesday_selection[0].date %> <%= @tuesday_selection[0].day_date %></p>
+            </div>
+
+            <div class="week__date">
+              <p><%= @wednesday_selection[0].date %> <%= @wednesday_selection[0].day_date %></p>
+            </div>
+
+            <div class="week__date">
+              <p><%= @thursday_selection[0].date %> <%= @thursday_selection[0].day_date %></p>
+            </div>
+
+            <div class="week__date">
+              <p><%= @friday_selection[0].date %> <%= @friday_selection[0].day_date %></p>
+            </div>
+
+            <div class="week__date">
+              <p><%= @saturday_selection[0].date %> <%= @saturday_selection[0].day_date %></p>
+            </div>
+
+            <div class="week__date">
+              <p><%= @sunday_selection[0].date %> <%= @sunday_selection[0].day_date %></p>
+            </div>
+
           </div>
 
             <%# Loading all of the sorted cards  %>
