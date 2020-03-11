@@ -194,6 +194,7 @@ end
     @friday_selection = @selections.where(date: "Friday")
     @saturday_selection = @selections.where(date: "Saturday")
     @sunday_selection = @selections.where(date: "Sunday")
+
     generate_map
 
 
