@@ -195,22 +195,21 @@ end
     @saturday_selection = @selections.where(date: "Saturday")
     @sunday_selection = @selections.where(date: "Sunday")
 
-    generate_map
-
 
     # Code for PDF generator
 
       respond_to do |format|
+
             format.html
             format.pdf do
                 render pdf: "Itinerary for: test",
-                page_size: 'A4',
+                # page_size: 'A4',
                 template: "../views/selections/listview.html.erb",
-                layout: "pdf.html",
-                orientation: "Landscape",
-                lowquality: true,
-                zoom: 1,
-                dpi: 75
+                layout: "pdf.html"
+                # orientation: "Landscape",
+                # lowquality: true,
+                # zoom: 1,
+                # dpi: 75
             end
           end
 
