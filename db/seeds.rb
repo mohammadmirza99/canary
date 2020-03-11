@@ -52,7 +52,8 @@ activity1 = Activity.create!({
   address: 'Via Dei Serpenti 165 Corner Via Leonina 1/A',
   longitude: 12.490910,
   latitude: 41.894661,
-  rate: 1
+  rate: 1,
+  web_url: "https://barlalicata.it/en/"
 })
 activity2 = Activity.create!({
   name: 'Ristoro della Salute',
@@ -65,7 +66,8 @@ activity2 = Activity.create!({
   address: 'Piazza del Colosseo 2/A, 00184 Rome Italy',
   longitude: 12.494220,
   latitude: 41.889840,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 activity3 = Activity.create!({
   name: 'Ristoro della Salute',
@@ -78,7 +80,8 @@ activity3 = Activity.create!({
   address: 'Piazza del Colosseo 2/A, 00184 Rome Italy',
   longitude: 12.494220,
   latitude: 41.889839,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
   #Restaurants#afternoon
 activity4 = Activity.create!({
@@ -92,7 +95,8 @@ activity4 = Activity.create!({
   address: 'Via Nazionale 22 Hotel Artemide, 00184 Rome Italy',
   longitude: 12.4936712,
   latitude: 41.900799,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 
 activity5 = Activity.create!({
@@ -106,7 +110,8 @@ activity5 = Activity.create!({
   address: 'Via Giulia, 62, 00186 Roma RM, Italy',
   longitude: 12.4662569,
   latitude: 41.8982142,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 activity6 = Activity.create!({
   name: 'Castello della Castelluccia',
@@ -119,7 +124,8 @@ activity6 = Activity.create!({
   address: 'Castello della Castelluccia, Via Carlo Cavina, 40, 00123 Roma RM, Italy',
   longitude: 12.3990623,
   latitude: 41.9809259,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
   #Restaurants#Evening
 activity7 = Activity.create!({
@@ -133,7 +139,8 @@ activity7 = Activity.create!({
   address: 'Via Nazionale 22 Hotel Artemide, 00184 Rome Italy',
   longitude: 12.4936712,
   latitude: 41.900799,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
 activity8 = Activity.create!({
   name: 'Gran Caffe Rossi Martini',
@@ -146,7 +153,8 @@ activity8 = Activity.create!({
   address: 'Piazza del Colosseo 3A/3B, 00184 Rome Italy',
   longitude: 12.4941751,
   latitude: 41.8897544,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 activity9 = Activity.create!({
   name: 'Imago',
@@ -159,7 +167,8 @@ activity9 = Activity.create!({
   address: "Piazza della Trinita' Dei Monti 6 Hassler Roma Hotel, 00187 Rome Italy",
   longitude: 12.4838695,
   latitude: 41.9059465,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 #Spa#Morning
 activity10 = Activity.create!({
@@ -173,7 +182,8 @@ activity10 = Activity.create!({
   address: "Piazza di Spagna 6, 00187 Rome Italy",
   longitude: 12.4816538,
   latitude: 41.9066646,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
 activity11 = Activity.create!({
   name: 'Artemís Spa',
@@ -186,7 +196,8 @@ activity11 = Activity.create!({
   address: "Via Nazionale 22 Hotel Artemide, 00184 Rome Italy",
   longitude: 12.4936712,
   latitude: 41.900799,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 activity12 = Activity.create!({
   name: 'Spa at Trilussa Palace Hotel',
@@ -199,7 +210,8 @@ activity12 = Activity.create!({
   address: "Piazza Ippolito Nievo 25 Trastevere, 00153 Rome Italy",
   longitude: 12.4666113,
   latitude: 41.8804494,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 #Spa#Afternoon
 activity13 = Activity.create!({
@@ -213,7 +225,8 @@ activity13 = Activity.create!({
   address: "Via Nazionale 22 Hotel Artemide, 00184 Rome Italy",
   longitude: 12.4936712,
   latitude: 41.900799,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 activity14 = Activity.create!({
   name: 'Templum Salutis',
@@ -226,7 +239,8 @@ activity14 = Activity.create!({
   address: "Via Ciro da Urbino 21, 00176 Rome Italy",
   longitude: 12.5410023,
   latitude: 41.878056,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
 activity15 = Activity.create!({
   name: 'Doma Luxury Spa',
@@ -239,7 +253,8 @@ activity15 = Activity.create!({
   address: "Via di Parione 24-25 Piazza Navona, 00186 Rome Italy",
   longitude: 12.5410023,
   latitude: 41.878056,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 #Spa#Evening
 activity16 = Activity.create!({
@@ -253,7 +268,8 @@ activity16 = Activity.create!({
   address: "Via Degli Scipioni 228, 00192 Rome Italy",
   longitude: 12.462653,
   latitude: 41.9095767,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
 activity17 = Activity.create!({
   name: 'Barberin Hills',
@@ -266,7 +282,8 @@ activity17 = Activity.create!({
   address: "Via Degli Avignonesi 15 -16 Piazza Barberini, 00187 Rome Italy",
   longitude: 12.4877017,
   latitude: 41.9030613,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 activity18 = Activity.create!({
   name: 'Bahr',
@@ -279,7 +296,8 @@ activity18 = Activity.create!({
   address: "Piazza Rondanini 30A, 00186 Rome Italy",
   longitude: 12.4758567,
   latitude: 41.8999945,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
 #Museum#Morning
 activity19 = Activity.create!({
@@ -293,7 +311,8 @@ activity19 = Activity.create!({
   address: "Piazzale del Museo Borghese 5, 00197 Rome Italy",
   longitude: 12.4918565,
   latitude: 41.9139189,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 activity20 = Activity.create!({
   name: 'Museo Nazionale di Castel Sant Angelo',
@@ -306,7 +325,8 @@ activity20 = Activity.create!({
   address: "Lungotevere Castello 50, 00193 Rome Italy",
   longitude: 12.466404,
   latitude: 41.902626,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 activity21 = Activity.create!({
   name: 'Palazzo Colonna - Galleria Colonna',
@@ -319,7 +339,8 @@ activity21 = Activity.create!({
   address: "Via della Pilotta 17, 00187 Rome Italy",
   longitude: 12.4848829,
   latitude: 41.897499,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
 #Museum#Afternoon
 activity22 = Activity.create!({
@@ -333,7 +354,8 @@ activity22 = Activity.create!({
   address: "Largo di Villa Peretti 2 Museo Nazionale Romano, 00185 Rome Italy",
   longitude: 12.49790246649969,
   latitude: 41.9018864348116,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 activity23 = Activity.create!({
   name: 'Le Domus Romane di Palazzo Valentini  *',
@@ -346,7 +368,8 @@ activity23 = Activity.create!({
   address: "Foro Traiano 85, 00187 Rome Italy",
   longitude: 12.49790246649969,
   latitude: 41.9018864348116,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 activity24 = Activity.create!({
   name: 'Sistine Chapel  *',
@@ -359,7 +382,8 @@ activity24 = Activity.create!({
   address: "Viale Vaticano, 00165 Vatican City Italy",
   longitude: 12.49790246649969,
   latitude: 41.9018864348116,
-  rate: 5
+  rate: 5,
+  web_url: "https://barlalicata.it/en/"
 })
 
 # Fake seed
@@ -374,7 +398,8 @@ activity25 = Activity.create!({
   address: "Viale Vaticano, 00165 Vatican City Italy",
   longitude: 12.49790246649969,
   latitude: 41.9018864348116,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 activity26 = Activity.create!({
   name: 'Sistine Chapel  *',
@@ -387,7 +412,8 @@ activity26 = Activity.create!({
   address: "Viale Vaticano, 00165 Vatican City Italy",
   longitude: 12.49790246649969,
   latitude: 41.9018864348116,
-  rate: 3
+  rate: 3,
+  web_url: "https://barlalicata.it/en/"
 })
 activity27 = Activity.create!({
   name: 'Sistine Chapel  *',
@@ -400,7 +426,8 @@ activity27 = Activity.create!({
   address: "Viale Vaticano, 00165 Vatican City Italy",
   longitude: 12.49790246649969,
   latitude: 41.9018864348116,
-  rate: 4
+  rate: 4,
+  web_url: "https://barlalicata.it/en/"
 })
 
 #fake seed
