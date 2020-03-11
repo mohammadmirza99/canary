@@ -105,7 +105,7 @@
                     </div>
                   <% else %>
                     <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary add-icon" style="background-color: white; border: 2px dotted #ECBE46 ">
-                       <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0] }), method: :post, class:"fas fa-plus-circle fa-2x text-decor-none" %></p>
+                       <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0]}), method: :post, class:"fas fa-plus-circle fa-2x text-decor-none" %></p>
                     </div>
                   <% end %>
                 <% @counter +=1 %>
