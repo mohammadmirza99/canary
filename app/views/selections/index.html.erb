@@ -11,13 +11,13 @@
         </div>
         <div class="sidebox">
           <div class="sidelist">
-            <li class="side-menue-actions"><i class="fas fa-stream" style="color: white"></i><%= link_to "List-View", listview_path %> </li>
-            <li class="side-menue-actions"><i class="far fa-calendar-alt" style="color: white"></i><%= link_to "Calendar-View", selections_path %> </li>
-            <li class="side-menue-actions"><i class="fas fa-map-marked-alt" style="color: white"></i><%= link_to "My itinerary" %></li>
+            <li class="side-menue-actions"><i class="fas fa-stream" style="color: white"></i><%= link_to "Timeline", listview_path %> </li>
+            <li class="side-menue-actions"><i class="far fa-calendar-alt" style="color: white"></i><%= link_to "Calendar", selections_path %> </li>
+            <!-- <li class="side-menue-actions"><i class="fas fa-map-marked-alt" style="color: white"></i><%#= link_to "My itinerary" %></li> -->
             <li class="side-menue-actions"><i class="fas fa-file-download" style="color: white"></i><%= link_to "Save" %></li>
           </div>
           <div class="sideactions">
-            <li class="side-menue-actions"><%= link_to "Settings" %></li>
+            <!-- <li class="side-menue-actions"><%#= link_to "Settings" %></li> -->
             <li class="side-menue-actions"><%= link_to "Logout" %></li>
             <hr style="color: white">
             <p><i class="far fa-copyright"></i> Canary,Inc. All rights reserved<br>@canary</p>
@@ -82,7 +82,7 @@
 
                   <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
                   <% if selection %>
-                    <div onclick = "window.mapHandler('<%= selection.activity.name%>', '<%= selection.activity.longitude%>', '<%= selection.activity.latitude%>' )" data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
+                    <div onclick = "window.mapHandler(<%= selection.activity.longitude%>, <%= selection.activity.latitude%>)" data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
                       <p class= "card-inner-text"><%= selection.activity.name %></p>
                       <div class="card-icons">
                         <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"fas fa-trash card-none text-decor-none" %></p>

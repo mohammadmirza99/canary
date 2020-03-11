@@ -3,6 +3,12 @@ import "../plugins/flatpickr";
 // Code For Swappable
 import {initSwappable} from '../plugins/swappable';
 initSwappable();
+//
+$(document).ready(function(){
+  $(".category-choice").click(function(){
+    $(this).toggleClass("active");
+  });
+});
 
 // Code For Map
 
