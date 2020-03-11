@@ -36,6 +36,25 @@
 
     <div class="list-container">
 
+      <div class="title__list">
+        <h1>Activity during your week in Italy </h1>
+        <%#= @monday_selection.activity  %>
+
+
+
+      </div>
+
+      <div class="start__activity-container">
+        <div>
+          <div class="time__info">
+            <div class="list__icon-start">
+              <i class="fas fa-plane-arrival fa-lg", style="color: #484848";></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @monday_selection.each do |selection| %>
@@ -56,7 +75,8 @@
         <div class="container__content">
           <!-- create an icon by the time of day -->
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
+          <div class="time__info-start">
+            <div class="line"></div>
             <div class="list__icon">
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
@@ -465,6 +485,15 @@
           <!-- /.card-list-container -->
         </div>
         <% end %>
+        </div>
+        <div class="start__activity-container">
+          <div>
+            <div class="time__info">
+              <div class="list__icon-start">
+                <i class="fas fa-plane-arrival fa-lg", style="color: #484848";></i>
+              </div>
+            </div>
+          </div>
 
       </div>
 
