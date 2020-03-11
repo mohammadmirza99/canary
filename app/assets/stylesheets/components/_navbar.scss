@@ -1,8 +1,17 @@
 // define the height of the navbar
 .nav-wrapper {
+  display: flex;
   height: 50px;
+  justify-content: space-between;
+  .logo-home {
+  img{
+    width: 50px;
+    margin-bottom: 30px;
+    padding-top: 5px;
+    padding-left: 3px;
+  }
+  }
 }
-
 
 ul {
   list-style-type: none;
