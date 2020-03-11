@@ -50,6 +50,8 @@
   margin: 0 151px;
 }
 
+cards
+
 .card-zone{
   display: grid;
   grid-gap: 10px;
@@ -224,7 +226,45 @@
   border: 5px solid red;
 }
 
+///////////// week-container__date ///////////////
 
+.week__date {
+  color: #808080;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-list-right{
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+
+.card-list-flex {
+  height: 388px;
+}
+
+.cards__info-price {
+  margin-top: 43px;
+  p {
+    margin: 0px 0px;
+  }
+}
+
+.cards__info-web {
+  margin-top: 9px;
+  a:hover {
+    text-decoration: none;
+    color: #167FFB;
+  }
+}
+
+.card-list-left {
+
+    display: grid;
+    grid-template-rows: 70% 30%;
+    grid-gap: 10%;
+
+}
 
 
 

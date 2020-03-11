@@ -18,7 +18,15 @@
 }
 
 .card-text-container{
-  padding: 20px;
+  padding: 10px;
+  color: #484848;
+  h2 {
+    font-size: 28px;
+    font-family: "Montserrat", sans-serif;
+  }
+  p {
+    font-family: "Roboto", sans-serif;
+  }
 }
 
 
@@ -34,3 +42,11 @@
   display: grid;
   grid-template-rows: 25% 29% 26% 20% ;
 }
+
+.card-info-container{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 15%;
+}
+
+

@@ -31,23 +31,37 @@ MONTH_LIST = ["Jan", "Febr", "March", "Apr", "May", "Jun",
 class SelectionsController < ApplicationController
 
   def index
+
     # For map
+    @selections = Selection.all
+
+    @itinerary = Itinerary.find(@selections.first.itinerary.id)
+
+    @monday_selection = @selections.where(date: "Monday", time_of_day: "Morning")
+    @tuesday_selection = @selections.where(date: "Tuesday", time_of_day: "Morning")
+    @wednesday_selection = @selections.where(date: "Wednesday", time_of_day: "Morning")
+    @thursday_selection = @selections.where(date: "Thursday", time_of_day: "Morning")
+    @friday_selection = @selections.where(date: "Friday", time_of_day: "Morning")
+    @saturday_selection = @selections.where(date: "Saturday", time_of_day: "Morning")
+    @sunday_selection = @selections.where(date: "Sunday", time_of_day: "Morning")
     generate_map
   end
 
   def create
+
     @interests = current_user.interests
     @selections = Selection.all
+    @itinerary = Itinerary.find(params[:itinerary])
 
     @activities = current_user.activities
     @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
 
-    # Creates new selection based on params time_of_day and day
     new_selection = Selection.create!(
       activity: @new_act,
       user: current_user,
       time_of_day: params[:time_of_day],
-      date: params[:day]
+      date: params[:day],
+      itinerary: @itinerary
       )
 
     redirect_to selections_path
@@ -69,6 +83,7 @@ class SelectionsController < ApplicationController
 
     @interests = current_user.interests
     @activities = current_user.activities
+    @itinerary = Itinerary.find(params[:itinerary])
 
     # Finds an activity that matches interests but is not selected yet.
     @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
@@ -82,7 +97,8 @@ class SelectionsController < ApplicationController
       activity: @new_act,
       user: current_user,
       time_of_day: params[:time_of_day],
-      date: params[:day]
+      date: params[:day],
+      itinerary: @itinerary
       )
     redirect_to selections_path
   end
@@ -145,8 +161,6 @@ class SelectionsController < ApplicationController
         end
       end
     end
-
-
   # Added sleep so that modal has enough time to show animation.
   sleep(2)
   redirect_to listview_path
@@ -179,8 +193,24 @@ end
     @saturday_selection = @selections.where(date: "Saturday")
     @sunday_selection = @selections.where(date: "Sunday")
 
-    generate_map
-    # raisse
+
+    # Code for PDF generator
+
+      respond_to do |format|
+
+            format.html
+            format.pdf do
+                render pdf: "Itinerary for: test",
+                # page_size: 'A4',
+                template: "../views/selections/listview.html.erb",
+                layout: "pdf.html"
+                # orientation: "Landscape",
+                # lowquality: true,
+                # zoom: 1,
+                # dpi: 75
+            end
+          end
+
   end
 
   private
@@ -200,7 +230,7 @@ end
           lat: activity.latitude,
           lng: activity.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
-          image_url: helpers.asset_url('canary_logo.png')
+          image_url: helpers.asset_url('canary_map.png')
         }
 
         @markers << marker
