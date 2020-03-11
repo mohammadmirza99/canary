@@ -1,27 +1,29 @@
 
-<div class="nav-wrapper">
-  <!-- <div><img src="../../assets/images/canary_logo.png" alt="" height="40px"></div> -->
-  <ul class="main-navigation">
-    <% if user_signed_in? %>
-      <li class="navigation-item">
-        <%= link_to "Home", root_path, class: "navigation-link"  %>
-      </li>
-      <li class="navigation-item">
-        <%= link_to "Dashboard", selections_path, class: "navigation-link"  %>
-      </li>
-      <li class="navigation-item">
-        <%= link_to "Find destination", selections_path, class: "navigation-link"   %>
-      </li>
+<div class="nav-wrapper navbar-home">
+  <div class="logo-home"><%= link_to (image_tag "logo.png"), root_path %></div>
+  <div class="list-nav-home">
+    <ul class="main-navigation">
+      <% if user_signed_in? %>
+        <li class="navigation-item">
+          <%= link_to "Home", root_path, class: "navigation-link"  %>
+        </li>
+        <li class="navigation-item">
+          <%= link_to "Dashboard", selections_path, class: "navigation-link"  %>
+        </li>
+        <li class="navigation-itesm">
+          <%= link_to "Find destination", selections_path, class: "navigation-link"   %>
+        </li>
 
-      <li class="navigation-item">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navigation-link"   %>
-      </li>
+        <li class="navigation-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navigation-link"   %>
+        </li>
 
-    <% else %>
-      <li class="navigation-item">
-        <%= link_to "Login", new_user_session_path, class: "navigation-link"  %>
-      </li>
-    <% end %>
-  </ul>
+      <% else %>
+        <li class="navigation-item">
+          <%= link_to "Login", new_user_session_path, class: "navigation-link"  %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
