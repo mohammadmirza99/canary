@@ -84,7 +84,7 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
-              <% if @monday_selection.find_by(time_of_day: "Afternoon") %>
+              <% if @monday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -138,7 +138,7 @@
 
           <div class="time__info">
             <div class="list__icon">
-              <% if @tuesday_selection.find_by(time_of_day: "Afternoon") %>
+              <% if @tuesday_selection.find_by(time_of_day: "Afternoon")|| @monday_selection.find_by(time_of_day: "Evening")%>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -192,7 +192,7 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
-              <% if @wednesday_selection.find_by(time_of_day: "Afternoon") %>
+              <% if @wednesday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -242,7 +242,7 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
-              <% if @thursday_selection.find_by(time_of_day: "Afternoon") %>
+              <% if @thursday_selection.find_by(time_of_day: "Afternoon")|| @monday_selection.find_by(time_of_day: "Evening") %>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -293,7 +293,7 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
-              <% if @friday_selection.find_by(time_of_day: "Afternoon") %>
+              <% if @friday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -344,7 +344,7 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
-              <% if @saturday_selection.find_by(time_of_day: "Afternoon") %>
+              <% if @saturday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -395,7 +395,7 @@
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
-              <% if @sunday_selection.find_by(time_of_day: "Afternoon") %>
+              <% if @sunday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
