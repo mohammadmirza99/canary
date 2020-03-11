@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post '/generate', to: 'selections#generate', as: 'generate'
   get '/listview', to: 'selections#listview'
   post '/random', to: 'selections#random', as: 'random'
+  get '/pdfview', to: 'selections#pdfview', as: 'pdfview'
 end
