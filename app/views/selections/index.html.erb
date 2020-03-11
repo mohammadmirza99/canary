@@ -61,18 +61,27 @@
 
 
       <%# Div created to align the weeks to the calendar.  %>
-        <div>
+          <div>
 
-          <div class ="week-container">
-            <p>Monday</p>
-            <p>Tuesday</p>
-            <p>Wednesday</p>
-            <p>Thursday</p>
-            <p>Friday</p>
-            <p>Saturday</p>
-            <p>Sunday</p>
+          <% range =  @itinerary.end_date.to_date.day - @itinerary.start_date.to_date.day  %>
+
+          <div class = "week-container">
+
+          <% current_day_num = @itinerary.end_date.to_date.day %>
+          <% current_date = @itinerary.end_date.to_date %>
+          <% 7.times do %>
+
+            <div class = "week__date">
+
+            <%= current_date.strftime('%A') %>
+            <% current_date = current_date.next %>
+            <%= current_day_num %>
+            <% current_day_num += 1 %>
+
+            </div>
+          <% end %>
+
           </div>
-
             <%# Loading all of the sorted cards  %>
 
             <div class="card-container">
