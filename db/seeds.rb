@@ -50,292 +50,360 @@ activity1 = Activity.create!({
   location: location1,
   address: 'Via Dei Serpenti 165 Corner Via Leonina 1/A',
   longitude: 12.490910,
-  latitude: 41.894661
+  latitude: 41.894661,
+  rate: 1
 })
 activity2 = Activity.create!({
   name: 'Ristoro della Salute',
   description: 'La Licata began its activity as a Pastry Shop in 1967, one of the best and most renowned in the historic center of Rome, in the Rione Monti, the first and oldest Roman district, also known as “La Suburra”.',
-  price_category: '5',
+  price_category: '1',
   image_url:'https://images.unsplash.com/photo-1515669097368-22e68427d265?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Morning',
   interest: 'Restaurant',
   location: location1,
   address: 'Piazza del Colosseo 2/A, 00184 Rome Italy',
   longitude: 12.494220,
-  latitude: 41.889840
+  latitude: 41.889840,
+  rate: 4
 })
 activity3 = Activity.create!({
   name: 'Ristoro della Salute',
   description: 'Italian, Pizza, Mediterranean, European, Romana, Lazio, Central-Italian, International',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1560187839-85fa7adfcf39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1966&q=80',
   time_of_day: 'Morning',
   interest: 'Restaurant',
   location: location1,
   address: 'Piazza del Colosseo 2/A, 00184 Rome Italy',
   longitude: 12.494220,
-  latitude: 41.889839
+  latitude: 41.889839,
+  rate: 5
 })
   #Restaurants#afternoon
 activity4 = Activity.create!({
   name: 'Ambrosia Rooftop Restaurant & Bar',
   description: 'Italian, Pizza, Mediterranean, European, Romana, Lazio, Central-Italian, International',
-  price_category: '5',
+  price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=937&q=80',
   time_of_day: 'Afternoon',
   interest: 'Restaurant',
   location: location1,
   address: 'Via Nazionale 22 Hotel Artemide, 00184 Rome Italy',
   longitude: 12.4936712,
-  latitude: 41.900799
+  latitude: 41.900799,
+  rate: 3
 })
 
 activity5 = Activity.create!({
   name: 'I Sofa Bar Restaurant & Roof Terrace',
   description: 'Italian, Pizza, Mediterranean, European, Romana, Lazio, Central-Italian, International',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Afternoon',
   interest: 'Restaurant',
   location: location1,
   address: 'Via Giulia, 62, 00186 Roma RM, Italy',
   longitude: 12.4662569,
-  latitude: 41.8982142
+  latitude: 41.8982142,
+  rate: 4
 })
 activity6 = Activity.create!({
   name: 'Castello della Castelluccia',
   description: 'Italian, Pizza, Mediterranean, European, Romana, Lazio, Central-Italian, International',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1520066975094-c321ec00637d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Afternoon',
   interest: 'Restaurant',
   location: location1,
   address: 'Castello della Castelluccia, Via Carlo Cavina, 40, 00123 Roma RM, Italy',
   longitude: 12.3990623,
-  latitude: 41.9809259
+  latitude: 41.9809259,
+  rate: 5
 })
   #Restaurants#Evening
 activity7 = Activity.create!({
   name: 'Ambrosia Rooftop Restaurant & Bar',
   description: 'Italian, Pizza, Mediterranean, European, Romana, Lazio, Central-Italian, International',
-  price_category: '5',
+  price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
   time_of_day: 'Evening',
   interest: 'Restaurant',
   location: location1,
   address: 'Via Nazionale 22 Hotel Artemide, 00184 Rome Italy',
   longitude: 12.4936712,
-  latitude: 41.900799
+  latitude: 41.900799,
+  rate: 5
 })
 activity8 = Activity.create!({
   name: 'Gran Caffe Rossi Martini',
   description: 'Italian, Pizza, Mediterranean, European, Romana, Lazio, Central-Italian, International',
-  price_category: '5',
+  price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1529516222410-a269d812f320?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Evening',
   interest: 'Restaurant',
   location: location1,
   address: 'Piazza del Colosseo 3A/3B, 00184 Rome Italy',
   longitude: 12.4941751,
-  latitude: 41.8897544
+  latitude: 41.8897544,
+  rate: 3
 })
 activity9 = Activity.create!({
   name: 'Imago',
   description: 'Italian, Pizza, Mediterranean, European, Romana, Lazio, Central-Italian, International',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1543992321-cefacfc2322e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1932&q=80',
   time_of_day: 'Evening',
   interest: 'Restaurant',
   location: location1,
   address: "Piazza della Trinita' Dei Monti 6 Hassler Roma Hotel, 00187 Rome Italy",
   longitude: 12.4838695,
-  latitude: 41.9059465
+  latitude: 41.9059465,
+  rate: 4
 })
 #Spa#Morning
 activity10 = Activity.create!({
   name: 'Alta Care Beauty Spa',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '1',
   image_url: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Morning',
   interest: 'Spa',
   location: location1,
   address: "Piazza di Spagna 6, 00187 Rome Italy",
   longitude: 12.4816538,
-  latitude: 41.9066646
+  latitude: 41.9066646,
+  rate: 5
 })
 activity11 = Activity.create!({
   name: 'Artemís Spa',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1488345979593-09db0f85545f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Morning',
   interest: 'Spa',
   location: location1,
   address: "Via Nazionale 22 Hotel Artemide, 00184 Rome Italy",
   longitude: 12.4936712,
-  latitude: 41.900799
+  latitude: 41.900799,
+  rate: 4
 })
 activity12 = Activity.create!({
   name: 'Spa at Trilussa Palace Hotel',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1532926381893-7542290edf1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Morning',
   interest: 'Spa',
   location: location1,
   address: "Piazza Ippolito Nievo 25 Trastevere, 00153 Rome Italy",
   longitude: 12.4666113,
-  latitude: 41.8804494
+  latitude: 41.8804494,
+  rate: 3
 })
 #Spa#Afternoon
 activity13 = Activity.create!({
   name: 'Spa at Trilussa Palace Hotel',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1552373438-9be21778554d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Afternoon',
   interest: 'Spa',
   location: location1,
   address: "Via Nazionale 22 Hotel Artemide, 00184 Rome Italy",
   longitude: 12.4936712,
-  latitude: 41.900799
+  latitude: 41.900799,
+  rate: 4
 })
 activity14 = Activity.create!({
   name: 'Templum Salutis',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Afternoon',
   interest: 'Spa',
   location: location1,
   address: "Via Ciro da Urbino 21, 00176 Rome Italy",
   longitude: 12.5410023,
-  latitude: 41.878056
+  latitude: 41.878056,
+  rate: 5
 })
 activity15 = Activity.create!({
   name: 'Doma Luxury Spa',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '1',
   image_url: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Afternoon',
   interest: 'Spa',
   location: location1,
   address: "Via di Parione 24-25 Piazza Navona, 00186 Rome Italy",
   longitude: 12.5410023,
-  latitude: 41.878056
+  latitude: 41.878056,
+  rate: 3
 })
 #Spa#Evening
 activity16 = Activity.create!({
   name: 'Baan Sabai',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1540963848041-9ef66a1e595e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
   time_of_day: 'Evening',
   interest: 'Spa',
   location: location1,
   address: "Via Degli Scipioni 228, 00192 Rome Italy",
   longitude: 12.462653,
-  latitude: 41.9095767
+  latitude: 41.9095767,
+  rate: 5
 })
 activity17 = Activity.create!({
   name: 'Barberin Hills',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1491510736257-3ad769ff47b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Evening',
   interest: 'Spa',
   location: location1,
   address: "Via Degli Avignonesi 15 -16 Piazza Barberini, 00187 Rome Italy",
   longitude: 12.4877017,
-  latitude: 41.9030613
+  latitude: 41.9030613,
+  rate: 4
 })
 activity18 = Activity.create!({
   name: 'Bahr',
   description: 'business that provides a variety of services for the purpose of improving health, beauty and relaxation through personal care treatments such as hair, massages and facials',
-  price_category: '5',
+  price_category: '1',
   image_url: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80',
   time_of_day: 'Evening',
   interest: 'Spa',
   location: location1,
   address: "Piazza Rondanini 30A, 00186 Rome Italy",
   longitude: 12.4758567,
-  latitude: 41.8999945
+  latitude: 41.8999945,
+  rate: 5
 })
 #Museum#Morning
 activity19 = Activity.create!({
   name: 'Galleria Borghese',
   description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1491156855053-9cdff72c7f85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2900&q=80',
   time_of_day: 'Morning',
   interest: 'Museum',
   location: location1,
   address: "Piazzale del Museo Borghese 5, 00197 Rome Italy",
   longitude: 12.4918565,
-  latitude: 41.9139189
+  latitude: 41.9139189,
+  rate: 4
 })
 activity20 = Activity.create!({
   name: 'Museo Nazionale di Castel Sant Angelo',
   description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
-  price_category: '5',
+  price_category: '1',
   image_url: 'https://images.unsplash.com/photo-1544213456-bc37cb97df74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
   time_of_day: 'Morning',
   interest: 'Museum',
   location: location1,
   address: "Lungotevere Castello 50, 00193 Rome Italy",
   longitude: 12.466404,
-  latitude: 41.902626
+  latitude: 41.902626,
+  rate: 3
 })
 activity21 = Activity.create!({
   name: 'Palazzo Colonna - Galleria Colonna',
   description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
-  price_category: '5',
+  price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80',
   time_of_day: 'Morning',
   interest: 'Museum',
   location: location1,
   address: "Via della Pilotta 17, 00187 Rome Italy",
   longitude: 12.4848829,
-  latitude: 41.897499
+  latitude: 41.897499,
+  rate: 5
 })
 #Museum#Afternoon
 activity22 = Activity.create!({
   name: 'Museo Nazionale Romano - Palazzo Massimo alle Terme',
   description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
-  price_category: '5',
+  price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
   time_of_day: 'Morning',
   interest: 'Museum',
   location: location1,
   address: "Largo di Villa Peretti 2 Museo Nazionale Romano, 00185 Rome Italy",
   longitude: 12.49790246649969,
-  latitude: 41.9018864348116
+  latitude: 41.9018864348116,
+  rate: 4
 })
 activity23 = Activity.create!({
   name: 'Le Domus Romane di Palazzo Valentini  *',
   description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
-  price_category: '5',
+  price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1564399579883-451a5d44ec08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1535&q=80',
   time_of_day: 'Morning',
   interest: 'Museum',
   location: location1,
   address: "Foro Traiano 85, 00187 Rome Italy",
   longitude: 12.49790246649969,
-  latitude: 41.9018864348116
+  latitude: 41.9018864348116,
+  rate: 3
 })
 activity24 = Activity.create!({
   name: 'Sistine Chapel  *',
   description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
-  price_category: '5',
+  price_category: '2',
   image_url: 'https://images.unsplash.com/photo-1565799515768-2dcfd834625c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1992&q=80',
   time_of_day: 'Morning',
   interest: 'Museum',
   location: location1,
   address: "Viale Vaticano, 00165 Vatican City Italy",
   longitude: 12.49790246649969,
-  latitude: 41.9018864348116
+  latitude: 41.9018864348116,
+  rate: 5
 })
+
+# Fake seed
+activity25 = Activity.create!({
+  name: 'Sistine Chapel  *',
+  description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
+  price_category: '1',
+  image_url: 'https://images.unsplash.com/photo-1565799515768-2dcfd834625c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1992&q=80',
+  time_of_day: 'Morning',
+  interest: 'Museum',
+  location: location1,
+  address: "Viale Vaticano, 00165 Vatican City Italy",
+  longitude: 12.49790246649969,
+  latitude: 41.9018864348116,
+  rate: 3
+})
+activity26 = Activity.create!({
+  name: 'Sistine Chapel  *',
+  description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
+  price_category: '1',
+  image_url: 'https://images.unsplash.com/photo-1565799515768-2dcfd834625c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1992&q=80',
+  time_of_day: 'Afternoon',
+  interest: 'Museum',
+  location: location1,
+  address: "Viale Vaticano, 00165 Vatican City Italy",
+  longitude: 12.49790246649969,
+  latitude: 41.9018864348116,
+  rate: 3
+})
+activity27 = Activity.create!({
+  name: 'Sistine Chapel  *',
+  description: 'An institution that cares for (conserves) a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary.',
+  price_category: '1',
+  image_url: 'https://images.unsplash.com/photo-1565799515768-2dcfd834625c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1992&q=80',
+  time_of_day: 'Evening',
+  interest: 'Museum',
+  location: location1,
+  address: "Viale Vaticano, 00165 Vatican City Italy",
+  longitude: 12.49790246649969,
+  latitude: 41.9018864348116,
+  rate: 4
+})
+
+#fake seed
+
 puts "create categories"
 #create category
 
@@ -462,6 +530,22 @@ pair24 = Pair.create!({
   category: category1,
   activity: activity24
 })
+
+#fake seed
+pair25 = Pair.create!({
+  category: category1,
+  activity: activity25
+})
+pair26 = Pair.create!({
+  category: category1,
+  activity: activity26
+})
+
+pair27 = Pair.create!({
+  category: category1,
+  activity: activity27
+})
+#fake seed
 
 puts "creating family"
 # Family pair

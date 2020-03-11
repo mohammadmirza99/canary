@@ -89,7 +89,7 @@
 
               <%# Card info  %>
 
-              <%# Turns card info area into a 2-div grid  %>
+              <!-- Turns card info area into a 2-div grid -->
               <div class = "card-info-container">
 
                 <%# Adding padding to the text  %>
@@ -108,8 +108,30 @@
                     </div>
 
                     <div>
-                      <p><% 5.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
-                      <p><% 5.times{%> <i class="fas fa-star"></i> <%}%> </p>
+                      <% if selection.activity.price_category == "1" %>
+                        <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "2" %>
+                        <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "3" %>
+                        <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <% end %>
+                    </div>
+                    <div>
+                      <% if selection.activity.rate == 1 %>
+                        <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 2 %>
+                        <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 3 %>
+                        <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 4 %>
+                        <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 5 %>
+                        <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                      <% end %>
                     </div>
 
                   </div>
@@ -178,11 +200,55 @@
               </div>
 
               <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
+              <div class = "card-info-container">
+
+                <%# Adding padding to the text  %>
+                <div class="card-text-container">
+                  <h2><%=selection.activity.name%></h2>
+                  <p> <%=selection.activity.description%> </p>
+                  <p> <%=selection.activity.address%></p>
+                </div>
+
+                <div class = "card-text-container ">
+
+                  <div class = "card-list-right">
+
+                    <div>
+                      <p>Website</p>
+                    </div>
+
+                    <div>
+                      <% if selection.activity.price_category == "1" %>
+                        <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "2" %>
+                        <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "3" %>
+                        <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <% end %>
+                    </div>
+                    <div>
+                      <% if selection.activity.rate == 1 %>
+                        <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 2 %>
+                        <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 3 %>
+                        <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 4 %>
+                        <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 5 %>
+                        <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                      <% end %>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
-              <!-- /.card-info -->
 
             </div>
             <!-- /.card-list-flex -->
@@ -239,9 +305,54 @@
               </div>
 
               <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
+              <div class = "card-info-container">
+
+                <%# Adding padding to the text  %>
+                <div class="card-text-container">
+                  <h2><%=selection.activity.name%></h2>
+                  <p> <%=selection.activity.description%> </p>
+                  <p> <%=selection.activity.address%></p>
+                </div>
+
+                <div class = "card-text-container ">
+
+                  <div class = "card-list-right">
+
+                    <div>
+                      <p>Website</p>
+                    </div>
+
+                    <div>
+                      <% if selection.activity.price_category == "1" %>
+                        <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "2" %>
+                        <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "3" %>
+                        <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <% end %>
+                    </div>
+                    <div>
+                      <% if selection.activity.rate == 1 %>
+                        <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 2 %>
+                        <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 3 %>
+                        <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 4 %>
+                        <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 5 %>
+                        <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                      <% end %>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
               <!-- /.card-info -->
 
@@ -298,9 +409,54 @@
               </div>
 
               <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
+              <div class = "card-info-container">
+
+                <%# Adding padding to the text  %>
+                <div class="card-text-container">
+                  <h2><%=selection.activity.name%></h2>
+                  <p> <%=selection.activity.description%> </p>
+                  <p> <%=selection.activity.address%></p>
+                </div>
+
+                <div class = "card-text-container ">
+
+                  <div class = "card-list-right">
+
+                    <div>
+                      <p>Website</p>
+                    </div>
+
+                    <div>
+                      <% if selection.activity.price_category == "1" %>
+                        <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "2" %>
+                        <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "3" %>
+                        <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <% end %>
+                    </div>
+                    <div>
+                      <% if selection.activity.rate == 1 %>
+                        <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 2 %>
+                        <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 3 %>
+                        <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 4 %>
+                        <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 5 %>
+                        <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                      <% end %>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
               <!-- /.card-info -->
 
@@ -358,9 +514,54 @@
               </div>
 
               <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
+              <div class = "card-info-container">
+
+                <%# Adding padding to the text  %>
+                <div class="card-text-container">
+                  <h2><%=selection.activity.name%></h2>
+                  <p> <%=selection.activity.description%> </p>
+                  <p> <%=selection.activity.address%></p>
+                </div>
+
+                <div class = "card-text-container ">
+
+                  <div class = "card-list-right">
+
+                    <div>
+                      <p>Website</p>
+                    </div>
+
+                    <div>
+                      <% if selection.activity.price_category == "1" %>
+                        <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "2" %>
+                        <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "3" %>
+                        <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <% end %>
+                    </div>
+                    <div>
+                      <% if selection.activity.rate == 1 %>
+                        <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 2 %>
+                        <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 3 %>
+                        <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 4 %>
+                        <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 5 %>
+                        <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                      <% end %>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
               <!-- /.card-info -->
 
@@ -419,9 +620,54 @@
               </div>
 
               <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
+              <div class = "card-info-container">
+
+                <%# Adding padding to the text  %>
+                <div class="card-text-container">
+                  <h2><%=selection.activity.name%></h2>
+                  <p> <%=selection.activity.description%> </p>
+                  <p> <%=selection.activity.address%></p>
+                </div>
+
+                <div class = "card-text-container ">
+
+                  <div class = "card-list-right">
+
+                    <div>
+                      <p>Website</p>
+                    </div>
+
+                    <div>
+                      <% if selection.activity.price_category == "1" %>
+                        <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "2" %>
+                        <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "3" %>
+                        <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <% end %>
+                    </div>
+                    <div>
+                      <% if selection.activity.rate == 1 %>
+                        <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 2 %>
+                        <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 3 %>
+                        <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 4 %>
+                        <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 5 %>
+                        <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                      <% end %>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
               <!-- /.card-info -->
 
@@ -480,9 +726,54 @@
               </div>
 
               <%# Card info  %>
-              <div class="card-text-container">
-                <h2><%=selection.activity.name%></h2>
-                <p> <%=selection.activity.description%> </p>
+              <div class = "card-info-container">
+
+                <%# Adding padding to the text  %>
+                <div class="card-text-container">
+                  <h2><%=selection.activity.name%></h2>
+                  <p> <%=selection.activity.description%> </p>
+                  <p> <%=selection.activity.address%></p>
+                </div>
+
+                <div class = "card-text-container ">
+
+                  <div class = "card-list-right">
+
+                    <div>
+                      <p>Website</p>
+                    </div>
+
+                    <div>
+                      <% if selection.activity.price_category == "1" %>
+                        <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "2" %>
+                        <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+                      <% elsif selection.activity.price_category == "3" %>
+                        <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+                      <% end %>
+                    </div>
+                    <div>
+                      <% if selection.activity.rate == 1 %>
+                        <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 2 %>
+                        <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+                      <% elsif selection.activity.rate == 3 %>
+                        <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 4 %>
+                        <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                        <% elsif selection.activity.rate == 5 %>
+                        <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+                      <% end %>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
               <!-- /.card-info -->
 
