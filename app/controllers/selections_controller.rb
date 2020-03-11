@@ -194,6 +194,7 @@ end
     @sunday_selection = @selections.where(date: "Sunday")
 
 
+
     # Code for PDF generator
 
       respond_to do |format|
@@ -235,6 +236,12 @@ end
 
         @markers << marker
       end
+    end
+  end
+
+  def style_line
+    if @monday_selection.count == 2
+
     end
   end
 

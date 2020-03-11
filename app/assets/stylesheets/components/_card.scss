@@ -103,7 +103,8 @@ cards
 
   .line {
     position: absolute;
-    height: 882px;
+    height: 500px;
+    top: 0;
     width: 2px;
     background-color: #9AA8A0;
     z-index: -1;
@@ -112,6 +113,7 @@ cards
 }
 
 .list__icon {
+  position: relative;
   height: 68px;
   width: 68px;
   border-radius: 50%;
