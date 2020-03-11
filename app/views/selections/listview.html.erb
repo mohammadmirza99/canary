@@ -37,10 +37,7 @@
     <div class="list-container">
 
       <div class="title__list">
-        <h1>Activity during your week in Italy </h1>
-        <%#= @monday_selection.activity  %>
-
-
+        <h1>Activities during your trip <br> in Italy </h1>
 
       </div>
 
@@ -54,6 +51,8 @@
         </div>
 
       </div>
+
+      <!-- start -->
 
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
@@ -790,9 +789,10 @@
 
           <% elsif selection.time_of_day == "Evening"   %>
 
-          <div class="time__info">
+          <div class="time__info-end">
+            <div class="line"></div>
             <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
+              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
           <% end %>
@@ -872,14 +872,16 @@
         </div>
         <% end %>
         </div>
-        <div class="start__activity-container">
+        <div class="end__activity-container">
           <div>
             <div class="time__info">
               <div class="list__icon-start">
-                <i class="fas fa-plane-arrival fa-lg", style="color: #484848";></i>
+                <i class="fas fa-plane-departure fa-lg", style="color: #484848";></i>
               </div>
             </div>
           </div>
+
+        </div>
 
       </div>
 

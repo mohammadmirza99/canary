@@ -103,7 +103,7 @@ cards
 
   .line {
     position: absolute;
-    height: 793px;
+    height: 882px;
     width: 2px;
     background-color: #9AA8A0;
     z-index: -1;
@@ -133,6 +133,11 @@ cards
   margin: 0 151px;
 }
 
+.end__activity-container {
+  justify-content: flex-end;
+  margin: 109px 151px;
+}
+
 .list__icon-start {
   height: 68px;
   width: 68px;
@@ -158,6 +163,21 @@ cards
   .line {
     position: absolute;
     height: 562px;
+    width: 2px;
+    background-color: #9AA8A0;
+    z-index: -1;
+    left: 34px;
+  }
+}
+
+.time__info-end {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .line {
+    position: absolute;
+    height: 800px;
     width: 2px;
     background-color: #9AA8A0;
     z-index: -1;
