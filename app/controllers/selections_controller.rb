@@ -172,6 +172,7 @@ end
     @day = params[:day]
     @counter = params[:counter]
     @selection = Selection.find(params[:id])
+
     @selection.destroy
     respond_to do |format|
       format.html { render 'selections/index' }
