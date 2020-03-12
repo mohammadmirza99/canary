@@ -1,26 +1,35 @@
 
-<div class="title__list">
-<h1>activities during your trip in <br>Italy </h1>
+<div>
+  <%#= image_tag "canary_logo.png", alt: "alttext", height: 100, width: 100 %>
 </div>
 
-<div>
-  <%= image_tag "canary_logo.png", alt: "alttext", height: 100, width: 100 %>
+<div class="title__list">
+<h1>activities during your trip in <br>Italy </h1>
 </div>
 
 <!-- start -->
 
 <div class= "pdf-row-center">
   <div class ="pdf-row-container">
-   Monday
+
+    <div class= "pdf-day-container">
+      <p class="pdf-day-width">Monday</p>
+    </div>
+
   <% @monday_selection.each do |selection|  %>
     <%= render 'card-pdf', {selection: selection}%>
   <% end  %>
+
   </div>
 </div>
 
 <div class= "pdf-row-center">
   <div class ="pdf-row-container">
-   Tuesday
+
+    <div class= "pdf-day-container">
+      <p class = "pdf-day-width">Tuesday</p>
+    </div>
+
   <% @tuesday_selection.each do |selection|  %>
     <%= render 'card-pdf', {selection: selection}%>
   <% end  %>
@@ -29,7 +38,11 @@
 
 <div class= "pdf-row-center">
   <div class ="pdf-row-container">
-   Wednesday
+
+    <div class= "pdf-day-container">
+    <p class = "pdf-day-width"> Wednesday</p>
+  </div>
+
   <% @wednesday_selection.each do |selection|  %>
     <%= render 'card-pdf', {selection: selection}%>
   <% end  %>
@@ -39,7 +52,11 @@
 
 <div class= "pdf-row-center">
   <div class ="pdf-row-container">
-   Thursday
+
+    <div class= "pdf-day-container">
+      <p class = "pdf-day-width">Thursday</p>
+    </div>
+
   <% @thursday_selection.each do |selection|  %>
     <%= render 'card-pdf', {selection: selection}%>
   <% end  %>
@@ -48,7 +65,11 @@
 
 <div class= "pdf-row-center">
   <div class ="pdf-row-container">
-   Friday
+
+    <div class= "pdf-day-container">
+     <p class = "pdf-day-width">Friday</p>
+    </div>
+
   <% @friday_selection.each do |selection|  %>
     <%= render 'card-pdf', {selection: selection}%>
   <% end  %>
@@ -57,7 +78,11 @@
 
 <div class= "pdf-row-center">
   <div class ="pdf-row-container">
-   Saturday
+
+    <div class= "pdf-day-container">
+     <p class = "pdf-day-width">Saturday</p>
+    </div>
+
   <% @saturday_selection.each do |selection|  %>
     <%= render 'card-pdf', {selection: selection}%>
   <% end  %>
@@ -66,7 +91,11 @@
 
 <div class= "pdf-row-center">
   <div class ="pdf-row-container">
-   Sunday
+
+    <div class= "pdf-day-container">
+      <p class = "pdf-day-width">Sunday</p>
+    </div>
+
   <% @sunday_selection.each do |selection|  %>
     <%= render 'card-pdf', {selection: selection}%>
   <% end  %>

@@ -1,33 +1,12 @@
 
 
-<!-- <div class="card-list-container">
-    <%# Image container  %>
-    </div>
-
-
-    <%# Card info  %>
-    <div class = "card-info-container">
-      <%# Adding padding to the text  %>
-      <div class="card-text-container">
-        <div class= "card-list-left">
-          <div>
-            <h2><%=selection.activity.name%></h2>
-            <p> <%=selection.activity.description%> </p>
-          </div>
-          <div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-</div>
- -->
-
 <div class = "pdf-card-container">
 
-    <div class="card-image-pdf" style="background-image: url('<%=selection.activity.image_url%>');"> </div>
+    <div class="card-image-pdf" style="background-image: url('<%=selection.activity.image_url%>');">
+      <p class ="pdf-tod-style"><%= selection.time_of_day  %></p>
+    </div>
 
-  <div>
+  <div class = "pdf-content-padding">
     <p><strong><%= selection.activity.name %></strong></p>
     <p><%=selection.activity.description%> </p>
     <p><%=selection.activity.address%></p>
