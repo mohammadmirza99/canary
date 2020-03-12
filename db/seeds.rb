@@ -435,12 +435,13 @@ activity27 = Activity.create!({
 puts "create categories"
 #create category
 
+
 category1 = Category.create!({
-  name: 'Relax'
+  name: 'Family'
 })
 
 category2 = Category.create!({
-  name: 'Family'
+  name: 'Relax'
 })
 
 category3 = Category.create!({

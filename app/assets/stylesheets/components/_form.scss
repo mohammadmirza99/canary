@@ -7,7 +7,7 @@
   font-size: 15px;
   color: #484848;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  margin-top: 13px;
+  margin-top: 60px;
 }
 
 // container input
@@ -43,6 +43,10 @@
   text-align: center;
   flex-wrap: wrap;
   justify-content: space-between;
+  height: 145px;
+  margin-top: 32px;
+  margin-left: 10px;
+  margin-right: 10px;
 
 }
 
@@ -54,16 +58,6 @@
   align-items: center;
 }
 
-.category__interest {
-  background: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  &:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-  &.active {
-  background: rgb(44,202,174);
-  }
+.custom__select {
+  width: 100px;
 }
