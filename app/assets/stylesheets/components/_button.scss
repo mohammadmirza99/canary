@@ -17,3 +17,21 @@
 
   }
 }
+
+.btn-download{
+  padding: 16px;
+  margin-top: 10px;
+  background:#28B69C;
+  color: white;
+  transition: 0.2s;
+
+  &:hover{
+    text-decoration: none;
+    color: white;
+    background: #F4BC19;
+  }
+}
+
+.btn-padding{
+  padding-top: 16px;
+}

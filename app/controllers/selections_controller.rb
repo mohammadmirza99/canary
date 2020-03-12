@@ -197,15 +197,58 @@ end
 
     # Code for PDF generator
 
+      # respond_to do |format|
+
+      #       format.html
+      #       format.pdf do
+      #           render pdf: "Itinerary for: test",
+      #           # page_size: 'A4',
+      #           template: "../views/selections/listview.html.erb",
+      #           layout: "pdf.html"
+      #           # orientation: "Landscape",
+      #           # lowquality: true,
+      #           # zoom: 1,
+      #           # dpi: 75
+      #       end
+      #     end
+
+  end
+
+
+  def pdfview
+
+     #Iterate in the view over the selection array.
+    @selection = Selection.first
+    @selections = Selection.all
+
+    # month choose by the user
+    num_month = @selection.itinerary.end_date[5] + @selection.itinerary.end_date[6]
+    # finds the month in a array defined at the top of the file
+    @month = MONTH_LIST[num_month.to_i - 1]
+    day = @selection.itinerary.end_date.to_i - @selection.itinerary.start_date.to_i
+
+    # For map
+    @monday_selection = @selections.where(date: "Monday")
+    @tuesday_selection = @selections.where(date: "Tuesday")
+    @wednesday_selection = @selections.where(date: "Wednesday")
+    @thursday_selection = @selections.where(date: "Thursday")
+    @friday_selection = @selections.where(date: "Friday")
+    @saturday_selection = @selections.where(date: "Saturday")
+    @sunday_selection = @selections.where(date: "Sunday")
+
+
+
+    # Code for PDF generator
+
       respond_to do |format|
 
             format.html
             format.pdf do
                 render pdf: "Itinerary for: test",
                 # page_size: 'A4',
-                template: "../views/selections/listview.html.erb",
-                layout: "pdf.html"
-                # orientation: "Landscape",
+                template: "../views/selections/pdfview.html.erb",
+                layout: "pdf.html",
+                orientation: "Landscape"
                 # lowquality: true,
                 # zoom: 1,
                 # dpi: 75
