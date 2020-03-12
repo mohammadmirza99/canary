@@ -1,420 +1,74 @@
- <div class="list-container">
 
-      <div class="title__list">
-        <h1>Activities during your trip <br> in Italy </h1>
-
-      </div>
-
-      <div class="start__activity-container">
-        <div>
-          <div class="time__info-start">
-            <div class="line"></div>
-            <div class="list__icon-start">
-              <i class="fas fa-plane-arrival fa-lg", style="color: #484848";></i>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- start -->
-
-      <div class="cards-itinerary-container">
-        <%# Looping through each selection %>
-        <% @monday_selection.each do |selection| %>
-        <%# Card starting point  %>
-        <%# Card starting point  %>
-
-        <!-- add a date if afternoon -->
-
-        <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
-              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="container__content">
-          <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @monday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-
-          <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @monday_selection.find_by(time_of_day: "Evening")%>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-
-          <!-- create an icon by the time of day -->
-          <% if selection.time_of_day == "Evening"   %>
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-          <%= render 'card-list', {selection: selection} %>
-          <!-- /.card-list-container -->
-        </div>
-        <% end %>
-
-      </div>
-
-      <div class="cards-itinerary-container">
-        <%# Looping through each selection %>
-        <% @tuesday_selection.each do |selection| %>
-        <%# Card starting point  %>
-        <%# Card starting point  %>
-
-        <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
-              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="container__content">
-          <% if selection.time_of_day == "Morning" %>
-
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @tuesday_selection.find_by(time_of_day: "Afternoon")|| @monday_selection.find_by(time_of_day: "Evening")%>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-
-          <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @tuesday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-
-
-          <% if selection.time_of_day == "Evening"   %>
-
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <%= render 'card-list', {selection: selection} %>
-          <!-- /.card-list-container -->
-        </div>
-        <% end %>
-
-      </div>
-
-      <div class="cards-itinerary-container">
-        <%# Looping through each selection %>
-        <% @wednesday_selection.each do |selection| %>
-        <%# Card starting point  %>
-        <%# Card starting point  %>
-        <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
-              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="container__content">
-          <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @wednesday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-
-          <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @wednesday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <% if selection.time_of_day == "Evening"   %>
-
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <%= render 'card-list', {selection: selection} %>
-          <!-- /.card-list-container -->
-        </div>
-        <% end %>
-
-      </div>
-      <div class="cards-itinerary-container">
-        <%# Looping through each selection %>
-        <% @thursday_selection.each do |selection| %>
-        <%# Card starting point  %>
-        <%# Card starting point  %>
-        <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
-              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-        <div class="container__content">
-          <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @thursday_selection.find_by(time_of_day: "Afternoon")|| @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-
-          <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @thursday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <% if selection.time_of_day == "Evening"   %>
-
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <%= render 'card-list', {selection: selection} %>
-          <!-- /.card-list-container -->
-        </div>
-        <% end %>
-
-      </div>
-
-      <div class="cards-itinerary-container">
-        <%# Looping through each selection %>
-        <% @friday_selection.each do |selection| %>
-        <%# Card starting point  %>
-        <%# Card starting point  %>
-        <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
-              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-        <div class="container__content">
-          <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @friday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-
-          <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @friday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <% if selection.time_of_day == "Evening"   %>
-
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-          <%= render 'card-list', {selection: selection} %>
-          <!-- /.card-list-container -->
-        </div>
-        <% end %>
-
-      </div>
-
-      <div class="cards-itinerary-container">
-        <%# Looping through each selection %>
-        <% @saturday_selection.each do |selection| %>
-        <%# Card starting point  %>
-        <%# Card starting point  %>
-        <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
-              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="container__content">
-          <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @saturday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-
-          <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @saturday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <% if selection.time_of_day == "Evening" %>
-
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <%= render 'card-list', {selection: selection} %>
-          <!-- /.card-list-container -->
-        </div>
-        <% end %>
-      </div>
-
-      <div class="cards-itinerary-container">
-        <%# Looping through each selection %>
-        <% @sunday_selection.each do |selection| %>
-        <%# Card starting point  %>
-        <%# Card starting point  %>
-        <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
-              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
-              <hr>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="container__content">
-          <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @sunday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-
-          <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
-              <% if @sunday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
-              <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <% if selection.time_of_day == "Evening"   %>
-
-          <div class="time__info-end">
-            <div class="list__icon">
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
-          <% end %>
-
-          <%= render 'card-list', {selection: selection} %>
-          <!-- /.card-list-container -->
-        </div>
-          <% end %>
-
-      </div>
-
-      <div class="end__activity-container">
-        <div>
-          <div class="time__info-end">
-            <div class="list__icon-start">
-              <div class="line"></div>
-              <i class="fas fa-plane-departure fa-lg", style="color: #484848";></i>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-        <%# /loop  %>
-
-      </div>
-
-      <!-- /cards-itinerary-container -->
-    </div>
-    <!-- /.list-container -->
-  </div>
-  <!-- /#page-content-wrapper -->
+<div class="title__list">
+<h1>activities during your trip in <br>Italy </h1>
 </div>
-<!-- /#wrapper -->
+
+<div>
+  <%= image_tag "canary_logo.png", alt: "alttext", height: 100, width: 100 %>
+</div>
+
+<!-- start -->
+
+<div class= "pdf-row-center">
+  <div class ="pdf-row-container">
+   Monday
+  <% @monday_selection.each do |selection|  %>
+    <%= render 'card-pdf', {selection: selection}%>
+  <% end  %>
+  </div>
+</div>
+
+<div class= "pdf-row-center">
+  <div class ="pdf-row-container">
+   Tuesday
+  <% @tuesday_selection.each do |selection|  %>
+    <%= render 'card-pdf', {selection: selection}%>
+  <% end  %>
+  </div>
+</div>
+
+<div class= "pdf-row-center">
+  <div class ="pdf-row-container">
+   Wednesday
+  <% @wednesday_selection.each do |selection|  %>
+    <%= render 'card-pdf', {selection: selection}%>
+  <% end  %>
+  </div>
+</div>
 
 
+<div class= "pdf-row-center">
+  <div class ="pdf-row-container">
+   Thursday
+  <% @thursday_selection.each do |selection|  %>
+    <%= render 'card-pdf', {selection: selection}%>
+  <% end  %>
+  </div>
+</div>
 
+<div class= "pdf-row-center">
+  <div class ="pdf-row-container">
+   Friday
+  <% @friday_selection.each do |selection|  %>
+    <%= render 'card-pdf', {selection: selection}%>
+  <% end  %>
+  </div>
+</div>
 
+<div class= "pdf-row-center">
+  <div class ="pdf-row-container">
+   Saturday
+  <% @saturday_selection.each do |selection|  %>
+    <%= render 'card-pdf', {selection: selection}%>
+  <% end  %>
+  </div>
+</div>
 
-
-
-
-<%= link_to 'DOWNLOAD PDF', listview_path(format: :pdf) %>
-
+<div class= "pdf-row-center">
+  <div class ="pdf-row-container">
+   Sunday
+  <% @sunday_selection.each do |selection|  %>
+    <%= render 'card-pdf', {selection: selection}%>
+  <% end  %>
+  </div>
+</div>
