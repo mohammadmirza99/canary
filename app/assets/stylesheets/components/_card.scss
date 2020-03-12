@@ -15,9 +15,15 @@
 .card-inner-text {
   font-weight: 700;
   color:#fcf8e8;
+  margin-top: 43%;
+  margin-left: 5%;
 }
 .card-icons {
   display: flex;
+  z-index: 10;
+  position: absolute;
+  top: 1%;
+  right: 0;
     p {
       margin-right: 5px;
     }
@@ -41,6 +47,7 @@
 }
 .card-cell{
   position: relative;
+  width: 100%;
 
 
 }
@@ -371,7 +378,6 @@ border: 1px solid black;
   width: 1000px;
   margin: auto;
 }
-
 
 //////////////////////////////////////////
 
