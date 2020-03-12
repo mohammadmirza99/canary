@@ -338,27 +338,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 .card-image-pdf{
-  height: 160px;
+  height: 148px;
   background-size: cover;
   background-position: center;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .pdf-card-container{
 width: 250px;
-border: 1px solid black;
+border: 1px solid #9AA8A0;
+margin-right: 24px;
 
   p{
     font-size: 10px;
@@ -366,18 +356,42 @@ border: 1px solid black;
 }
 
 .pdf-row-container{
-  border: 1px solid black;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   display: flex;
   // grid-template-columns: 10%  30% 30% 30%;
   // grid-gap: 10px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .pdf-row-center{
   width: 1000px;
   margin: auto;
 }
+
+
+.pdf-day-width{
+  margin-right: 14px;
+}
+
+.pdf-day-container{
+  width: 100px;
+}
+
+.pdf-tod-style{
+  font-size: 12px;
+  width: 60px;
+  background: #28B69C;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+.pdf-content-padding{
+  padding: 9px;
+}
+
+
 
 //////////////////////////////////////////
 

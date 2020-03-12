@@ -14,7 +14,7 @@
             <li class="side-menue-actions"><i class="fas fa-stream" style="color: white"></i><%= link_to "Timeline", listview_path %> </li>
             <li class="side-menue-actions"><i class="far fa-calendar-alt" style="color: white"></i><%= link_to "Calendar", selections_path %> </li>
             <!-- <li class="side-menue-actions"><i class="fas fa-map-marked-alt" style="color: white"></i><%#= link_to "My itinerary" %></li> -->
-            <li class="side-menue-actions"><i class="fas fa-file-download" style="color: white"></i><%= link_to "Save" %></li>
+            <li class="side-menue-actions"><i class="fas fa-file-download" style="color: white"></i><%= link_to "Download", pdfview_path(format: :pdf) %></li>
           </div>
           <div class="sideactions">
             <!-- <li class="side-menue-actions"><%#= link_to "Settings" %></li> -->
