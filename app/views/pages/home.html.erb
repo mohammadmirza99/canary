@@ -2,7 +2,7 @@
 
   <%= render 'shared/navbar' %>
 
-  <div class="container_form", style="margin-left: 100px;">
+  <div class="container_form">
     <!-- create a form_tag -->
     <%= form_tag generate_path, method: "post" do |f| %>
 
@@ -84,7 +84,7 @@
               <div class="category__interest">
               <input type="checkbox" class="d-none" value= "parks" name="interest[]" id="post_category_ids_parks-family">
                 <label for="post_category_ids_parks-family">
-                <p class="category-choice">Parks</p>
+                <p class="category-choice">Parcs</p>
               </div>
 
               <div class="category__interest">
@@ -114,7 +114,7 @@
               <div class="category__interest">
               <input type="checkbox" class="d-none" value= "football" name="interest[]" id="post_category_ids_football-family">
                 <label for="post_category_ids_football-family">
-                <p class="category-choice">Football</p>
+                <p class="category-choice">Events</p>
               </div>
             </div>
           </div>

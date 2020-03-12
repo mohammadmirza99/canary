@@ -175,9 +175,16 @@ end
 
 
   def destroy
+    @itinerary = params[:itinerary]
+    @day = params[:day]
+    @counter = params[:counter]
     @selection = Selection.find(params[:id])
+
     @selection.destroy
-    redirect_to selections_path
+    respond_to do |format|
+      format.html { render 'selections/index' }
+      format.js  # <-- idem
+    end
   end
 
   def listview
@@ -199,25 +206,6 @@ end
     @friday_selection = @selections.where(date: "Friday")
     @saturday_selection = @selections.where(date: "Saturday")
     @sunday_selection = @selections.where(date: "Sunday")
-
-
-
-    # Code for PDF generator
-
-      # respond_to do |format|
-
-      #       format.html
-      #       format.pdf do
-      #           render pdf: "Itinerary for: test",
-      #           # page_size: 'A4',
-      #           template: "../views/selections/listview.html.erb",
-      #           layout: "pdf.html"
-      #           # orientation: "Landscape",
-      #           # lowquality: true,
-      #           # zoom: 1,
-      #           # dpi: 75
-      #       end
-      #     end
 
   end
 
@@ -251,11 +239,11 @@ end
 
             format.html
             format.pdf do
-                render pdf: "Itinerary for: test",
-                # page_size: 'A4',
+                render pdf: "Itinerary for: Italy",
+                page_size: 'A4',
                 template: "../views/selections/pdfview.html.erb",
-                layout: "pdf.html",
-                orientation: "Landscape"
+                layout: "pdf.html"
+                # orientation: "Landscape"
                 # lowquality: true,
                 # zoom: 1,
                 # dpi: 75
@@ -267,7 +255,8 @@ end
   private
 
   def safe_params
-    params.permit(:time_of_day, :date)
+    params.permit(:time_of_day, :date, :counter, :day, :itinerary)
+
   end
 
   def generate_map

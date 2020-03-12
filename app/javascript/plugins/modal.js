@@ -3,8 +3,8 @@ import swal from 'sweetalert';
 // Modal for generating the itinerary.
 export const generateModal = () =>swal({
   title: "Generating Itinerary",
-  text: "Hang tight, we are working hard!",
+  text: "Hang tight, we are hard at work!",
   icon: "success",
-  // buttons: true,
+  buttons: false
   // dangerMode: true,
 })
