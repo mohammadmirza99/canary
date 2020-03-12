@@ -1,12 +1,12 @@
 
-<div class="card-list-container">
+
+<!-- <div class="card-list-container">
     <%# Image container  %>
-    <div class="card-image" style="background-image: url('<%=selection.activity.image_url%>');">
     </div>
+
 
     <%# Card info  %>
     <div class = "card-info-container">
-
       <%# Adding padding to the text  %>
       <div class="card-text-container">
         <div class= "card-list-left">
@@ -15,10 +15,22 @@
             <p> <%=selection.activity.description%> </p>
           </div>
           <div>
-            <p><i class="fas fa-building" style="color: #484848"></i> <%=selection.activity.address%></p>
           </div>
         </div>
       </div>
     </div>
+
+</div>
+ -->
+
+<div class = "pdf-card-container">
+
+    <div class="card-image-pdf" style="background-image: url('<%=selection.activity.image_url%>');"> </div>
+
+  <div>
+    <p><strong><%= selection.activity.name %></strong></p>
+    <p><%=selection.activity.description%> </p>
+    <p><%=selection.activity.address%></p>
+  </div>
 
 </div>

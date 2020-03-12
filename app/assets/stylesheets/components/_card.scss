@@ -340,6 +340,39 @@
 
 
 
+
+
+.card-image-pdf{
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 10px;
+}
+
+.pdf-card-container{
+width: 250px;
+border: 1px solid black;
+
+  p{
+    font-size: 10px;
+  }
+}
+
+.pdf-row-container{
+  border: 1px solid black;
+  padding-bottom: 25px;
+  display: flex;
+  // grid-template-columns: 10%  30% 30% 30%;
+  // grid-gap: 10px;
+  justify-content: space-between;
+}
+
+.pdf-row-center{
+  width: 1000px;
+  margin: auto;
+}
+
+
 //////////////////////////////////////////
 
 // .card-cell:hover  .card-none {
