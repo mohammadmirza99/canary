@@ -37,14 +37,23 @@ class SelectionsController < ApplicationController
 
     @itinerary = Itinerary.find(@selections.first.itinerary.id)
 
-    @monday_selection = @selections.where(date: "Monday", time_of_day: "Morning")
-    @tuesday_selection = @selections.where(date: "Tuesday", time_of_day: "Morning")
-    @wednesday_selection = @selections.where(date: "Wednesday", time_of_day: "Morning")
-    @thursday_selection = @selections.where(date: "Thursday", time_of_day: "Morning")
-    @friday_selection = @selections.where(date: "Friday", time_of_day: "Morning")
-    @saturday_selection = @selections.where(date: "Saturday", time_of_day: "Morning")
-    @sunday_selection = @selections.where(date: "Sunday", time_of_day: "Morning")
+    start_time = Time.now
+    @monday_selection = @selections.select { |s| s.date == "Monday" && s.time_of_day == "Morning" }
+    @tuesday_selection = @selections.select { |s| s.date == "Tuesday" && s.time_of_day == "Morning" }
+    @wednesday_selection = @selections.select { |s| s.date == "Wednesday" && s.time_of_day == "Morning" }
+    @thursday_selection = @selections.select { |s| s.date == "Thursday" && s.time_of_day == "Morning" }
+    @friday_selection = @selections.select { |s| s.date == "Friday" && s.time_of_day == "Morning" }
+    @saturday_selection = @selections.select { |s| s.date == "Saturday" && s.time_of_day == "Morning" }
+    @sunday_selection = @selections.select { |s| s.date == "Sunday" && s.time_of_day == "Morning" }
+    end_time = Time.now
+    duration = end_time - start_time
+    p 'duration selection query: ', duration
+
+    start_time = Time.now
     generate_map
+    end_time = Time.now
+    duration = end_time - start_time
+    p 'duration for map render: ', duration
   end
 
   def create
@@ -84,6 +93,8 @@ class SelectionsController < ApplicationController
     @interests = current_user.interests
     @activities = current_user.activities
     @itinerary = Itinerary.find(params[:itinerary])
+    @time_of_day = params[:time_of_day]
+    @day = params[:day]
 
     # Finds an activity that matches interests but is not selected yet.
     @new_act = Activity.where.not(id: @activities).where(interest:@interests).sample
@@ -93,14 +104,19 @@ class SelectionsController < ApplicationController
     @selection.destroy
 
     # Creates new selection based on params time_of_day and day
-    new_selection = Selection.create!(
+
+    @new_selection = Selection.create!(
       activity: @new_act,
       user: current_user,
       time_of_day: params[:time_of_day],
       date: params[:day],
       itinerary: @itinerary
       )
-    redirect_to selections_path
+
+    respond_to do |format|
+      format.html { render 'selections/index' }
+      format.js
+    end
   end
 
 
@@ -205,8 +221,8 @@ end
   def pdfview
 
      #Iterate in the view over the selection array.
-    @selection = Selection.first
     @selections = Selection.all
+    @selection = @selections.first
 
     # month choose by the user
     num_month = @selection.itinerary.end_date[5] + @selection.itinerary.end_date[6]
@@ -215,33 +231,29 @@ end
     day = @selection.itinerary.end_date.to_i - @selection.itinerary.start_date.to_i
 
     # For map
-    @monday_selection = @selections.where(date: "Monday")
-    @tuesday_selection = @selections.where(date: "Tuesday")
-    @wednesday_selection = @selections.where(date: "Wednesday")
-    @thursday_selection = @selections.where(date: "Thursday")
-    @friday_selection = @selections.where(date: "Friday")
-    @saturday_selection = @selections.where(date: "Saturday")
-    @sunday_selection = @selections.where(date: "Sunday")
-
-
+    @monday_selection = @selections.select { |s| s.date == "Monday" }
+    @tuesday_selection = @selections.select { |s| s.date == "Tuesday" }
+    @wednesday_selection = @selections.select { |s| s.date == "Wednesday" }
+    @thursday_selection = @selections.select { |s| s.date == "Thursday" }
+    @friday_selection = @selections.select { |s| s.date == "Friday" }
+    @saturday_selection = @selections.select { |s| s.date == "Saturday" }
+    @sunday_selection = @selections.select { |s| s.date == "Sunday" }
 
     # Code for PDF generator
 
       respond_to do |format|
-
-            format.html
-            format.pdf do
-                render pdf: "Itinerary for: Italy",
-                page_size: 'A4',
-                template: "../views/selections/pdfview.html.erb",
-                layout: "pdf.html"
-                # orientation: "Landscape"
-                # lowquality: true,
-                # zoom: 1,
-                # dpi: 75
-            end
-          end
-
+        format.html
+        format.pdf do
+            render pdf: "Itinerary for: Italy",
+            page_size: 'A4',
+            template: "../views/selections/pdfview.html.erb",
+            layout: "pdf.html"
+            # orientation: "Landscape"
+            # lowquality: true,
+            # zoom: 1,
+            # dpi: 75
+        end
+      end
   end
 
   private
@@ -252,12 +264,15 @@ end
   end
 
   def generate_map
-    @act = Activity.geocoded
+    @act = Activity.all
     @markers = []
+    selections = Selection.all
     @act.each do |activity|
 
       # Sorting through activity to make sure it corresponds to current user.
-      if Selection.find_by(activity: activity, user: current_user)
+      # if Selection.find_by(activity: activity, user: current_user)
+      if selections.find { |s| s.activity == activity && s.user == current_user }
+
         marker = {
           lat: activity.latitude,
           lng: activity.longitude,
