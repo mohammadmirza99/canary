@@ -1,3 +1,35 @@
-<p><strong>  <%=activity.name %> </strong></p>
-<p> <%=activity.description %> </p>
+<h4><strong>  <%=activity.name %> </strong></h4>
+<p class ="info-card-map"> <%=activity.description %> </p>
+
+
+
+<div class ="d-flex justify-content-between">
+
+  <% if activity.rate == 1 %>
+  <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+  <% elsif activity.rate == 2 %>
+  <p><% 2.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+
+  <% elsif activity.rate == 3 %>
+  <p><% 3.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+  <% elsif activity.rate == 4 %>
+  <p><% 4.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+  <% elsif activity.rate == 5 %>
+  <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
+  <% end %>
+
+
+  <% if activity.price_category == "1" %>
+  <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+  <% elsif activity.price_category == "2" %>
+  <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+  <% elsif activity.price_category == "3" %>
+  <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+  <% end %>
+</div>
+
+
 

@@ -1,55 +1,7 @@
-<%# Container for the entire page (cards and map)  %>
-<div id="wrapper">
-  <div class="overlay"></div>
-  <!-- Sidebar -->
-    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
-      <ul class="nav sidebar-nav">
-        <div class="sidebar-header">
-          <div class="sidebar-brand">
-            <div class="logonav"><%= link_to (image_tag "logo.png"), root_path %></div>
-          </div>
-        </div>
-        <div class="sidebox">
-          <div class="sidelist">
-            <li class="side-menue-actions"><i class="fas fa-stream" style="color: white"></i><%= link_to "Timeline", listview_path %> </li>
-            <li class="side-menue-actions"><i class="far fa-calendar-alt" style="color: white"></i><%= link_to "Calendar", selections_path %> </li>
-            <!-- <li class="side-menue-actions"><i class="fas fa-map-marked-alt" style="color: white"></i><%#= link_to "My itinerary" %></li> -->
-            <li class="side-menue-actions"><i class="fas fa-file-download" style="color: white"></i><%= link_to "Save" %></li>
-          </div>
-          <div class="sideactions">
-            <!-- <li class="side-menue-actions"><%#= link_to "Settings" %></li> -->
-            <li class="side-menue-actions"><%= link_to "Logout" %></li>
-            <hr style="color: white">
-            <p><i class="far fa-copyright"></i> Canary,Inc. All rights reserved<br>@canary</p>
-            <div class="footericons">
-              <i class="fab fa-facebook"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-twitter-square"></i>
-            </div>
-          </div>
-        </div>
-      </ul>
-    </nav>
-
-  <!-- /#sidebar-wrapper -->
-  <!-- Page Content -->
-  <div class="minisidebar"></div>
-  <div id="page-content-wrapper">
-    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
-      <span class="hamb-top"></span>
-      <span class="hamb-middle"></span>
-      <span class="hamb-bottom"></span>
-    </button>
-
-
-    <div class="list-container">
+ <div class="list-container">
 
       <div class="title__list">
-        <h1>activities for your trip to <br>Rome, Italy </h1>
-        <div class="btn-padding">
-
-          <%= link_to 'DOWNLOAD YOUR ITINERARY', pdfview_path(format: :pdf), class: "btn-download" %>
-        </div>
+        <h1>Activities during your trip <br> in Italy </h1>
 
       </div>
 
@@ -65,13 +17,6 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @monday_selection.first.date %> <%= @monday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <!-- start -->
 
       <div class="cards-itinerary-container">
@@ -79,6 +24,17 @@
         <% @monday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+
+        <!-- add a date if afternoon -->
+
+        <% if selection.time_of_day == "Morning" %>
+          <div class="cards__date">
+            <div class="cards__date-title">
+              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
@@ -118,18 +74,20 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @tuesday_selection.first.date %> <%= @tuesday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @tuesday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+
+        <% if selection.time_of_day == "Morning" %>
+          <div class="cards__date">
+            <div class="cards__date-title">
+              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
@@ -172,18 +130,19 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @wednesday_selection.first.date %> <%= @wednesday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @wednesday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+        <% if selection.time_of_day == "Morning" %>
+          <div class="cards__date">
+            <div class="cards__date-title">
+              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
@@ -222,19 +181,19 @@
         <% end %>
 
       </div>
-
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @thursday_selection.first.date %> <%= @thursday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @thursday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+        <% if selection.time_of_day == "Morning" %>
+          <div class="cards__date">
+            <div class="cards__date-title">
+              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
@@ -273,18 +232,19 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @friday_selection.first.date %> <%= @friday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @friday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+        <% if selection.time_of_day == "Morning" %>
+          <div class="cards__date">
+            <div class="cards__date-title">
+              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
@@ -322,18 +282,19 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @saturday_selection.first.date %> <%= @saturday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @saturday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+        <% if selection.time_of_day == "Morning" %>
+          <div class="cards__date">
+            <div class="cards__date-title">
+              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
@@ -372,23 +333,25 @@
         <% end %>
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @sunday_selection.first.date %> <%= @sunday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @sunday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+        <% if selection.time_of_day == "Morning" %>
+          <div class="cards__date">
+            <div class="cards__date-title">
+              <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
+              <hr>
+            </div>
+          </div>
+        <% end %>
+
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
           <div class="time__info">
             <div class="list__icon">
-              <% if @sunday_selection.find_by(time_of_day: "Afternoon") || @sunday_selection.find_by(time_of_day: "Evening") %>
+              <% if @sunday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
                 <div class="line"></div>
               <% end %>
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
@@ -446,4 +409,12 @@
 </div>
 <!-- /#wrapper -->
 
+
+
+
+
+
+
+
+<%= link_to 'DOWNLOAD PDF', listview_path(format: :pdf) %>
 

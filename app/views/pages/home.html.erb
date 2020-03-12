@@ -2,14 +2,14 @@
 
   <%= render 'shared/navbar' %>
 
-  <div class="container_form", style="margin-left: 50px;">
+  <div class="container_form", style="margin-left: 100px;">
     <!-- create a form_tag -->
     <%= form_tag generate_path, method: "post" do |f| %>
 
     <!-- create an input__form for location -->
     <div class="title">
+      <h4 id= "slogan">Fly Stress Free Like A</h4>
       <h3>Canary</h3>
-      <h4 id= "slogan">Fly Stress Free</h4>
     </div>
       <div class="form__input">
 
@@ -56,17 +56,17 @@
           </div>
 
           <div class="dropdown__container">
-            <%= select_tag "categories", options_from_collection_for_select(@categories, "name", "name", {class: "custom__select"})%>
-
+            <%= select_tag "categories", options_from_collection_for_select(@categories, "name", "name", {class: "custom__select "}, )%>
           </div>
         </div>
       </div>
       <!-- create a dropdown with all the categories -->
-
       <!-- create a checkbox for the interest -->
       <div class="interest">
+            <p class="d-flex justify-content-center">Interests</p>
           <div id="family">
             <div class="category__interests">
+
 
               <div class="category__interest">
               <input type="checkbox" class="d-none" value= "restaurant" name="interest[]" id="post_category_ids_restaurant-family">
@@ -131,6 +131,8 @@
               <div class="category__interests">
 
                 <div class="category__interest">
+
+
                   <input type="checkbox" class="d-none" value= "Spa" name="interest[]" id="post_category_ids_spa-relax">
                   <label for="post_category_ids_spa-relax">
                     <i class="category-choice">Spa</i>
@@ -290,7 +292,7 @@
       </div>
 
       <div class="button__form">
-          <%= submit_tag "Itinerary", class: "button", onclick: "window.generateModal()" %>
+          <%= submit_tag "Generate My Itinerary", class: "button", onclick: "window.generateModal()" %>
       </div>
     <% end %>
 

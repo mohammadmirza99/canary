@@ -12,7 +12,29 @@
     color: white;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 1px;
-    border: 1px solid rgb(40,182,156);
+    // border: 1px solid rgb(40,182,156);
+
+    &:hover{
+      background: #F4BC19;
+    }
 
   }
+}
+
+.btn-download{
+  padding: 16px;
+  margin-top: 10px;
+  background:#28B69C;
+  color: white;
+  transition: 0.2s;
+
+  &:hover{
+    text-decoration: none;
+    color: white;
+    background: #F4BC19;
+  }
+}
+
+.btn-padding{
+  padding-top: 16px;
 }

@@ -13,6 +13,7 @@
 
 .week-container{
   margin-top: 12px;
+  padding-bottom: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -46,7 +47,7 @@
 .card-info-container{
   display: grid;
   grid-template-columns: 70% 30%;
-  grid-gap: 15%;
+  grid-gap: 10%;
 }
 
 
