@@ -156,12 +156,19 @@ class SelectionsController < ApplicationController
     Selection.where(user: current_user).destroy_all
     # Iterates through array of days
     DAYS.each_with_index do |day, index|
+      # spa_made = false
+
       # Iterates through array of interests
+
 
       user_activities.each do |act|
         next if Selection.where(time_of_day: day[1], date: day[0], user: current_user).count > 0
+        next if Selection.joins(:activity).where(date: day[0], user: current_user, activities: { interest: act.interest } ).length > 0
+
         # Iterates over each activity inside the interests
         # Checks to see if time of day of activity is == to T.O.D of array element.
+
+
         if act.time_of_day == day[1]
           Selection.create!(
             activity: act,
@@ -188,6 +195,7 @@ end
     @day = params[:day]
     @counter = params[:counter]
     @selection = Selection.find(params[:id])
+
     @selection.destroy
     respond_to do |format|
       format.html { render 'selections/index' }
