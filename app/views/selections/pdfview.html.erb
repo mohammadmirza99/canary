@@ -1,19 +1,10 @@
+
+
+
  <div class="list-container">
 
       <div class="title__list">
         <h1>Activities during your trip <br> in Italy </h1>
-
-      </div>
-
-      <div class="start__activity-container">
-        <div>
-          <div class="time__info-start">
-            <div class="line"></div>
-            <div class="list__icon-start">
-              <i class="fas fa-plane-arrival fa-lg", style="color: #484848";></i>
-            </div>
-          </div>
-        </div>
 
       </div>
 
@@ -28,48 +19,32 @@
         <!-- add a date if afternoon -->
 
         <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
+
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
               <hr>
-            </div>
-          </div>
-        <% end %>
 
-        <div class="container__content">
+        <% end %>
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @monday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @monday_selection.find_by(time_of_day: "Evening")%>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
 
 
           <!-- create an icon by the time of day -->
           <% if selection.time_of_day == "Evening"   %>
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
-          <%= render 'card-list', {selection: selection} %>
+          <%= render 'card-pdf', {selection: selection} %>
           <!-- /.card-list-container -->
-        </div>
+
         <% end %>
 
       </div>
@@ -81,51 +56,32 @@
         <%# Card starting point  %>
 
         <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
+
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
               <hr>
-            </div>
-          </div>
         <% end %>
 
-        <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
 
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @tuesday_selection.find_by(time_of_day: "Afternoon")|| @monday_selection.find_by(time_of_day: "Evening")%>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @tuesday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
-
-
 
           <% if selection.time_of_day == "Evening"   %>
 
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
           <% end %>
 
-          <%= render 'card-list', {selection: selection} %>
+          <%= render 'card-pdf', {selection: selection} %>
           <!-- /.card-list-container -->
-        </div>
+
         <% end %>
 
       </div>
@@ -136,48 +92,35 @@
         <%# Card starting point  %>
         <%# Card starting point  %>
         <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
+
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
               <hr>
-            </div>
-          </div>
+
         <% end %>
 
-        <div class="container__content">
+
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @wednesday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @wednesday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
 
           <% if selection.time_of_day == "Evening"   %>
 
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
+
           <% end %>
 
-          <%= render 'card-list', {selection: selection} %>
+          <%= render 'card-pdf', {selection: selection} %>
           <!-- /.card-list-container -->
-        </div>
+
         <% end %>
 
       </div>
@@ -187,45 +130,31 @@
         <%# Card starting point  %>
         <%# Card starting point  %>
         <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
+
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
               <hr>
-            </div>
-          </div>
+
         <% end %>
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @thursday_selection.find_by(time_of_day: "Afternoon")|| @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @thursday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
 
           <% if selection.time_of_day == "Evening"   %>
 
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
 
-          <%= render 'card-list', {selection: selection} %>
+          <%= render 'card-pdf', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -238,44 +167,30 @@
         <%# Card starting point  %>
         <%# Card starting point  %>
         <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
+
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
               <hr>
-            </div>
-          </div>
+
         <% end %>
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @friday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @friday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
 
           <% if selection.time_of_day == "Evening"   %>
 
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
-          <%= render 'card-list', {selection: selection} %>
+          <%= render 'card-pdf', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -288,46 +203,31 @@
         <%# Card starting point  %>
         <%# Card starting point  %>
         <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
+
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
               <hr>
-            </div>
-          </div>
+
         <% end %>
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @saturday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @saturday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
 
           <% if selection.time_of_day == "Evening" %>
 
-          <div class="time__info">
-            <div class="list__icon">
-              <i class="fas fa-moon fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
           <% end %>
 
-          <%= render 'card-list', {selection: selection} %>
+          <%= render 'card-pdf', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
         <% end %>
@@ -339,46 +239,33 @@
         <%# Card starting point  %>
         <%# Card starting point  %>
         <% if selection.time_of_day == "Morning" %>
-          <div class="cards__date">
-            <div class="cards__date-title">
+
               <p> <%= selection.date %> <%= selection.day_date %> <%= @month %></p>
               <hr>
-            </div>
-          </div>
+
         <% end %>
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @sunday_selection.find_by(time_of_day: "Afternoon") || @monday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
-          <div class="time__info">
-            <div class="list__icon">
+
               <% if @sunday_selection.find_by(time_of_day: "Evening") %>
-                <div class="line"></div>
               <% end %>
-              <i class="fas fa-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
           <% end %>
 
           <% if selection.time_of_day == "Evening"   %>
 
-          <div class="time__info-end">
-            <div class="list__icon">
-              <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
-            </div>
-          </div>
+
+
           <% end %>
 
-          <%= render 'card-list', {selection: selection} %>
+          <%= render 'card-pdf', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
           <% end %>
@@ -387,13 +274,7 @@
 
       <div class="end__activity-container">
         <div>
-          <div class="time__info-end">
-            <div class="list__icon-start">
-              <div class="line"></div>
-              <i class="fas fa-plane-departure fa-lg", style="color: #484848";></i>
-            </div>
-          </div>
-        </div>
+
 
       </div>
 
@@ -413,8 +294,4 @@
 
 
 
-
-
-
-<%= link_to 'DOWNLOAD PDF', listview_path(format: :pdf) %>
 

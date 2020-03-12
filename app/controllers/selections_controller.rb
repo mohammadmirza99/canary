@@ -245,7 +245,7 @@ end
             format.html
             format.pdf do
                 render pdf: "Itinerary for: test",
-                # page_size: 'A4',
+                # page_size: 'A5',
                 template: "../views/selections/pdfview.html.erb",
                 layout: "pdf.html",
                 orientation: "Landscape"
