@@ -35,15 +35,6 @@
           </div>
 
           <div class="cards__info-price">
-            <% if selection.activity.price_category == "1" %>
-              <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
-
-            <% elsif selection.activity.price_category == "2" %>
-              <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
-
-            <% elsif selection.activity.price_category == "3" %>
-              <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
-            <% end %>
             <% if selection.activity.rate == 1 %>
               <p><% 1.times{%> <i class="fas fas fa-star"></i><%}%> </p>
 
@@ -57,6 +48,16 @@
               <% elsif selection.activity.rate == 5 %>
               <p><% 5.times{%> <i class="fas fas fa-star"></i><%}%> </p>
             <% end %>
+            <% if selection.activity.price_category == "1" %>
+              <p><% 1.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+            <% elsif selection.activity.price_category == "2" %>
+              <p><% 2.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+
+            <% elsif selection.activity.price_category == "3" %>
+              <p><% 3.times{%> <i class="fas fa-dollar-sign"></i><%}%> </p>
+            <% end %>
+
           </div>
 
         </div>
