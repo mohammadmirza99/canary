@@ -92,10 +92,10 @@
                   <% selection = Selection.where(user: current_user, time_of_day: day[1], date: day[0]).first %>
                   <% itinerary = Selection.first.itinerary.id %>
                   <% if selection %>
-                    <div onclick = "window.mapHandler(<%= selection.activity.longitude%>, <%= selection.activity.latitude%>)" data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
+                    <div id="selection-<%=selection.id%>"onclick = "window.mapHandler(<%= selection.activity.longitude%>, <%= selection.activity.latitude%>)" data-selection-id="<%= selection.id%>" class="card-cell card-itinerary image-box" style="background-image: url('<%=selection.activity.image_url%>');">
                       <p class= "card-inner-text"><%= selection.activity.name %></p>
                       <div class="card-icons">
-                        <p> <%= link_to '', selection_path(selection.id), method: :delete, data: {confirm: "You sure?"}, class:"fas fa-trash card-none text-decor-none" %></p>
+                        <p> <%= link_to '', selection_path(selection.id, counter: @counter, day: day, itinerary: itinerary), method: :delete, data: {confirm: "You sure?"}, remote: true, class:"fas fa-trash card-none text-decor-none" %></p>
                         <p> <%= link_to '', random_path({time_of_day: day[1], day: day[0], selection: selection.id, itinerary: itinerary}), method: :post, class:"fas fa-random card-none text-decor-none" %></p>
                       </div>
                     </div>
@@ -103,6 +103,7 @@
                     <div data-id="selection-<%=@counter%>" class="card-cell card-itinerary add-icon" style="background-color: white; border: 2px dotted #ECBE46 ">
                        <p> <%= link_to '', selections_path({time_of_day: day[1], day: day[0], itinerary: itinerary }), method: :post, class:"fas fa-plus-circle fa-2x text-decor-none" %></p>
                     </div>
+
                   <% end %>
                 <% @counter +=1 %>
                 <% end %>

@@ -168,9 +168,15 @@ end
 
 
   def destroy
+    @itinerary = params[:itinerary]
+    @day = params[:day]
+    @counter = params[:counter]
     @selection = Selection.find(params[:id])
     @selection.destroy
-    redirect_to selections_path
+    respond_to do |format|
+      format.html { render 'selections/index' }
+      format.js  # <-- idem
+    end
   end
 
   def listview
@@ -241,7 +247,8 @@ end
   private
 
   def safe_params
-    params.permit(:time_of_day, :date)
+    params.permit(:time_of_day, :date, :counter, :day, :itinerary)
+
   end
 
   def generate_map
