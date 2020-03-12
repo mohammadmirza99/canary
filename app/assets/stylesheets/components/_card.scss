@@ -53,7 +53,7 @@
 
 }
 .cards-itinerary-container {
-  justify-content: flex-end;
+  position: relative;
   // Add margin
   margin: 0 151px;
 }
@@ -171,12 +171,12 @@
 
   .line {
     position: absolute;
-    height: 295px;
+    height: 330px;
     width: 2px;
     background-color: #9AA8A0;
     z-index: -1;
     left: 36px;
-    top: 0px;
+    bottom: -330px;
   }
 }
 
@@ -199,26 +199,23 @@
 
 .cards__date {
   text-align: center;
-  margin: 10px 162px 10px 202px;
+  margin: 50px 162px 10px 202px;
 }
 
 .cards__date-title {
   position: relative;
 
   p {
-    position: absolute;
-    background-color: #F4F4F4;
-    padding: 10px 25px;
-    top: -20px;
-    left: 478px;
-    color: #9AA8A0;
-  }
-
-  hr {
-    margin: 0px 20px;
-    margin: 0px 69px 0px 154px;
+    font-size: 17px;
+    color: #484848;
 
   }
+
+  // hr {
+  //   margin: 0px 20px;
+  //   margin: 0px 69px 0px 154px;
+
+  // }
 }
 
 .inner {
