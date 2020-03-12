@@ -310,16 +310,14 @@
   font-style: normal;
   font-weight: normal;
   text-align: center;
+  width: 100px;
   &:hover {
     opacity: 1;
     cursor: pointer;
     background-color: #28B69C;
     color: white
   }
-  i {
-  width: 100px;
 
-  }
   &.active {
   background: #28B69C;
   color: white;
