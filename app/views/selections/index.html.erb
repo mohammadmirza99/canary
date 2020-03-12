@@ -68,7 +68,7 @@
           <div class = "week-container">
 
           <% current_day_num = @itinerary.end_date.to_date.day %>
-          <% current_date = @itinerary.end_date.to_date %>
+          <% current_date = @itinerary.start_date.to_date %>
           <% 7.times do %>
 
             <div class = "week__date">
@@ -116,7 +116,7 @@
 
           <%# Map  %>
           <div class = "map-border map-container">
-           <div id="map" style="width: 100%; margin-left: 30px; height: 400px;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+           <div id="map" style="width: 100%; margin-left: 0px; height: 410px;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
         </div>
       </div>

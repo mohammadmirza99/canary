@@ -313,6 +313,7 @@ html { height: 100%;}
 .minisidebar{
   position: fixed;
   height: 100%;
+  z-index: 10;
   width: 70px;
   background-color: #29b69c;
   transition: width 0.5s ease;

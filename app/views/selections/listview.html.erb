@@ -45,7 +45,11 @@
     <div class="list-container">
 
       <div class="title__list">
-        <h1>Activities during your trip <br> in Italy </h1>
+        <h1>activities for your trip to <br>Rome, Italy </h1>
+        <div class="btn-padding">
+
+          <%= link_to 'DOWNLOAD YOUR ITINERARY', pdfview_path(format: :pdf), class: "btn-download" %>
+        </div>
 
       </div>
 
@@ -453,12 +457,4 @@
 </div>
 <!-- /#wrapper -->
 
-
-
-
-
-
-
-
-<%= link_to 'DOWNLOAD PDF', pdfview_path(format: :pdf) %>
 
