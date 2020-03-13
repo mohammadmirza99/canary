@@ -248,7 +248,7 @@ activity12 = Activity.create!({
   location: location1,
   address: 'Via Dei Crispolti 102, 00159 Rome Italie',
   longitude: 12.550320,
-  latitude:41.909310,
+  latitude: 41.909310,
   rate: 4,
   web_url: 'http://www.sottocasafood.it/#/app/home'
 })
@@ -340,7 +340,7 @@ activity18 = Activity.create!({
   location: location1,
   address: 'Via Della Scala 1, 00153 Rome Italie',
   longitude: 12.468670,
-  latitude: 41.890410,
+  latitude: 41.890412,
   rate: 4,
   web_url: 'https://www.mimiecoco.com/en/homepage/'
 })
@@ -462,8 +462,8 @@ activity26 = Activity.create!({
   interest: 'Museum',
   location: location1,
   address: 'Viale Vaticano, Vatican Italie',
-  longitude: '12.449540',
-  latitude: '41.905460',
+  longitude: 12.449550,
+  latitude: 41.905470,
   rate: 4,
   web_url: 'http://www.museivaticani.va/content/museivaticani/it/collezioni/musei/stanze-di-raffaello.html'
 })

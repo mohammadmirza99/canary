@@ -222,7 +222,6 @@ end
     @friday_selection = @selections.select { |s| s.date == "Friday" }
     @saturday_selection = @selections.select { |s| s.date == "Saturday" }
     @sunday_selection = @selections.select { |s| s.date == "Sunday" }
-
   end
 
 
