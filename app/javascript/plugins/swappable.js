@@ -31,7 +31,6 @@ const initSwappable = () =>{
       appendTo: containerSelector,
       constrainDimensions: true,
     },
-    plugins: [Plugins.Snappable],
   });
 
   swappable.on('drag:stop', (event) => {

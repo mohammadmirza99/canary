@@ -7,9 +7,10 @@
     </div>
 
   <div class = "pdf-content-padding">
-    <p><strong><%= selection.activity.name %></strong></p>
-    <p><%=selection.activity.description%> </p>
-    <p><%=selection.activity.address%></p>
+    <% activity = selection.activity %>
+    <p><strong><%= activity.name %></strong></p>
+    <p><%=activity.description%> </p>
+    <p><%=activity.address%></p>
   </div>
 
 </div>

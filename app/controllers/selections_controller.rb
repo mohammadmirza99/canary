@@ -205,8 +205,8 @@ end
 
   def listview
     #Iterate in the view over the selection array.
-    @selection = Selection.first
     @selections = Selection.all
+    @selection = @selections.first
 
     # month choose by the user
     num_month = @selection.itinerary.end_date[5] + @selection.itinerary.end_date[6]
@@ -215,13 +215,13 @@ end
     day = @selection.itinerary.end_date.to_i - @selection.itinerary.start_date.to_i
 
     # For map
-    @monday_selection = @selections.where(date: "Monday")
-    @tuesday_selection = @selections.where(date: "Tuesday")
-    @wednesday_selection = @selections.where(date: "Wednesday")
-    @thursday_selection = @selections.where(date: "Thursday")
-    @friday_selection = @selections.where(date: "Friday")
-    @saturday_selection = @selections.where(date: "Saturday")
-    @sunday_selection = @selections.where(date: "Sunday")
+    @monday_selection = @selections.select { |s| s.date == "Monday" }
+    @tuesday_selection = @selections.select { |s| s.date == "Tuesday" }
+    @wednesday_selection = @selections.select { |s| s.date == "Wednesday" }
+    @thursday_selection = @selections.select { |s| s.date == "Thursday" }
+    @friday_selection = @selections.select { |s| s.date == "Friday" }
+    @saturday_selection = @selections.select { |s| s.date == "Saturday" }
+    @sunday_selection = @selections.select { |s| s.date == "Sunday" }
 
   end
 
@@ -231,6 +231,7 @@ end
      #Iterate in the view over the selection array.
     @selections = Selection.all
     @selection = @selections.first
+    @activities = Activity.all
 
     # month choose by the user
     num_month = @selection.itinerary.end_date[5] + @selection.itinerary.end_date[6]
