@@ -48,7 +48,7 @@ puts "Creating activities"
 puts "Create Relax/Spa"
 
 activity1 = Activity.create!({
-  name: 'Alta Care Beauty Spa',
+  name: 'Alta Care Beauty',
   description: "A location conceived for all those who enjoy taking care of their bodies and taking the time out to enjoy some relax and wellness. Alta Care BeautySpa offers various personalized treatments, during which only Dermastir Luxury products are used.",
   price_category: '3',
   image_url: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
@@ -65,7 +65,7 @@ activity1 = Activity.create!({
 puts "create"
 
 activity2 = Activity.create!({
-  name: 'Spa at Trilussa Palace Hotel',
+  name: 'Spa at Trilussa',
   description: 'Trilussa Palace Hotel Rome Trastevere is an expression of Italian style and tradition in hospitality. Located in Trastevere, the lively and picturesque ancient neighborhood in the heart of Rome, the hotel is an elegant establishment, ideal for a business trip or leasure trip.',
   price_category: '3',
   image_url: 'https://media-cdn.tripadvisor.com/media/photo-s/0d/6f/87/32/spa-at-trilussa-palace.jpg',
@@ -116,7 +116,7 @@ activity4 = Activity.create!({
 puts "create"
 
 activity5 = Activity.create!({
-  name: 'Doma Luxury Spa',
+  name: 'Doma Luxury',
   description: 'Doma Luxury Spa, the most exclusive day spa in Rome, is a dive in the history of the Eternal City. Who has not dreamed of traveling through time? As the days went by the "Dominus" Ancient Rome? As courted men of that time? There were many moments for couples, nor romantic restaurants.',
   price_category: '2',
   image_url: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/93/6d/ca.jpg',
@@ -222,8 +222,8 @@ puts "Create Relax/Restaurant"
 # 10 activities --> Restaurant
 
 activity11 = Activity.create!({
-  name: 'Mirto & Alloro',
-  description: 'Mirto & Alloro is Sardinian Restaurant and Pizzeria located in Via del Trullo 476, Rome (Portuense area). Fish specialties. The location is structured on two floors and has an outdoor garden, open in summer and covered in winter. We are open every evening except Monday. Sunday and holidays also for lunch.',
+  name: 'Mirto',
+  description: 'Mirto is Sardinian Restaurant and Pizzeria located in Via del Trullo 476, Rome (Portuense area). Fish specialties. The location is structured on two floors and has an outdoor garden, open in summer and covered in winter. We are open every evening except Monday. Sunday and holidays also for lunch.',
   price_category: '2',
   image_url: 'https://u.tfstatic.com/restaurant_photos/015/288015/169/612/mirto-alloro-vista-sala-adfeb.jpg',
   time_of_day: 'Afternoon',
@@ -239,7 +239,7 @@ activity11 = Activity.create!({
 puts "create"
 
 activity12 = Activity.create!({
-  name:'Sottocasa Food',
+  name:'Sottocasa',
   description: 'Italian cuisine, fast food',
   price_category: '1',
   image_url: 'https://media-cdn.tripadvisor.com/media/photo-p/11/37/aa/74/sottocasa.jpg',
@@ -255,7 +255,7 @@ activity12 = Activity.create!({
 
 puts "create"
 activity13 = Activity.create!({
-  name: 'Pasta e Vino Osteria',
+  name: 'Pasta e Vino',
   description: 'Pasta and Wine Like ‘Na Vorta Osteria, it was born from the need to rediscover the good flavors of the past, authentic ingredients and recipes.',
   price_category: '2',
   image_url: 'https://u.tfstatic.com/restaurant_photos/147/384147/169/612/pasta-e-vino-osteria-vista-sala-f7772.jpg',
@@ -271,7 +271,7 @@ activity13 = Activity.create!({
 
 
 activity14 = Activity.create!({
-  name: 'Polpetta Trastevere',
+  name: 'Polpetta',
   description: 'Polpetta was born in the wonderful Roman stage, a new catering format that perfectly combines tradition and innovation with simplicity and flair.',
   price_category: '2',
   image_url: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/35/58/fd/misto-polpetta.jpg',
@@ -286,7 +286,7 @@ activity14 = Activity.create!({
 })
 
 activity15 = Activity.create!({
-  name: 'Il Laboratorio della Pizza',
+  name: 'Il Laboratorio',
   description: 'The gourmet pizza you have never eaten. Exclusively high quality Italian products, carefully chosen and used with passion. Exclusive internal room on reservation. It is not for everyone!',
   price_category: '1',
   image_url: 'https://u.tfstatic.com/restaurant_photos/825/433825/169/612/laboratorio-della-pizza-sala-8d24c.jpg',
@@ -331,7 +331,7 @@ activity17 = Activity.create!({
 })
 
 activity18 = Activity.create!({
-  name: 'Mimì e Cocò Trast',
+  name: 'Mimì e Cocò',
   description: 'Accogliente, caldo, in un palazzo Vescovile del tardo Cinquecento dedicato a coloro che vogliono godere di un ambiente confortevole e che mette tutti a proprio agio, nella via della movida romana, senza rinunciare all’eleganza.',
   price_category: '2',
   image_url: 'https://u.tfstatic.com/restaurant_photos/741/575741/169/612/mimi-e-coco-trast-suggerimento-dello-chef-3e407.jpg',
@@ -346,7 +346,7 @@ activity18 = Activity.create!({
 })
 
 activity19 = Activity.create!({
-  name: 'Il Tamburello di Pulcinella',
+  name: 'Il Tamburello',
   description: 'The restaurant Il Tamburello di Pulcinella is located a few kilometers from the center in the west of the city of Rome.',
   price_category: '3',
   image_url: 'https://media-cdn.tripadvisor.com/media/photo-s/07/ef/7e/8d/il-tamburello-di-pulcinella.jpg',
@@ -409,7 +409,7 @@ activity22 = Activity.create!({
 })
 
 activity23 = Activity.create!({
-  name: 'Cappella Sistina',
+  name: 'Sistina',
   description: 'If the Pope has museums, it is precisely for this reason! Because art can be an extraordinary vehicle for announcing to men and women all over the world, with simplicity, the good news of God Who made Himself man for us, because He loves us! And this is beautiful!',
   price_category: '2',
   image_url:'https://sg.toluna.com/dpolls_images/2018/01/02/4b7f1ae5-0b32-4d79-a5c3-a504de4e50b5_x365.jpg',
@@ -424,7 +424,7 @@ activity23 = Activity.create!({
 })
 
 activity24 = Activity.create!({
-  name: 'Museo Leonardo Da Vinci',
+  name: 'Leonardo',
   description:'The "Leonardo Da Vinci Experience" exhibition is the first of its kind - And the only one of its kind in the world - Hosting a collection of Da Vinci s work.',
   price_category: '1',
   image_url: 'https://i.pinimg.com/originals/48/95/12/489512a45040713fcde8866da1464664.jpg',
@@ -439,7 +439,7 @@ activity24 = Activity.create!({
 })
 
 activity25 = Activity.create!({
-  name: 'Museo Nazionale Romano',
+  name: 'Romano',
   description: 'The National Roman Museum was born in 1889 as one of the main centers of historical and artistic culture of united Italy.',
   price_category: '2',
   image_url: 'https://romesite.fr/images/museum-rome.jpg',
@@ -454,7 +454,7 @@ activity25 = Activity.create!({
 })
 
 activity26 = Activity.create!({
-  name: 'Stanze di Raffaello',
+  name: 'Raffaello',
   description: 'The four rooms called Raphael were part of the apartment located on the second floor of the Pontifical Palace chosen by Julius II of the ...',
   price_category: '2',
   image_url: 'https://www.milestonerome.com/wp-content/uploads/2019/02/RaffaelloaRoma-26-1024x768.jpg',
@@ -469,7 +469,7 @@ activity26 = Activity.create!({
 })
 
 activity27 = Activity.create!({
-  name: 'Vatican Museum',
+  name: 'Vatican',
   description: 'The Vatican Museums constitute a museum complex located in the Vatican. It brings together twelve museums, which represents five galleries',
   price_category: '3',
   image_url: 'https://www.rome-passion.com/photos/museesvatican/braccio-nuovo.jpg',
@@ -484,7 +484,7 @@ activity27 = Activity.create!({
 })
 
 activity28 = Activity.create!({
-  name: 'National Museum of Palazzo Venezia',
+  name: 'Venezia',
   description: 'The Palace of Venice is a Roman palace located between Piazza Venezia and Via del Plebiscito in Rome. It houses the National Palace Museum of Venice.',
   price_category: '2',
   image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Palazzo_Venezia_Roma_07.JPG/347px-Palazzo_Venezia_Roma_07.JPG',
@@ -499,7 +499,7 @@ activity28 = Activity.create!({
 })
 
 activity29 = Activity.create!({
-  name: 'Galleria Spada',
+  name: 'Galleria',
   description: 'The Galleria Spada is a museum in Rome, which is located in the Palazzo Spada of the same name, located in Piazza Capo di Ferro.',
   price_category: '1',
   image_url: 'https://www.wantedinrome.com/i/preview/storage/uploads/2019/03/galleria-spada-rome-museum.jpg',
@@ -514,7 +514,7 @@ activity29 = Activity.create!({
 })
 
 activity30 = Activity.create!({
-  name: 'Museo del Tesoro della Basilica di San Pietro',
+  name: 'Basilica',
   description: 'The Vatican Museums constitute a museum complex located in the Vatican. It brings together twelve museums, which represents five galleries',
   price_category: '2',
   image_url: 'https://media-cdn.tripadvisor.com/media/photo-s/09/b5/cc/66/museo-del-tesoro-della.jpg',
