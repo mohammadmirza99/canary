@@ -198,25 +198,19 @@
 
 
 .cards__date {
-  text-align: center;
-  margin: 50px 162px 10px 202px;
+  display: flex;
+  align-items: center;
+  margin-top: 23px;
+  font-size: 17px;
+  color: #484848;
+  margin-left: 3px;
+
 }
-
-.cards__date-title {
-  position: relative;
-
-  p {
-    font-size: 17px;
-    color: #484848;
-
-  }
-
   // hr {
   //   margin: 0px 20px;
   //   margin: 0px 69px 0px 154px;
 
   // }
-}
 
 .inner {
   outline-bottom: 5px solid green;
