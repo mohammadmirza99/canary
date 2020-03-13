@@ -48,10 +48,8 @@
         <div class="title__list">
           <h1>Activities for your trip to <br>Rome, Italy </h1>
           <div class="btn-padding">
-
             <%= link_to 'DOWNLOAD YOUR ITINERARY', pdfview_path(format: :pdf), class: "btn-download" %>
           </div>
-
         </div>
       </div>
 
@@ -67,20 +65,12 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @monday_selection.first.date %> <%= @monday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
-      <!-- start -->
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @monday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
@@ -92,6 +82,8 @@
               <i class="fas fa-cloud-sun fa-lg", style="color: #F4BC19";></i>
             </div>
           </div>
+
+
 
           <% elsif selection.time_of_day == "Afternoon" %>
           <div class="time__info">
@@ -113,6 +105,9 @@
             </div>
           </div>
           <% end %>
+          <div class="cards__date">
+            <p><%= selection.date %> <%= selection.day_date %></p>
+          </div>
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
@@ -120,12 +115,6 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @tuesday_selection.first.date %> <%= @tuesday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
 
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
@@ -166,6 +155,9 @@
             </div>
           </div>
           <% end %>
+          <div class="cards__date">
+            <p><%= selection.date %> <%= selection.day_date %></p>
+          </div>
 
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
@@ -174,12 +166,6 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @wednesday_selection.first.date %> <%= @wednesday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
 
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
@@ -217,6 +203,9 @@
             </div>
           </div>
           <% end %>
+          <div class="cards__date">
+            <p><%= selection.date %> <%= selection.day_date %></p>
+          </div>
 
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
@@ -225,12 +214,7 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @thursday_selection.first.date %> <%= @thursday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
+
 
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
@@ -267,6 +251,9 @@
             </div>
           </div>
           <% end %>
+          <div class="cards__date">
+            <p><%= selection.date %> <%= selection.day_date %></p>
+          </div>
 
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
@@ -275,12 +262,6 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @friday_selection.first.date %> <%= @friday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
 
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
@@ -317,6 +298,9 @@
             </div>
           </div>
           <% end %>
+          <div class="cards__date">
+            <p><%= selection.date %> <%= selection.day_date %></p>
+          </div>
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
@@ -324,12 +308,6 @@
 
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @saturday_selection.first.date %> <%= @saturday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
 
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
@@ -367,19 +345,15 @@
             </div>
           </div>
           <% end %>
-
+          <div class="cards__date">
+            <p><%= selection.date %> <%= selection.day_date %></p>
+          </div>
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
         </div>
         <% end %>
       </div>
 
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @sunday_selection.first.date %> <%= @sunday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
 
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
@@ -416,6 +390,9 @@
             </div>
           </div>
           <% end %>
+          <div class="cards__date">
+            <p><%= selection.date %> <%= selection.day_date %></p>
+          </div>
 
           <%= render 'card-list', {selection: selection} %>
           <!-- /.card-list-container -->
