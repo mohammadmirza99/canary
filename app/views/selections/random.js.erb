@@ -11,3 +11,8 @@ var newCard = `
 `;
 
 oldCard.outerHTML = newCard;
+
+var map = document.getElementById('map');
+var newMarker = <%= JSON.generate(@marker).html_safe %>;
+
+window.replaceMarker(newMarker, <%= @selection.activity.latitude %>, <%= @selection.activity.longitude %>);
