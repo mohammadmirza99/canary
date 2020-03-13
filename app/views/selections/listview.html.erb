@@ -67,22 +67,12 @@
 
       </div>
 
-
-
-      <!-- start -->
-
-      <div class="cards__date">
-        <div class="cards__date-title">
-          <p> <%= @monday_selection.first.date %> <%= @monday_selection.first.day_date %> <%= @month %></p>
-          <hr>
-        </div>
-      </div>
-
       <div class="cards-itinerary-container">
         <%# Looping through each selection %>
         <% @monday_selection.each do |selection| %>
         <%# Card starting point  %>
         <%# Card starting point  %>
+
 
         <div class="container__content">
           <% if selection.time_of_day == "Morning" %>
