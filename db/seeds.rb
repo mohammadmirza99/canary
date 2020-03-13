@@ -93,7 +93,7 @@ activity3 = Activity.create!({
   longitude: 12.4839,
   latitude: 41.8947,
   rate: '5',
-  web_url: 'https://www.hotelartemide.it/fr/artemis-spa-rome'
+  web_url: 'http://www.hammamroma.com/en/massaggio.asp'
 })
 
 puts "create"
