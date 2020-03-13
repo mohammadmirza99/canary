@@ -457,7 +457,7 @@ activity26 = Activity.create!({
   name: 'Stanze di Raffaello',
   description: 'The four rooms called Raphael were part of the apartment located on the second floor of the Pontifical Palace chosen by Julius II of the ...',
   price_category: '2',
-  image_url: 'https://c8.alamy.com/comp/JGP4PC/la-scuola-di-atene-the-school-of-athens-in-stanze-di-raffaello-raphael-JGP4PC.jpg',
+  image_url: 'https://www.milestonerome.com/wp-content/uploads/2019/02/RaffaelloaRoma-26-1024x768.jpg',
   time_of_day: 'Evening',
   interest: 'Museum',
   location: location1,
