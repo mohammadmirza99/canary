@@ -112,6 +112,13 @@ class SelectionsController < ApplicationController
       date: params[:day],
       itinerary: @itinerary
       )
+    @marker = {
+        lat: @new_act.latitude,
+        lng: @new_act.longitude,
+        image_url: helpers.asset_url('canary_map.png'),
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: @new_act })
+      }
+    # @window = render_to_string(partial: "info_window", locals: { activity: @new_act })
 
     respond_to do |format|
       format.html { render 'selections/index' }

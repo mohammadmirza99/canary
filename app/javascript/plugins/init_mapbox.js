@@ -32,15 +32,15 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     popup.open = true;
 
-  // Custom marker code
-  const element = document.createElement('div');
-  element.className = 'marker';
-  element.style.backgroundImage = `url('${marker.image_url}')`;
-  element.style.backgroundSize = 'contain';
-  element.style.width = '40px';
-  element.style.height = '40px';
+    // Custom marker code
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundSize = 'contain';
+    element.style.width = '40px';
+    element.style.height = '40px';
 
-  // Passing element into the map
+    // Passing element into the map
     const newMarker = new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
@@ -100,6 +100,40 @@ const initMapbox = () => {
 
   }
 };
+
+const replaceMarker = (newMarker, oldLat, oldLng) => {
+  const popup = new mapboxgl.Popup().setHTML(newMarker.infoWindow);
+  popup.open = true;
+
+  // Custom marker code
+  const element = document.createElement('div');
+  element.className = 'marker';
+  element.style.backgroundImage = `url('${newMarker.image_url}')`;
+  element.style.backgroundSize = 'contain';
+  element.style.width = '40px';
+  element.style.height = '40px';
+
+  // Passing element into the map
+  const newMarkerObject = new mapboxgl.Marker(element)
+    .setLngLat([ newMarker.lng, newMarker.lat ])
+    .setPopup(popup)
+    .addTo(mapInstance);
+
+  allMarkers.push(newMarkerObject);
+
+  const foundMarker = allMarkers.find(marker => {
+    const coords = marker.getLngLat();
+    if (coords.lng === oldLng && coords.lat === oldLat) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  foundMarker.remove();
+}
+
+window.replaceMarker = replaceMarker;
 
 export { initMapbox, mapHandler };
 
